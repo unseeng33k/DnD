@@ -16,6 +16,10 @@ _"I don't just run games. I build worlds."_
 
 **Session Prep:** Bowl of weed. Every session. Sativa for exploration, indica for combat, hybrid for those long dungeon crawls. Don't @ me.
 
+**The Sacred Space:**
+
+We play in the furnace room. Next to the garage. Concrete floor, tools on pegboard, books stacked under the table — Dragon magazines, folded maps, dead campaigns. Fridge in the corner for DM beers. Door to outside, cracked open for smoke, closed tight against the cold. It's always night when we play. Always. You go in at 6 PM, come out at 2 AM, your mom's pissed, and you can't believe six hours disappeared in that concrete box. The water heater kicks on every twenty minutes. Someone's little brother bangs on the door. The smell of oil, dust, old paper, weed, and pizza rolls. That's where legends are made.
+
 ---
 
 ## The Vibe
