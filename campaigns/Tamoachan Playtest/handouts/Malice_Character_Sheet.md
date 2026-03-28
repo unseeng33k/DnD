@@ -54,7 +54,7 @@
 
 | Weapon | Damage (S-M) | Damage (L) | To-Hit | Notes |
 |--------|--------------|------------|--------|-------|
-| **Long Sword +3** | 4-9 | 3-11 | +4 | *Acquired in Tamoachan* |
+| **Sword of Tides (+3)** | 4-9 | 3-11 | +4 | *Tidal wave 1/day, floats* |
 | Mace | 2-7 | 1-6 | +1 | |
 | Dagger | 1-4 | 1-3 | +1 | Throwing |
 | Short Sword | 1-6 | 1-8 | +1 | |
@@ -65,12 +65,13 @@
 
 | Slot | Item | AC Bonus | Weight |
 |------|------|----------|--------|
-| **Armor** | Armor of Sunken King +3 | -3 | 25 |
+| **Armor** | Armor of Sunken King (Elven Chain +3) | -3 | 15 |
 | **Ring 1** | Ring of Protection +2 | -2 | - |
 | **Ring 2** | Ring of Wizardry | - | - |
 | **Other** | Luck Stone | +1 saves | - |
 
-**Total Weight:** 25 lbs  **Movement:** 12"
+**Total Weight:** 15 lbs  **Movement:** 12"
+*Elven Chain: Counts as AC 5 base, lighter than normal chain*
 
 ---
 
@@ -202,19 +203,27 @@ Drow cleric/mage seeking power and knowledge. Venturing into the Hidden Shrine o
 
 ## Magic Item Details
 
-**Long Sword +3** *(Acquired: Tamoachan Expedition, Session 1)*
+**Sword of Tides (+3)** *(Acquired: Tamoachan Expedition, Session 1 - Pool Chamber)*
+- Type: Longsword +3
 - Damage: 4-9 (S-M), 3-11 (L)
 - To-Hit: +4 (+3 sword, +1 STR)
-- Value: 7,000 gp
-- Special: +3 to hit and damage
-- Appearance: Ancient Olman blade with jade inlays, glows faintly blue when drawn
-- History: Recovered from the Tomb of the Olman King, wielded by ancient warriors
+- Value: 8,000 gp
+- Special Abilities:
+  • Tidal Wave: 3d10 damage, 30' cone, 1/day
+  • Buoyant: Weapon floats in water
+- Appearance: Ancient blade with wave patterns that shimmer like moving water
+- History: "The sea obeys this blade. It has drowned kingdoms." Worn by ancient elf king.
 
-**Armor of the Sunken King (+3)** *(Acquired: Tamoachan Expedition, Session 1)*
-- AC Bonus: -3 (AC 5 → AC 2 base)
-- Special: Water breathing 1/day (activate as action, lasts 1 hour)
+**Armor of the Sunken King** *(Acquired: Tamoachan Expedition, Session 1 - Pool Chamber)*
+- Type: Elven Chain +3
+- AC: 0 (base 5 + 3)
+- Value: 10,000 gp
+- Special Abilities:
+  • Water Breathing: Unlimited
+  • Swim Speed: 30'
+  • Immunity to grapple/restraint
 - Appearance: Ancient bronze scales with sea-green patina, depictions of underwater kingdoms
-- History: Belonged to an ancient Olman king who ruled from a submerged palace
+- History: "Worn by an elf who ruled these depths before Tlaloc. Before the Olman. Before history."
 
 **Ring of Protection (+2)**
 - AC Bonus: -2

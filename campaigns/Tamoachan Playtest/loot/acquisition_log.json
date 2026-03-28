@@ -4,29 +4,29 @@
       "date": "2026-03-28",
       "session": "Session 1",
       "character": "Malice Indarae De'Barazzan",
-      "item": "Armor of the Sunken King +3",
+      "item": "Armor of the Sunken King (Elven Chain +3)",
       "type": "armor",
       "bonus": "+3",
       "identified": true,
-      "identified_by": "Detect Magic, Legend Lore",
-      "location": "Tomb of the Olman King",
-      "source": "Treasure hoard",
-      "value_gp": 15000,
-      "notes": "Ancient bronze scale armor. Water breathing 1/day. Belonged to Olman king who ruled from submerged palace."
+      "identified_by": "Identify spell",
+      "location": "Pool Chamber",
+      "source": "Skeleton of ancient elf king",
+      "value_gp": 10000,
+      "notes": "Elven Chain +3: AC 0, swim 30', immunity to grapple/restraint, water breathing. Worn by elf who ruled before Tlaloc, before Olman, before history."
     },
     {
       "date": "2026-03-28",
       "session": "Session 1",
       "character": "Malice Indarae De'Barazzan",
-      "item": "Long Sword +3",
+      "item": "Sword of Tides (+3 Longsword)",
       "type": "weapon",
       "bonus": "+3",
       "identified": true,
-      "identified_by": "Detect Magic",
-      "location": "Tomb of the Olman King",
-      "source": "Treasure hoard",
-      "value_gp": 7000,
-      "notes": "Ancient Olman blade with jade inlays. Glows faintly blue when drawn."
+      "identified_by": "Identify spell",
+      "location": "Pool Chamber",
+      "source": "Skeleton of ancient elf king",
+      "value_gp": 8000,
+      "notes": "Longsword +3: Tidal wave 3d10 damage 30' cone 1/day, weapon floats. 'The sea obeys this blade. It has drowned kingdoms.'"
     },
     {
       "date": "2026-03-28",
@@ -43,5 +43,5 @@
       "notes": "Silver band with protective runes visible in moonlight."
     }
   ],
-  "total_value_acquired": 32000
+  "total_value_acquired": 25000
 }

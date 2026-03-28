@@ -12,13 +12,14 @@ class MagicItemCompendium {
       'armor of the sunken king': {
         name: 'Armor of the Sunken King',
         type: 'Armor',
+        subtype: 'Elven Chain',
         bonus: '+3',
         ac: -3,
-        value: '15,000 gp',
-        special: 'Water breathing 1/day (activate as action, lasts 1 hour)',
+        value: '10,000 gp',
+        special: 'Water breathing, swim 30\', immunity to grapple/restraint',
         appearance: 'Ancient bronze scales with sea-green patina, depictions of underwater kingdoms',
-        history: 'Belonged to an ancient Olman king who ruled from a submerged palace',
-        weight: 25
+        history: 'Worn by an elf who ruled these depths before Tlaloc. Before the Olman. Before history.',
+        weight: 15
       },
       'armor +1': {
         name: 'Armor +1',
@@ -173,6 +174,20 @@ class MagicItemCompendium {
         special: null,
         appearance: 'Ancient blade with jade inlays, glows faintly blue when drawn',
         history: 'Often recovered from ancient tombs, wielded by legendary warriors'
+      },
+      'sword of tides': {
+        name: 'Sword of Tides',
+        type: 'Weapon',
+        subtype: 'Longsword +3',
+        bonus: '+3',
+        toHit: 3,
+        damage: 3,
+        damageSM: '4-9',
+        damageL: '3-11',
+        value: '8,000 gp',
+        special: 'Tidal wave: 3d10 damage, 30\' cone, 1/day. Weapon floats (buoyant).',
+        appearance: 'Ancient blade with wave patterns that shimmer like moving water',
+        history: 'The sea obeys this blade. It has drowned kingdoms.'
       },
       'vorpal sword': {
         name: 'Vorpal Sword',
