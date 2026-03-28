@@ -200,6 +200,18 @@ class MagicItemCompendium {
         appearance: 'Wickedly curved blade with serrated edge, seems to whisper',
         history: 'Legendary weapon from the poem Jabberwocky, feared by all'
       },
+      'uthul': {
+        name: 'Uthul',
+        type: 'Weapon',
+        subtype: 'Battle Axe +2',
+        bonus: '+2',
+        toHit: 2,
+        damage: 2,
+        value: '5,000 gp',
+        special: 'Vorpal vs giant class: sever limb on 18-20',
+        appearance: 'Heavy battle axe with runes that glow when giants are near',
+        history: 'Forged to slay giants, this axe has felled many tyrants'
+      },
 
       // Miscellaneous
       'luck stone': {
