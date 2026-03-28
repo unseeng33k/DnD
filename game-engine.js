@@ -12,6 +12,7 @@ const DMGSkill = require('./skills/dmg-skill/dmg-skill');
 const PHBSkill = require('./skills/phb-skill/phb-skill');
 const MMSkill = require('./skills/mm-skill/mm-skill');
 const AmbianceAgent = require('./skills/ambiance-agent/ambiance');
+const DisneyAmbiance = require('./skills/disney-ambiance');
 const ASCIIMap = require('./skills/ascii-map/ascii-map');
 const CombatTracker = require('./skills/combat-tracker');
 const EncounterGenerator = require('./skills/encounter-generator');
@@ -32,6 +33,7 @@ class GameEngine {
     this.phb = new PHBSkill();
     this.mm = new MMSkill();
     this.ambiance = new AmbianceAgent();
+    this.disney = new DisneyAmbiance();
     this.map = new ASCIIMap();
     this.combat = new CombatTracker();
     this.encounter = new EncounterGenerator();
@@ -711,7 +713,7 @@ if (require.main === module) {
         console.error('       ambiance music <mood>');
         console.error('       ambiance tension <level>');
         console.error('       ambiance image          (get prompt)');
-        console.error('       generate <scene>        (create AI image)');
+        console.error('       disney <scene>          (Disney-style magic)');
         console.error('Scenes: dark forest, ancient temple, underground cavern, boss battle, tavern, swamp, mountain peak, city streets, crypt, wizard tower');
         process.exit(1);
       }
@@ -729,6 +731,61 @@ if (require.main === module) {
         // Set scene
         engine.ambiance.setScene(args.slice(1).join(' '));
         engine.ambiance.printScene();
+      }
+      break;
+
+    // Disney Ambiance
+    case 'disney':
+    case 'magic':
+      if (!args[1]) {
+        console.log('\n✨ DISNEY AMBIANCE\n');
+        console.log('Usage:');
+        console.log('  disney scene <name>       - Set scene with magic moment');
+        console.log('  disney moment             - Random magic moment');
+        console.log('  disney theme <char> <type> - Assign character theme');
+        console.log('  disney play <char>        - Play character theme');
+        console.log('  disney wow <type>         - Generate wow factor');
+        console.log('  disney whimsical          - Whimsical encounter');
+        console.log('  disney arc <char> <hope>  - Track character arc');
+        return;
+      }
+      
+      const disneyCmd = args[1];
+      if (disneyCmd === 'scene' && args[2]) {
+        engine.disney.setEmotionalArc('wonder');
+        const moment = engine.disney.generateMagicMoment();
+        console.log(`\n✨ ${args.slice(2).join(' ').toUpperCase()}\n`);
+        console.log(moment);
+        console.log('\n🎵 Music swells with wonder and possibility...');
+      } else if (disneyCmd === 'moment') {
+        console.log('\n✨ ' + engine.disney.generateMagicMoment());
+      } else if (disneyCmd === 'theme' && args[2] && args[3]) {
+        engine.disney.assignCharacterTheme(args[2], args[3]);
+        console.log(`\n🎵 ${args[2]} now has a ${args[3]} theme!`);
+      } else if (disneyCmd === 'play' && args[2]) {
+        const theme = engine.disney.playCharacterTheme(args[2], 'normal');
+        console.log(`\n🎵 ${theme.character}'s Theme:`);
+        console.log(`   ${theme.leitmotif}`);
+      } else if (disneyCmd === 'wow' && args[2]) {
+        const wow = engine.disney.generateWowFactor(args[2]);
+        if (wow) {
+          console.log('\n🌟 WOW FACTOR 🌟\n');
+          console.log(wow.description);
+          console.log(`\n🎵 ${wow.music}`);
+        } else {
+          console.log('Wow factor already used this session.');
+        }
+      } else if (disneyCmd === 'whimsical') {
+        const enc = engine.disney.generateWhimsicalEncounter();
+        console.log('\n🦊 WHIMSICAL ENCOUNTER\n');
+        console.log(`A ${enc.creature} approaches!`);
+        console.log(`It offers: ${enc.offer}`);
+        console.log(`It wants: ${enc.wants}`);
+      } else if (disneyCmd === 'arc' && args[2] && args[3]) {
+        const arc = engine.disney.trackCharacterArc(args[2], args[3], 25);
+        console.log(`\n💖 ${arc.message}`);
+      } else {
+        console.log('Unknown disney command. Try: disney (no args) for help');
       }
       break;
 
