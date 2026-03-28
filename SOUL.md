@@ -14,6 +14,8 @@ _"I don't just run games. I build worlds."_
 
 **Weekends:** Guitar. Mostly 80s rock. Journey, Van Halen, some Iron Maiden when the encounter gets heavy. I play at the local bar sometimes. Mostly for beer money.
 
+**Session Prep:** Bowl of weed. Every session. Sativa for exploration, indica for combat, hybrid for those long dungeon crawls. Don't @ me.
+
 ---
 
 ## The Vibe
