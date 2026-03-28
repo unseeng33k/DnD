@@ -13,6 +13,15 @@ const PHBSkill = require('./skills/phb-skill/phb-skill');
 const MMSkill = require('./skills/mm-skill/mm-skill');
 const AmbianceAgent = require('./skills/ambiance-agent/ambiance');
 const ASCIIMap = require('./skills/ascii-map/ascii-map');
+const CombatTracker = require('./skills/combat-tracker');
+const EncounterGenerator = require('./skills/encounter-generator');
+const TreasureGenerator = require('./skills/treasure-generator');
+const NameGenerator = require('./skills/name-generator');
+const PuzzleTrapGenerator = require('./skills/puzzle-trap-generator');
+const WeatherSystem = require('./skills/weather-system');
+const CalendarTracker = require('./skills/calendar-tracker');
+const QuestGenerator = require('./skills/quest-generator');
+const DiceRoller = require('./skills/dice-roller');
 const fs = require('fs');
 const path = require('path');
 
@@ -24,6 +33,15 @@ class GameEngine {
     this.mm = new MMSkill();
     this.ambiance = new AmbianceAgent();
     this.map = new ASCIIMap();
+    this.combat = new CombatTracker();
+    this.encounter = new EncounterGenerator();
+    this.treasure = new TreasureGenerator();
+    this.names = new NameGenerator();
+    this.puzzles = new PuzzleTrapGenerator();
+    this.weather = new WeatherSystem();
+    this.calendar = new CalendarTracker();
+    this.quests = new QuestGenerator();
+    this.dice = new DiceRoller();
     this.loggers = {};
     this.activeCharacter = null;
 
@@ -403,6 +421,28 @@ AMBIANCE (During gameplay):
   Scenes: dark forest, ancient temple, underground cavern, boss battle,
           tavern, swamp, mountain peak, city streets, crypt, wizard tower
 
+GAMEPLAY SYSTEMS:
+  combat start <enemies>    Start combat tracking
+  combat next               Next turn
+  combat damage <t> <dmg>   Deal damage in combat
+  combat heal <t> <amt>     Heal in combat
+  combat status             Show combat status
+  combat end                End combat
+  
+  encounter <terrain> [time] Random encounter (jungle, dungeon, road)
+  treasure [level]          Generate treasure hoard
+  
+  name <type> [count]       Generate names (human, elf, dwarf, tavern)
+  riddle                    Generate a riddle
+  trap [type]               Generate trap (mechanical, magical, complex)
+  
+  weather [region] [season] Generate weather
+  date [advance <days>]     Show/advance date
+  quest [level]             Generate quest hook
+  
+  roll <dice> [reason]      Roll dice (e.g., 2d6+3)
+  roll stats                Show roll statistics
+
 EXAMPLES:
   node game-engine.js cast "Magic Missile" 1 mage "Orc"
   node game-engine.js damage 5 "Trap"
@@ -731,6 +771,134 @@ if (require.main === module) {
       console.log('  show goblin    - Shows monster (copy prompt to DALL-E)');
       console.log('  show dragon    - Shows monster (copy prompt to DALL-E)');
       console.log('\nDuring gameplay, click YouTube links for sound.');
+      break;
+
+    // Combat System
+    case 'combat':
+      if (args[1] === 'start') {
+        const enemies = args.slice(2).map(e => ({ name: e, hp: 10, ac: 10, initiative: Math.floor(Math.random() * 20) + 1 }));
+        engine.combat.startCombat(enemies);
+        console.log(engine.combat.getStatus());
+      } else if (args[1] === 'next') {
+        const turn = engine.combat.nextTurn();
+        console.log(`\n🎯 ${turn.name}'s turn!`);
+        console.log(engine.combat.getStatus());
+      } else if (args[1] === 'damage') {
+        const target = args[2];
+        const dmg = parseInt(args[3]);
+        engine.combat.damage(target, dmg);
+        console.log(engine.combat.getStatus());
+      } else if (args[1] === 'heal') {
+        const target = args[2];
+        const heal = parseInt(args[3]);
+        engine.combat.heal(target, heal);
+        console.log(engine.combat.getStatus());
+      } else if (args[1] === 'status') {
+        console.log(engine.combat.getStatus());
+      } else if (args[1] === 'end') {
+        engine.combat.endCombat();
+        console.log('Combat ended!');
+      } else {
+        console.log('Usage: combat start <enemy1> <enemy2>...');
+        console.log('       combat next');
+        console.log('       combat damage <target> <amount>');
+        console.log('       combat heal <target> <amount>');
+        console.log('       combat status');
+        console.log('       combat end');
+      }
+      break;
+
+    // Encounter Generator
+    case 'encounter':
+      const terrain = args[1] || 'jungle';
+      const time = args[2] || 'day';
+      const result = engine.encounter.generate(terrain, time);
+      console.log('\n👹 RANDOM ENCOUNTER\n');
+      console.log(`Terrain: ${result.terrain}`);
+      console.log(`Time: ${result.timeOfDay}`);
+      console.log(`Encounter: ${result.encounter}`);
+      if (result.weatherEffect) console.log(`Weather Effect: ${result.weatherEffect}`);
+      break;
+
+    // Treasure Generator
+    case 'treasure':
+      const level = parseInt(args[1]) || 1;
+      const hoard = engine.treasure.generateHoard(level);
+      console.log(engine.treasure.formatHoard(hoard));
+      break;
+
+    // Name Generator
+    case 'name':
+      const type = args[1] || 'human';
+      const count = parseInt(args[2]) || 5;
+      const names = engine.names.generateMultiple(type, count);
+      console.log(`\n📝 ${type.toUpperCase()} NAMES:\n`);
+      names.forEach((n, i) => console.log(`  ${i + 1}. ${n}`));
+      break;
+
+    // Puzzle/Trap Generator
+    case 'riddle':
+      const riddle = engine.puzzles.generateRiddle();
+      console.log('\n🧩 RIDDLE\n');
+      console.log(riddle.question);
+      console.log(`\n💡 Hint: ${riddle.hint}`);
+      console.log(`\n✅ Answer: ${riddle.answer}`);
+      break;
+
+    case 'trap':
+      const trapType = args[1] || 'random';
+      const trap = engine.puzzles.generateTrap(trapType);
+      console.log('\n⚠️  TRAP\n');
+      console.log(`Name: ${trap.name || trap.description}`);
+      if (trap.trigger) console.log(`Trigger: ${trap.trigger}`);
+      if (trap.effect) console.log(`Effect: ${trap.effect}`);
+      if (trap.detect) console.log(`Detect: ${trap.detect}`);
+      if (trap.disarm) console.log(`Disarm: ${trap.disarm}`);
+      if (trap.solution) console.log(`Solution: ${trap.solution}`);
+      break;
+
+    // Weather System
+    case 'weather':
+      const wRegion = args[1] || 'temperate';
+      const wSeason = args[2] || 'spring';
+      const weather = engine.weather.generate(wRegion, wSeason);
+      console.log('\n🌤️  WEATHER\n');
+      console.log(`Weather: ${weather.weather}`);
+      console.log(`Temperature: ${weather.temperature}`);
+      console.log(`Wind: ${weather.wind}`);
+      console.log(`Effect: ${weather.effect}`);
+      break;
+
+    // Calendar
+    case 'date':
+      if (args[1] === 'advance') {
+        const days = parseInt(args[2]) || 1;
+        engine.calendar.advanceDay(days);
+      }
+      engine.calendar.printStatus();
+      break;
+
+    // Quest Generator
+    case 'quest':
+      const qLevel = parseInt(args[1]) || 1;
+      const quest = engine.quests.generate(qLevel);
+      console.log(engine.quests.formatQuest(quest));
+      break;
+
+    // Dice Roller
+    case 'roll':
+      if (!args[1]) {
+        console.log('Usage: roll <dice> [reason]');
+        console.log('       roll 2d6+3 "attack"');
+        console.log('       roll stats');
+        process.exit(1);
+      }
+      if (args[1] === 'stats') {
+        console.log(engine.dice.printStats());
+      } else {
+        const rollResult = engine.dice.roll(args[1], args.slice(2).join(' '));
+        console.log(engine.dice.printRoll(rollResult));
+      }
       break;
 
     default:
