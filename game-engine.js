@@ -23,6 +23,16 @@ const WeatherSystem = require('./skills/weather-system');
 const CalendarTracker = require('./skills/calendar-tracker');
 const QuestGenerator = require('./skills/quest-generator');
 const DiceRoller = require('./skills/dice-roller');
+const MoraleSystem = require('./skills/morale-system');
+const DungeonGenerator = require('./skills/dungeon-generator');
+const WildernessSystem = require('./skills/wilderness-system');
+const HenchmanSystem = require('./skills/henchman-system');
+const StrongholdSystem = require('./skills/stronghold-system');
+const ResearchSystem = require('./skills/research-system');
+const DivineIntervention = require('./skills/divine-intervention');
+const DiseaseSystem = require('./skills/disease-system');
+const TrainingSystem = require('./skills/training-system');
+const MonsterEcology = require('./skills/monster-ecology');
 const fs = require('fs');
 const path = require('path');
 
@@ -38,6 +48,22 @@ class GameEngine {
     this.combat = new CombatTracker();
     this.encounter = new EncounterGenerator();
     this.treasure = new TreasureGenerator();
+    this.names = new NameGenerator();
+    this.puzzles = new PuzzleTrapGenerator();
+    this.weather = new WeatherSystem();
+    this.calendar = new CalendarTracker();
+    this.quests = new QuestGenerator();
+    this.dice = new DiceRoller();
+    this.morale = new MoraleSystem();
+    this.dungeon = new DungeonGenerator();
+    this.wilderness = new WildernessSystem();
+    this.henchman = new HenchmanSystem();
+    this.stronghold = new StrongholdSystem();
+    this.research = new ResearchSystem();
+    this.divine = new DivineIntervention();
+    this.disease = new DiseaseSystem();
+    this.training = new TrainingSystem();
+    this.ecology = new MonsterEcology();
     this.names = new NameGenerator();
     this.puzzles = new PuzzleTrapGenerator();
     this.weather = new WeatherSystem();
@@ -444,6 +470,21 @@ GAMEPLAY SYSTEMS:
   
   roll <dice> [reason]      Roll dice (e.g., 2d6+3)
   roll stats                Show roll statistics
+
+GYGAXIAN SYSTEMS:
+  morale check <monster>    Check monster morale
+  morale reaction           NPC reaction roll
+  dungeon [level] [rooms]   Generate random dungeon
+  forage <terrain> [wis]    Forage for food/water
+  lost <terrain>            Check if party gets lost
+  hire <type>               Generate hireling
+  build <structure>         Calculate stronghold costs
+  research <level>          Calculate spell research
+  pray <level>              Attempt divine intervention
+  disease check <source>    Check for infection
+  disease                   Random disease
+  train <level>             Calculate training costs
+  ecology <monster>         Show monster ecology
 
 EXAMPLES:
   node game-engine.js cast "Magic Missile" 1 mage "Orc"
@@ -956,6 +997,146 @@ if (require.main === module) {
         const rollResult = engine.dice.roll(args[1], args.slice(2).join(' '));
         console.log(engine.dice.printRoll(rollResult));
       }
+      break;
+
+    // Morale System
+    case 'morale':
+      if (args[1] === 'check') {
+        const monster = args[2] || 'goblin';
+        const baseMorale = engine.morale.getMonsterMorale(monster);
+        const result = engine.morale.checkMorale(baseMorale, { leaderPresent: true });
+        console.log(`\n🎲 ${monster.toUpperCase()} MORALE CHECK\n`);
+        console.log(`Base Morale: ${baseMorale}`);
+        console.log(`Roll: ${result.roll} + Modifier: ${result.modifier} = ${result.total}`);
+        console.log(`Result: ${result.result}`);
+      } else if (args[1] === 'reaction') {
+        const reaction = engine.morale.checkReaction();
+        console.log(`\n🎲 REACTION ROLL\n`);
+        console.log(`Result: ${reaction.result}`);
+      } else {
+        console.log('Usage: morale check <monster>');
+        console.log('       morale reaction');
+      }
+      break;
+
+    // Dungeon Generator
+    case 'dungeon':
+      const dungeon = engine.dungeon.generateDungeon(parseInt(args[1]) || 1, parseInt(args[2]) || 10);
+      console.log(engine.dungeon.printDungeon(dungeon));
+      break;
+
+    // Wilderness Survival
+    case 'forage':
+      const forageResult = engine.wilderness.forage(args[1] || 'forest', parseInt(args[2]) || 10);
+      console.log('\n🌿 FORAGING\n');
+      console.log(`Success: ${forageResult.success}`);
+      console.log(`Food: ${forageResult.food} days`);
+      console.log(`Water: ${forageResult.water} days`);
+      console.log(forageResult.description);
+      break;
+
+    case 'lost':
+      const lost = engine.wilderness.checkLost(args[1] || 'forest');
+      console.log('\n🧭 NAVIGATION\n');
+      if (lost.lost) {
+        console.log(`❌ LOST! Walking ${lost.direction}`);
+      } else {
+        console.log(`✅ ${lost.reason}`);
+      }
+      break;
+
+    // Henchmen
+    case 'hire':
+      const hireType = args[1] || 'mercenary';
+      const hireling = engine.henchman.generateHireling(hireType);
+      console.log('\n👤 HIRELING\n');
+      console.log(`Name: ${hireling.name}`);
+      console.log(`Type: ${hireling.type}`);
+      console.log(`HP: ${hireling.hp}, AC: ${hireling.ac}`);
+      console.log(`Wage: ${hireling.wage} gp/day`);
+      break;
+
+    // Stronghold
+    case 'build':
+      if (!args[1]) {
+        console.log('Usage: build <structure>');
+        console.log('Structures: keep, castle, tower, smallCastle, fortifiedMonastery');
+        return;
+      }
+      const build = engine.stronghold.calculateConstruction(args[1]);
+      if (build.error) {
+        console.log(build.error);
+      } else {
+        console.log(`\n🏰 ${args[1].toUpperCase()}\n`);
+        console.log(`Cost: ${build.cost.toLocaleString()} gp`);
+        console.log(`Time: ${build.time}`);
+        console.log(`Garrison: ${build.garrison}`);
+        console.log(`Monthly Upkeep: ${build.monthlyUpkeep} gp`);
+      }
+      break;
+
+    // Research
+    case 'research':
+      const spellLevel = parseInt(args[1]) || 1;
+      const research = engine.research.calculateResearchCost(spellLevel, { intelligence: 16 });
+      console.log(`\n📚 RESEARCH SPELL LEVEL ${spellLevel}\n`);
+      console.log(`Cost: ${research.cost} gp`);
+      console.log(`Time: ${research.time}`);
+      console.log(`Success Chance: ${research.successChance}%`);
+      break;
+
+    // Divine Intervention
+    case 'pray':
+      const clericLevel = parseInt(args[1]) || 5;
+      const intervention = engine.divine.attempt(clericLevel, 5);
+      console.log(`\n🙏 DIVINE INTERVENTION (Level ${clericLevel})\n`);
+      console.log(`Roll: ${intervention.roll} vs ${intervention.chance}%`);
+      console.log(`Result: ${intervention.success ? 'SUCCESS!' : 'No response'}`);
+      if (intervention.intervention) {
+        console.log(`Miracle: ${intervention.intervention}`);
+        console.log(`Consequence: ${intervention.consequence}`);
+      }
+      break;
+
+    // Disease
+    case 'disease':
+      if (args[1] === 'check') {
+        const infection = engine.disease.checkInfection(args[2] || 'giant rat bite');
+        console.log('\n🦠 INFECTION CHECK\n');
+        console.log(`Source: ${args[2] || 'giant rat bite'}`);
+        console.log(`Infected: ${infection.infected ? 'YES!' : 'No'}`);
+        if (infection.disease) {
+          console.log(`Disease: ${infection.disease.name}`);
+          console.log(`Onset: ${infection.disease.onset}`);
+          console.log(`Cure: ${infection.disease.cure}`);
+        }
+      } else {
+        const disease = engine.disease.generateRandomDisease();
+        console.log('\n🦠 DISEASE\n');
+        console.log(`Name: ${disease.name}`);
+        console.log(`Onset: ${disease.onset}`);
+        console.log(`Symptoms: ${disease.symptoms}`);
+        console.log(`Cure: ${disease.cure}`);
+      }
+      break;
+
+    // Training
+    case 'train':
+      const trainLevel = parseInt(args[1]) || 1;
+      const training = engine.training.calculateTrainingCost('fighter', trainLevel);
+      console.log(`\n📖 TRAINING TO LEVEL ${training.nextLevel}\n`);
+      console.log(`Cost: ${training.cost} gp`);
+      console.log(`Time: ${training.time}`);
+      console.log(`HP Gain: 1d${training.nextLevel <= 9 ? 10 : 3}`);
+      break;
+
+    // Monster Ecology
+    case 'ecology':
+      if (!args[1]) {
+        console.log('Usage: ecology <monster>');
+        return;
+      }
+      console.log(engine.ecology.printEcology(args[1]));
       break;
 
     default:
