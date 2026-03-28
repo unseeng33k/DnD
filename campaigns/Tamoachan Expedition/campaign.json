@@ -1,0 +1,184 @@
+{
+  "name": "Tamoachan Expedition",
+  "module": "Hidden Shrine of Tamoachan",
+  "moduleCode": "C1",
+  "edition": "AD&D 1e",
+  "created": "2026-03-28T12:25:18.784Z",
+  "currentSession": 1,
+  "partyLocation": "Jungle Approach",
+  "scenes": [
+    {
+      "name": "Jungle Approach",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Temple Entrance",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Entry Hall",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Chamber of Three Archways",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Hall of the Glyphs",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Pool Chamber",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Shrine of Tlaloc",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Tomb of the Olman King",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Natural Cavern",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Cultist Quarters",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Sacrifice Chamber",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Treasure Vault",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    }
+  ],
+  "monsters": [
+    {
+      "name": "goblin",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "skeleton",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "zombie",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "ghoul",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "wight",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "lizard man",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "giant spider",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "basilisk",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "mummy",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "giant centipede",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "poisonous snake",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "crocodile",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "jaguar",
+      "encountered": 0,
+      "killed": 0
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Tomas the Survivor",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    },
+    {
+      "name": "Villager Woman",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    },
+    {
+      "name": "Cult Leader Xilonen",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    },
+    {
+      "name": "The Olman King (mummy)",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    }
+  ],
+  "treasure": {
+    "found": [],
+    "totalValue": 0
+  },
+  "xp": {
+    "total": 0,
+    "perCharacter": {}
+  }
+}
