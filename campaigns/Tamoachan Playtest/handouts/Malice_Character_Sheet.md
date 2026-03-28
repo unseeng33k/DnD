@@ -75,28 +75,31 @@
 
 ## CLERIC SPELLS
 
-### Level 1 Spells (Max: 3 / Day)
+### Level 1 Spells (Max: 4 / Day - WIS 17 Bonus: +1)
 
 | # | Spell Name | Prepared | Cast |
 |---|------------|----------|------|
 | 1 | Cure Light Wounds | ☑ | ☐ |
 | 2 | Detect Evil | ☑ | ☐ |
 | 3 | Protection from Evil | ☑ | ☐ |
+| 4 | _________________ | ☑ | ☐ |
 
-### Level 2 Spells (Max: 3 / Day)
+### Level 2 Spells (Max: 4 / Day - WIS 17 Bonus: +1)
 
 | # | Spell Name | Prepared | Cast |
 |---|------------|----------|------|
 | 1 | Hold Person | ☑ | ☐ |
 | 2 | Silence 15' Radius | ☑ | ☐ |
 | 3 | Spiritual Hammer | ☑ | ☐ |
+| 4 | _________________ | ☑ | ☐ |
 
-### Level 3 Spells (Max: 2 / Day)
+### Level 3 Spells (Max: 3 / Day - WIS 17 Bonus: +1)
 
 | # | Spell Name | Prepared | Cast |
 |---|------------|----------|------|
 | 1 | Cure Disease | ☑ | ☐ |
 | 2 | Dispel Magic | ☑ | ☐ |
+| 3 | _________________ | ☑ | ☐ |
 
 ---
 
