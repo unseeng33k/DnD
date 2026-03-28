@@ -112,6 +112,59 @@ class MMSkill {
 
     console.log(`\n👹 ${name.toUpperCase()}\n`);
     console.log(stats);
+    
+    // Generate AI image prompt
+    const imagePrompt = this.generateImagePrompt(name, stats);
+    console.log(`\n🎨 AI IMAGE PROMPT:`);
+    console.log(imagePrompt);
+  }
+
+  generateImagePrompt(name, stats) {
+    const prompts = {
+      'goblin': 'A small, ugly humanoid with leathery green skin, large pointed ears, sharp yellow teeth, wearing crude leather armor, holding a rusty sword, crouching in a dark cave, 1979 D&D art style, fantasy illustration',
+      'orc': 'A muscular humanoid with gray-green skin, pig-like snout, tusks, wearing mismatched armor, wielding a crude axe, aggressive stance, dungeon setting, 1979 D&D art style, fantasy illustration',
+      'skeleton': 'Animated human skeleton, bleached bones, empty eye sockets glowing with faint light, armed with sword and shield, tattered remnants of clothing, dark dungeon corridor, 1979 D&D art style, fantasy illustration',
+      'zombie': 'Reanimated human corpse, rotting flesh, vacant staring eyes, arms outstretched, tattered clothing, shambling pose, graveyard or dungeon setting, 1979 D&D art style, horror fantasy',
+      'ghoul': 'Gaunt humanoid with sharp claws and teeth, gray skin, feral eyes, hunched posture, ragged clothing, cemetery or crypt setting, 1979 D&D art style, horror fantasy',
+      'troll': 'Large green humanoid with rubbery skin, long arms, clawed hands, wild hair, regenerating wounds visible, cave or swamp setting, 1979 D&D art style, fantasy illustration',
+      'dragon': 'Massive winged reptile, scales gleaming, sharp claws, long neck, smoke curling from nostrils, treasure hoard beneath, cave entrance, dramatic lighting, 1979 D&D art style, epic fantasy',
+      'vampire': 'Pale aristocratic humanoid, red eyes, sharp fangs, elegant dark clothing, cape billowing, gothic castle interior, menacing pose, 1979 D&D art style, gothic horror fantasy',
+      'lich': 'Skeletal figure in ornate robes, glowing eyes, crown or headdress, magical energy surrounding hands, dark wizard tower, undead horror, 1979 D&D art style, dark fantasy',
+      'owlbear': 'Bizarre hybrid creature with bear body and owl head, feathered fur, sharp beak, massive claws, forest setting, aggressive stance, 1979 D&D art style, fantasy illustration',
+      'rust monster': 'Strange insect-like creature with propeller tail, two long feathery antennae, armored plates, metallic sheen, dungeon corridor, 1979 D&D art style, fantasy illustration',
+      'gelatinous cube': 'Transparent cube-shaped ooze, visible debris and bones suspended inside, dungeon corridor, sliding along floor, 1979 D&D art style, fantasy horror',
+      'umber hulk': 'Massive humanoid with mandibles, multifaceted eyes, powerful claws, chitinous armor, underground cavern, digging through stone, 1979 D&D art style, fantasy horror',
+      'medusa': 'Humanoid female with snakes for hair, scaly skin, reptilian eyes, holding bow, stone statues in background, dark temple setting, 1979 D&D art style, greek myth fantasy',
+      'basilisk': 'Large lizard-like creature with eight legs, crown of horns, glowing eyes, stone fragments around feet, dark dungeon, 1979 D&D art style, fantasy illustration',
+      'mimic': 'Amorphous creature disguised as treasure chest, pseudopods emerging, teeth visible, dungeon room, surprise attack pose, 1979 D&D art style, fantasy horror',
+      'giant': 'Huge humanoid, 12+ feet tall, crude clothing, massive club or sword, mountain or hill setting, threatening pose, 1979 D&D art style, epic fantasy',
+      'demon': 'Winged humanoid with horns, claws, fangs, red or black skin, fire and brimstone background, terrifying presence, 1979 D&D art style, dark fantasy horror',
+      'wraith': 'Spectral humanoid figure, hooded cloak, glowing eyes, ethereal form, ghostly trail, dark cemetery, 1979 D&D art style, gothic horror',
+      'mummy': 'Wrapped in ancient bandages, desiccated body, one eye visible, outstretched arms, Egyptian tomb setting, 1979 D&D art style, horror fantasy'
+    };
+
+    // Try exact match first
+    let prompt = prompts[name.toLowerCase()];
+    
+    // If no exact match, try to extract from stats
+    if (!prompt) {
+      const lowerStats = stats.toLowerCase();
+      
+      if (lowerStats.includes('undead')) {
+        prompt = `Undead creature, ${name}, decaying flesh, dark magic aura, dungeon or graveyard setting, 1979 D&D art style, horror fantasy`;
+      } else if (lowerStats.includes('dragon')) {
+        prompt = `Dragon, ${name}, scaled wings, reptilian, treasure hoard, cave entrance, dramatic lighting, 1979 D&D art style, epic fantasy`;
+      } else if (lowerStats.includes('giant')) {
+        prompt = `Giant humanoid, ${name}, massive size, primitive clothing, weapon, outdoor setting, 1979 D&D art style, epic fantasy`;
+      } else if (lowerStats.includes('demon') || lowerStats.includes('devil')) {
+        prompt = `Fiendish creature, ${name}, horns, claws, evil aura, hellish background, 1979 D&D art style, dark fantasy horror`;
+      } else {
+        // Generic fantasy monster prompt
+        prompt = `Fantasy monster, ${name}, dungeon setting, threatening pose, detailed illustration, 1979 D&D art style, classic fantasy RPG artwork`;
+      }
+    }
+
+    return prompt;
   }
 
   printSearch(results, term) {
