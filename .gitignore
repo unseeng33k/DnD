@@ -19,3 +19,13 @@ npm-debug.log*
 
 # Session data
 *.log
+
+# Character files (private)
+characters/malice*.json
+characters/malice*.md
+
+# Resources (large PDFs - keep local)
+resources/
+
+# Images (generated, keep local)
+images/
