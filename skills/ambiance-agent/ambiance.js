@@ -520,13 +520,22 @@ class AmbianceAgent {
 🎭 AMBIANCE AGENT for D&D - Central Hub for Session Prep
 
 PRE-SESSION PREP (Run this BEFORE playing):
+  node ambiance.js prep "Session Name" --module <module>
   node ambiance.js prep "Session Name" [config.json]
 
-  Generates:
-    - All location images
-    - All monster images  
-    - Ambiance packages (sensory + music)
-    - HTML guide with clickable images & YouTube links
+  Generates from module:
+    - All location images from the adventure
+    - All monster images from the module
+    - Ambiance for every scene
+    - HTML guide with everything
+
+AVAILABLE MODULES:
+  tamoachan          - Hidden Shrine of Tamoachan (C1)
+  tomb of horrors    - Tomb of Horrors (S1)
+  ravenloft          - Ravenloft (I6)
+  temple of elemental evil - Temple of Elemental Evil (T1-4)
+  against the giants - Against the Giants (G1-3)
+  white plume mountain - White Plume Mountain (S2)
 
 DURING GAMEPLAY:
   node ambiance.js scene <scene>      Full atmosphere for a scene
@@ -534,20 +543,8 @@ DURING GAMEPLAY:
   node ambiance.js tension <level>    Get tension cue
   node ambiance.js monster <name>     Show monster (player-safe)
 
-CONFIG FILE (config.json):
-  {
-    "locations": [
-      { "name": "Temple Entrance", "scene": "ancient temple" },
-      { "name": "Boss Room", "scene": "boss battle" }
-    ],
-    "monsters": ["goblin", "troll", "dragon"]
-  }
-
-SCENES: dark forest, ancient temple, underground cavern, boss battle,
-        tavern, swamp, mountain peak, city streets, crypt, wizard tower
-
 EXAMPLES:
-  node ambiance.js prep "Tamoachan Session 3"
+  node ambiance.js prep "Tamoachan Session 3" --module tamoachan
   node ambiance.js scene "dark forest"
   node ambiance.js monster goblin
   node ambiance.js music combat
@@ -624,13 +621,30 @@ if (require.main === module) {
     case 'prep':
       if (!args[1]) {
         console.log('Usage: prep "Session Name" [config.json]');
-        console.log('Example: node ambiance.js prep "Tamoachan Session 3" ./config.json');
+        console.log('       prep "Session Name" --module <module-name>');
+        console.log('Example: node ambiance.js prep "Tamoachan Session 3" --module tamoachan');
         process.exit(1);
       }
       let config = null;
-      if (args[2] && fs.existsSync(args[2])) {
+      
+      // Check for --module flag
+      const moduleIndex = args.indexOf('--module');
+      if (moduleIndex !== -1 && args[moduleIndex + 1]) {
+        const ModuleParser = require('./module-parser');
+        const parser = new ModuleParser();
+        config = parser.generatePrepConfig(args[moduleIndex + 1]);
+        if (!config) {
+          console.log(`Module "${args[moduleIndex + 1]}" not found.`);
+          console.log('Available modules:');
+          parser.listModules().forEach(m => console.log(`  - ${m.name} (${m.code})`));
+          process.exit(1);
+        }
+        // Remove --module and module name from args for session name
+        args.splice(moduleIndex, 2);
+      } else if (args[2] && fs.existsSync(args[2])) {
         config = JSON.parse(fs.readFileSync(args[2], 'utf8'));
       }
+      
       agent.prepSession(args[1], config);
       break;
 

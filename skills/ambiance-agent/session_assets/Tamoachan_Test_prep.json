@@ -1,0 +1,152 @@
+{
+  "name": "Tamoachan Test",
+  "date": "2026-03-28T12:12:58.121Z",
+  "locations": [
+    {
+      "name": "Jungle Entrance",
+      "scene": "dark forest",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "foreboding fantasy scene, Dappled moonlight filtering through twisted branches, Moss-covered bark, slick mud, sharp thorns, foreboding atmosphere, 1979 D&D art style, detailed illustration. 1979 D&D module art style, Erol Otus or David Sutherland illustration style, ink and watercolor, atmospheric lighting, vintage TSR aesthetic",
+      "ambiance": {
+        "sensory": "\n🎭 ATMOSPHERE\n\n👁️  **Lighting:** Dappled moonlight filtering through twisted branches\n👂 **Sounds:** Rustling leaves, snapping twigs, distant howls, hooting owls\n👃 **Smells:** Damp earth, rotting vegetation, pine resin\n🌡️  **Temperature:** Cool, clammy air that clings to your skin\n✋ **Textures:** Moss-covered bark, slick mud, sharp thorns\n\n**Mood:** foreboding\n",
+        "music": "\n🎵 MUSIC RECOMMENDATIONS\n\n📺 YouTube:\n   • Dark Forest Ambience: https://youtube.com/watch?v=8Z3Q3Jd3d3w\n   • Haunted Woods: https://youtube.com/watch?v=4D5E6F7G8H9\n\n🎧 Spotify: https://open.spotify.com/playlist/37i9dQZF1DX8Ugs9TgZgU1\n",
+        "prompt": "foreboding fantasy scene, Dappled moonlight filtering through twisted branches, Moss-covered bark, slick mud, sharp thorns, foreboding atmosphere, 1979 D&D art style, detailed illustration"
+      }
+    },
+    {
+      "name": "Temple Stairs",
+      "scene": "ancient temple",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "mysterious fantasy scene, Flickering torchlight casting dancing shadows on stone walls, Weathered stone, carved reliefs, dust-covered floors, mysterious atmosphere, 1979 D&D art style, detailed illustration. 1979 D&D module art style, Erol Otus or David Sutherland illustration style, ink and watercolor, atmospheric lighting, vintage TSR aesthetic",
+      "ambiance": {
+        "sensory": "\n🎭 ATMOSPHERE\n\n👁️  **Lighting:** Flickering torchlight casting dancing shadows on stone walls\n👂 **Sounds:** Dripping water, distant chanting, stone grinding, echoes\n👃 **Smells:** Incense, dust, old stone, something metallic\n🌡️  **Temperature:** Cool and dry, with occasional drafts\n✋ **Textures:** Weathered stone, carved reliefs, dust-covered floors\n\n**Mood:** mysterious\n",
+        "music": "\n🎵 MUSIC RECOMMENDATIONS\n\n📺 YouTube:\n   • Temple Ambience: https://youtube.com/watch?v=5E6F7G8H9I0\n   • Sacred Ruins: https://youtube.com/watch?v=6F7G8H9I0J1\n\n🎧 Spotify: https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j\n",
+        "prompt": "mysterious fantasy scene, Flickering torchlight casting dancing shadows on stone walls, Weathered stone, carved reliefs, dust-covered floors, mysterious atmosphere, 1979 D&D art style, detailed illustration"
+      }
+    },
+    {
+      "name": "Antechamber",
+      "scene": "ancient temple",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "mysterious fantasy scene, Flickering torchlight casting dancing shadows on stone walls, Weathered stone, carved reliefs, dust-covered floors, mysterious atmosphere, 1979 D&D art style, detailed illustration. 1979 D&D module art style, Erol Otus or David Sutherland illustration style, ink and watercolor, atmospheric lighting, vintage TSR aesthetic",
+      "ambiance": {
+        "sensory": "\n🎭 ATMOSPHERE\n\n👁️  **Lighting:** Flickering torchlight casting dancing shadows on stone walls\n👂 **Sounds:** Dripping water, distant chanting, stone grinding, echoes\n👃 **Smells:** Incense, dust, old stone, something metallic\n🌡️  **Temperature:** Cool and dry, with occasional drafts\n✋ **Textures:** Weathered stone, carved reliefs, dust-covered floors\n\n**Mood:** mysterious\n",
+        "music": "\n🎵 MUSIC RECOMMENDATIONS\n\n📺 YouTube:\n   • Temple Ambience: https://youtube.com/watch?v=5E6F7G8H9I0\n   • Sacred Ruins: https://youtube.com/watch?v=6F7G8H9I0J1\n\n🎧 Spotify: https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j\n",
+        "prompt": "mysterious fantasy scene, Flickering torchlight casting dancing shadows on stone walls, Weathered stone, carved reliefs, dust-covered floors, mysterious atmosphere, 1979 D&D art style, detailed illustration"
+      }
+    },
+    {
+      "name": "Pool Chamber",
+      "scene": "ancient temple",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "mysterious fantasy scene, Flickering torchlight casting dancing shadows on stone walls, Weathered stone, carved reliefs, dust-covered floors, mysterious atmosphere, 1979 D&D art style, detailed illustration. 1979 D&D module art style, Erol Otus or David Sutherland illustration style, ink and watercolor, atmospheric lighting, vintage TSR aesthetic",
+      "ambiance": {
+        "sensory": "\n🎭 ATMOSPHERE\n\n👁️  **Lighting:** Flickering torchlight casting dancing shadows on stone walls\n👂 **Sounds:** Dripping water, distant chanting, stone grinding, echoes\n👃 **Smells:** Incense, dust, old stone, something metallic\n🌡️  **Temperature:** Cool and dry, with occasional drafts\n✋ **Textures:** Weathered stone, carved reliefs, dust-covered floors\n\n**Mood:** mysterious\n",
+        "music": "\n🎵 MUSIC RECOMMENDATIONS\n\n📺 YouTube:\n   • Temple Ambience: https://youtube.com/watch?v=5E6F7G8H9I0\n   • Sacred Ruins: https://youtube.com/watch?v=6F7G8H9I0J1\n\n🎧 Spotify: https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j\n",
+        "prompt": "mysterious fantasy scene, Flickering torchlight casting dancing shadows on stone walls, Weathered stone, carved reliefs, dust-covered floors, mysterious atmosphere, 1979 D&D art style, detailed illustration"
+      }
+    },
+    {
+      "name": "Shrine Room",
+      "scene": "ancient temple",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "mysterious fantasy scene, Flickering torchlight casting dancing shadows on stone walls, Weathered stone, carved reliefs, dust-covered floors, mysterious atmosphere, 1979 D&D art style, detailed illustration. 1979 D&D module art style, Erol Otus or David Sutherland illustration style, ink and watercolor, atmospheric lighting, vintage TSR aesthetic",
+      "ambiance": {
+        "sensory": "\n🎭 ATMOSPHERE\n\n👁️  **Lighting:** Flickering torchlight casting dancing shadows on stone walls\n👂 **Sounds:** Dripping water, distant chanting, stone grinding, echoes\n👃 **Smells:** Incense, dust, old stone, something metallic\n🌡️  **Temperature:** Cool and dry, with occasional drafts\n✋ **Textures:** Weathered stone, carved reliefs, dust-covered floors\n\n**Mood:** mysterious\n",
+        "music": "\n🎵 MUSIC RECOMMENDATIONS\n\n📺 YouTube:\n   • Temple Ambience: https://youtube.com/watch?v=5E6F7G8H9I0\n   • Sacred Ruins: https://youtube.com/watch?v=6F7G8H9I0J1\n\n🎧 Spotify: https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j\n",
+        "prompt": "mysterious fantasy scene, Flickering torchlight casting dancing shadows on stone walls, Weathered stone, carved reliefs, dust-covered floors, mysterious atmosphere, 1979 D&D art style, detailed illustration"
+      }
+    },
+    {
+      "name": "Tomb of the Olman King",
+      "scene": "ancient temple",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "mysterious fantasy scene, Flickering torchlight casting dancing shadows on stone walls, Weathered stone, carved reliefs, dust-covered floors, mysterious atmosphere, 1979 D&D art style, detailed illustration. 1979 D&D module art style, Erol Otus or David Sutherland illustration style, ink and watercolor, atmospheric lighting, vintage TSR aesthetic",
+      "ambiance": {
+        "sensory": "\n🎭 ATMOSPHERE\n\n👁️  **Lighting:** Flickering torchlight casting dancing shadows on stone walls\n👂 **Sounds:** Dripping water, distant chanting, stone grinding, echoes\n👃 **Smells:** Incense, dust, old stone, something metallic\n🌡️  **Temperature:** Cool and dry, with occasional drafts\n✋ **Textures:** Weathered stone, carved reliefs, dust-covered floors\n\n**Mood:** mysterious\n",
+        "music": "\n🎵 MUSIC RECOMMENDATIONS\n\n📺 YouTube:\n   • Temple Ambience: https://youtube.com/watch?v=5E6F7G8H9I0\n   • Sacred Ruins: https://youtube.com/watch?v=6F7G8H9I0J1\n\n🎧 Spotify: https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j\n",
+        "prompt": "mysterious fantasy scene, Flickering torchlight casting dancing shadows on stone walls, Weathered stone, carved reliefs, dust-covered floors, mysterious atmosphere, 1979 D&D art style, detailed illustration"
+      }
+    },
+    {
+      "name": "Natural Cavern",
+      "scene": "underground cavern",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "claustrophobic fantasy scene, Bioluminescent fungi casting eerie blue-green glow, Slick limestone, sharp stalactites, loose gravel, claustrophobic atmosphere, 1979 D&D art style, detailed illustration. 1979 D&D module art style, Erol Otus or David Sutherland illustration style, ink and watercolor, atmospheric lighting, vintage TSR aesthetic",
+      "ambiance": {
+        "sensory": "\n🎭 ATMOSPHERE\n\n👁️  **Lighting:** Bioluminescent fungi casting eerie blue-green glow\n👂 **Sounds:** Water dripping, distant rumbling, bat wings, echoes\n👃 **Smells:** Stagnant water, minerals, damp earth\n🌡️  **Temperature:** Cold and damp, breath visible\n✋ **Textures:** Slick limestone, sharp stalactites, loose gravel\n\n**Mood:** claustrophobic\n",
+        "music": "\n🎵 MUSIC RECOMMENDATIONS\n\n📺 YouTube:\n   • Exploration Music: https://youtube.com/watch?v=M4N5O6P7Q8\n   • Adventure Awaits: https://youtube.com/watch?v=N5O6P7Q8R9\n\n🎧 Spotify: https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j\n",
+        "prompt": "claustrophobic fantasy scene, Bioluminescent fungi casting eerie blue-green glow, Slick limestone, sharp stalactites, loose gravel, claustrophobic atmosphere, 1979 D&D art style, detailed illustration"
+      }
+    },
+    {
+      "name": "Cultist Sacrifice Chamber",
+      "scene": "crypt",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "deathly fantasy scene, Darkness, occasional torch, shadows everywhere, Smooth stone sarcophagi, dust, cobwebs, deathly atmosphere, 1979 D&D art style, detailed illustration. 1979 D&D module art style, Erol Otus or David Sutherland illustration style, ink and watercolor, atmospheric lighting, vintage TSR aesthetic",
+      "ambiance": {
+        "sensory": "\n🎭 ATMOSPHERE\n\n👁️  **Lighting:** Darkness, occasional torch, shadows everywhere\n👂 **Sounds:** Silence, then sudden skittering, stone on stone\n👃 **Smells:** Dust, old bones, preservation herbs, earth\n🌡️  **Temperature:** Cold, still air that feels heavy\n✋ **Textures:** Smooth stone sarcophagi, dust, cobwebs\n\n**Mood:** deathly\n",
+        "music": "\n🎵 MUSIC RECOMMENDATIONS\n\n📺 YouTube:\n   • Exploration Music: https://youtube.com/watch?v=M4N5O6P7Q8\n   • Adventure Awaits: https://youtube.com/watch?v=N5O6P7Q8R9\n\n🎧 Spotify: https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j\n",
+        "prompt": "deathly fantasy scene, Darkness, occasional torch, shadows everywhere, Smooth stone sarcophagi, dust, cobwebs, deathly atmosphere, 1979 D&D art style, detailed illustration"
+      }
+    }
+  ],
+  "monsters": [
+    {
+      "name": "goblin",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "A small, ugly humanoid with leathery green skin, large pointed ears, sharp yellow teeth, wearing crude leather armor, holding a rusty sword, crouching in a dark cave, 1979 D&D art style, fantasy illustration"
+    },
+    {
+      "name": "skeleton",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "Animated human skeleton, bleached bones, empty eye sockets glowing with faint light, armed with sword and shield, tattered remnants of clothing, dark dungeon corridor, 1979 D&D art style, fantasy illustration"
+    },
+    {
+      "name": "zombie",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "Reanimated human corpse, rotting flesh, vacant staring eyes, arms outstretched, tattered clothing, shambling pose, graveyard or dungeon setting, 1979 D&D art style, horror fantasy"
+    },
+    {
+      "name": "ghoul",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "Gaunt humanoid with sharp claws and teeth, gray skin, feral eyes, hunched posture, ragged clothing, cemetery or crypt setting, 1979 D&D art style, horror fantasy"
+    },
+    {
+      "name": "wight",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "Undead creature, wight, decaying flesh, dark magic aura, dungeon or graveyard setting, 1979 D&D art style, horror fantasy"
+    },
+    {
+      "name": "lizard man",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "Fantasy monster, lizard man, dungeon setting, threatening pose, detailed illustration, 1979 D&D art style, classic fantasy RPG artwork"
+    },
+    {
+      "name": "basilisk",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "Large lizard-like creature with eight legs, crown of horns, glowing eyes, stone fragments around feet, dark dungeon, 1979 D&D art style, fantasy illustration"
+    },
+    {
+      "name": "mummy",
+      "success": false,
+      "error": "OPENAI_API_KEY not set. Set environment variable or add to script.",
+      "prompt": "Wrapped in ancient bandages, desiccated body, one eye visible, outstretched arms, Egyptian tomb setting, 1979 D&D art style, horror fantasy"
+    }
+  ]
+}
