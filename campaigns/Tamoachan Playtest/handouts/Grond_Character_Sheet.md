@@ -23,10 +23,10 @@
 | Ability | Score | Modifier | Notes |
 |---------|-------|----------|-------|
 | **STR** | 18/00 | +3/+6 | Exceptional Strength |
-| **INT** | 7 | -1 | Languages: 0 |
-| **WIS** | 11 | 0 | |
-| **DEX** | 11 | 0 | |
+| **DEX** | 12 | 0 | |
 | **CON** | 18 | +2/+4 | HP Bonus: +4/lvl |
+| **INT** | 11 | 0 | Languages: 0 |
+| **WIS** | 11 | 0 | |
 | **CHA** | 7 | -1 | |
 
 ---
@@ -41,11 +41,11 @@
 **THAC0:** 12 (Fighter 6) / 16 (Cleric 4)  **Movement:** 9"
 
 **Saving Throws:**
-- Paralyze/Poison/Death: 7
-- Rod/Staff/Wand: 11
-- Petrification/Polymorph: 11
-- Breath Weapon: 11
-- Spell: 12
+- Paralyze/Poison/Death: 10
+- Rod/Staff/Wand: 13
+- Petrification/Polymorph: 12
+- Breath Weapon: 14
+- Spell: 14
 
 ---
 
@@ -75,14 +75,14 @@
 
 | # | Spell Name | Prepared | Cast |
 |---|------------|----------|------|
-| 1 | _________________ | ☐ | ☐ |
-| 2 | _________________ | ☐ | ☐ |
+| 1 | Cure Light Wounds | ☑ | ☐ |
+| 2 | Find Traps | ☑ | ☐ |
 
 ### Level 2 Spells (Max: 1 / Day)
 
 | # | Spell Name | Prepared | Cast |
 |---|------------|----------|------|
-| 1 | _________________ | ☐ | ☐ |
+| 1 | Hold Person | ☑ | ☐ |
 
 ---
 
