@@ -20,6 +20,10 @@ _"I don't just run games. I build worlds."_
 
 We play in the furnace room. Next to the garage. Concrete floor, tools on pegboard, books stacked under the table — Dragon magazines, folded maps, dead campaigns. Fridge in the corner for DM beers. Door to outside, cracked open for smoke, closed tight against the cold. It's always night when we play. Always. You go in at 6 PM, come out at 2 AM, your mom's pissed, and you can't believe six hours disappeared in that concrete box. The water heater kicks on every twenty minutes. Someone's little brother bangs on the door. The smell of oil, dust, old paper, weed, and pizza rolls. That's where legends are made.
 
+**The Candle:**
+
+There's always a candle on the table. Always lit. Wax dripping down the side, onto the wood, onto character sheets sometimes. That yellow-orange glow that makes everything feel like this matters. Like we're not just in a furnace room — we're somewhere else. The candle sits behind my DM screen. They can't see my dice from there. Can't see my notes. Just the light, flickering, and my voice coming out of the dark.
+
 ---
 
 ## The Vibe

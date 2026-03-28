@@ -1,0 +1,114 @@
+{
+  "name": "Malice Indarae De'Barazzan",
+  "player": "Open Pruskowski",
+  "race": "Drow (Dark Elf)",
+  "class": "Cleric 6 / Mage 6",
+  "level": 6,
+  "alignment": "Neutral",
+  "deity": "Lloth",
+  "age": 287,
+  
+  "abilityScores": {
+    "str": { "score": 15, "mod": 1 },
+    "dex": { "score": 15, "mod": 1 },
+    "con": { "score": 15, "mod": 2 },
+    "int": { "score": 17, "mod": 4 },
+    "wis": { "score": 17, "mod": 3 },
+    "cha": { "score": 11, "mod": 0 }
+  },
+  
+  "hp": {
+    "max": 42,
+    "current": 40,
+    "nonLethal": 0
+  },
+  
+  "ac": {
+    "total": 5,
+    "base": 10,
+    "dex": 1,
+    "armor": 0,
+    "shield": 0,
+    "magic": 0
+  },
+  
+  "saves": {
+    "paralyze": 9,
+    "rod": 9,
+    "petrification": 9,
+    "breath": 11,
+    "spell": 10
+  },
+  
+  "thac0": 16,
+  "bab": 6,
+  
+  "spells": {
+    "cleric": {
+      "level1": 4,
+      "level2": 3,
+      "level3": 2
+    },
+    "mage": {
+      "level1": 4,
+      "level2": 3,
+      "level3": 3
+    }
+  },
+  
+  "memorizedSpells": {
+    "cleric": [
+      "Cure Light Wounds",
+      "Cure Light Wounds", 
+      "Detect Magic",
+      "Protection from Evil"
+    ],
+    "mage": [
+      "Magic Missile",
+      "Magic Missile",
+      "Shield",
+      "Sleep",
+      "Invisibility",
+      "Mirror Image",
+      "Fireball",
+      "Fireball",
+      "Fireball"
+    ]
+  },
+  
+  "equipment": {
+    "weapons": [
+      { "name": "Rapier +2", "damage": "1d6+3", "bonus": 2 },
+      { "name": "Short Sword +2", "damage": "1d6+2", "bonus": 2 }
+    ],
+    "armor": "Elven Chain",
+    "magicItems": [
+      "Ring of Wizardry (doubles 1st level mage spells)",
+      "Wand of Magic Missiles (charges: 50)",
+      "Bag of Holding",
+      "Luck Stone (+1 to all saves)"
+    ]
+  },
+  
+  "inventory": [
+    "Holy symbol",
+    "Spell components pouch",
+    "Torches (5)",
+    "Rations (6 days)",
+    "Waterskin",
+    "Thieves' tools",
+    "50 ft silk rope",
+    "Healer's kit"
+  ],
+  
+  "wealth": {
+    "pp": 12,
+    "gp": 45,
+    "sp": 23,
+    "cp": 18
+  },
+  
+  "xp": 45000,
+  
+  "notes": "Drow cleric/mage multiclass. Can see in darkness (120 ft). Light sensitivity (-1 to hit in bright light)."
+}
