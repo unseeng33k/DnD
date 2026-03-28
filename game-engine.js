@@ -486,6 +486,10 @@ GYGAXIAN SYSTEMS:
   train <level>             Calculate training costs
   ecology <monster>         Show monster ecology
 
+DM TOOLS:
+  check [campaign]          Pre-game character check
+  prep                      Show prep instructions
+
 EXAMPLES:
   node game-engine.js cast "Magic Missile" 1 mage "Orc"
   node game-engine.js damage 5 "Trap"
@@ -1137,6 +1141,23 @@ if (require.main === module) {
         return;
       }
       console.log(engine.ecology.printEcology(args[1]));
+      break;
+
+    // Pre-Game Check
+    case 'check':
+    case 'pregame':
+      const PregameCheck = require('./pregame-check');
+      const campaignCheck = args[1] || 'Tamoachan Playtest';
+      const pgChecker = new PregameCheck(campaignCheck);
+      const pgReady = pgChecker.checkAll();
+      
+      // Save to campaign logs
+      const campaignCheckDir = path.join(__dirname, 'campaigns', campaignCheck);
+      if (fs.existsSync(campaignCheckDir)) {
+        pgChecker.saveReport(campaignCheckDir);
+      }
+      
+      process.exit(pgReady ? 0 : 1);
       break;
 
     default:
