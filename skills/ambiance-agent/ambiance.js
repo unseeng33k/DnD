@@ -2,7 +2,7 @@
 
 /**
  * Ambiance Agent for D&D
- * Generates atmosphere, sensory details, music recommendations, and AI images
+ * Central hub for pre-session prep and atmospheric gameplay
  */
 
 const fs = require('fs');
@@ -347,31 +347,210 @@ class AmbianceAgent {
     console.log(this.generateImagePrompt());
   }
 
+  /**
+   * Full session prep - generates all images and ambiance
+   */
+  async prepSession(name, config = null) {
+    const fs = require('fs');
+    const path = require('path');
+    
+    const defaultConfig = {
+      locations: [
+        { name: "Dungeon Entrance", scene: "ancient temple" },
+        { name: "Main Chamber", scene: "underground cavern" },
+        { name: "Boss Room", scene: "boss battle" }
+      ],
+      monsters: ["goblin", "skeleton", "troll"]
+    };
+    
+    const cfg = config || defaultConfig;
+    const sessionDir = path.join(process.cwd(), 'session_assets');
+    
+    if (!fs.existsSync(sessionDir)) {
+      fs.mkdirSync(sessionDir, { recursive: true });
+    }
+
+    console.log(`\n🎲 AMBIANCE AGENT: Prepping "${name}"\n`);
+    console.log('='.repeat(60));
+
+    const data = {
+      name,
+      date: new Date().toISOString(),
+      locations: [],
+      monsters: []
+    };
+
+    // Generate location images
+    if (cfg.locations) {
+      console.log('\n🏰 Generating Location Images...\n');
+      for (const loc of cfg.locations) {
+        console.log(`  📍 ${loc.name}...`);
+        this.setScene(loc.scene || loc.name);
+        const result = await this.generateImage();
+        data.locations.push({
+          name: loc.name,
+          scene: loc.scene || loc.name,
+          ...result,
+          ambiance: {
+            sensory: this.getSensoryDescription(),
+            music: this.getMusic(),
+            prompt: this.generateImagePrompt()
+          }
+        });
+        if (result.success) {
+          console.log(`     ✅ Image generated`);
+        } else {
+          console.log(`     ⚠️  ${result.error}`);
+        }
+      }
+    }
+
+    // Generate monster images
+    if (cfg.monsters) {
+      console.log('\n👹 Generating Monster Images...\n');
+      const MMSkill = require('../mm-skill/mm-skill');
+      const mm = new MMSkill();
+      
+      for (const monsterName of cfg.monsters) {
+        console.log(`  👹 ${monsterName}...`);
+        const stats = mm.getMonster(monsterName);
+        if (stats) {
+          const prompt = mm.generateImagePrompt(monsterName, stats);
+          const result = await this.generateImage(prompt);
+          data.monsters.push({
+            name: monsterName,
+            ...result,
+            prompt
+          });
+          if (result.success) {
+            console.log(`     ✅ Image generated`);
+          } else {
+            console.log(`     ⚠️  ${result.error}`);
+          }
+        }
+      }
+    }
+
+    // Save JSON
+    const jsonFile = path.join(sessionDir, `${name.replace(/\s+/g, '_')}_prep.json`);
+    fs.writeFileSync(jsonFile, JSON.stringify(data, null, 2));
+
+    // Generate HTML
+    const htmlFile = path.join(sessionDir, `${name.replace(/\s+/g, '_')}_prep.html`);
+    const html = this.generateHTML(name, data);
+    fs.writeFileSync(htmlFile, html);
+
+    console.log('\n' + '='.repeat(60));
+    console.log('✅ SESSION PREP COMPLETE!\n');
+    console.log(`📁 Files saved to: ${sessionDir}/`);
+    console.log(`📄 JSON data: ${path.basename(jsonFile)}`);
+    console.log(`🌐 HTML guide: ${path.basename(htmlFile)}`);
+    console.log('\n🎮 During gameplay:');
+    console.log('   1. Open the HTML file');
+    console.log('   2. Click images to show players');
+    console.log('   3. Click YouTube links for sound');
+    console.log('   4. Read sensory descriptions aloud');
+
+    return { jsonFile, htmlFile, data };
+  }
+
+  generateHTML(name, data) {
+    let html = `<!DOCTYPE html>
+<html>
+<head>
+  <title>${name} - Session Guide</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 1200px; margin: 0 auto; padding: 20px; background: #1a1a1a; color: #e0e0e0; }
+    h1 { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+    h2 { color: #d4af37; margin-top: 40px; border-left: 4px solid #d4af37; padding-left: 15px; }
+    h3 { color: #daa520; }
+    .location, .monster { background: #2a2a2a; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #444; }
+    .image { max-width: 100%; border: 3px solid #d4af37; margin: 15px 0; border-radius: 4px; }
+    .prompt { background: #1a1a1a; padding: 15px; font-family: monospace; font-size: 0.85em; color: #888; border-left: 3px solid #555; }
+    .music { background: #1e3a1e; padding: 15px; margin: 10px 0; border-radius: 4px; }
+    .music a { color: #7f7; text-decoration: none; }
+    .music a:hover { text-decoration: underline; }
+    .sensory { background: #2a2a3a; padding: 15px; margin: 10px 0; border-radius: 4px; white-space: pre-wrap; }
+    a { color: #4a9; }
+    .error { color: #c44; background: #3a1a1a; padding: 10px; border-radius: 4px; }
+    .no-image { background: #3a3a1a; padding: 20px; text-align: center; color: #aa5; }
+  </style>
+</head>
+<body>
+  <h1>🎲 ${name}</h1>
+  <p style="color: #888;">Generated: ${new Date().toLocaleString()}</p>
+  
+  <h2>🏰 Locations</h2>
+`;
+
+    for (const loc of data.locations || []) {
+      html += `
+  <div class="location">
+    <h3>${loc.name}</h3>
+    ${loc.url ? `<img class="image" src="${loc.url}" alt="${loc.name}" onclick="window.open('${loc.url}', '_blank')" style="cursor: pointer;" title="Click to view full size">` : '<div class="no-image">🎨 Image not generated - copy prompt to DALL-E</div>'}
+    <div class="sensory">${loc.ambiance?.sensory || ''}</div>
+    <div class="music">${(loc.ambiance?.music || '').replace(/\n/g, '<br>')}</div>
+    <div class="prompt">${loc.ambiance?.prompt || loc.prompt || ''}</div>
+  </div>
+`;
+    }
+
+    html += `
+  <h2>👹 Monsters</h2>
+`;
+    for (const mon of data.monsters || []) {
+      html += `
+  <div class="monster">
+    <h3>${mon.name}</h3>
+    ${mon.url ? `<img class="image" src="${mon.url}" alt="${mon.name}" onclick="window.open('${mon.url}', '_blank')" style="cursor: pointer;" title="Click to view full size">` : '<div class="no-image">🎨 Image not generated - copy prompt to DALL-E</div>'}
+    <div class="prompt">${mon.prompt}</div>
+  </div>
+`;
+    }
+
+    html += `
+</body>
+</html>
+`;
+    return html;
+  }
+
   printHelp() {
     console.log(`
-🎭 AMBIANCE AGENT for D&D
+🎭 AMBIANCE AGENT for D&D - Central Hub for Session Prep
 
-USAGE:
-  node ambiance.js scene <scene-name>    Set scene and show atmosphere
-  node ambiance.js music <mood>          Get music recommendations
-  node ambiance.js sense                 Show sensory details
-  node ambiance.js tension <level>       Get tension cue (low/rising/high/peak)
-  node ambiance.js image                 Get AI image prompt
-  node ambiance.js generate [scene]      Generate AI image with DALL-E
+PRE-SESSION PREP (Run this BEFORE playing):
+  node ambiance.js prep "Session Name" [config.json]
 
-SCENES:
-  dark forest, ancient temple, underground cavern
-  boss battle, tavern, swamp, mountain peak
-  city streets, crypt, wizard tower
+  Generates:
+    - All location images
+    - All monster images  
+    - Ambiance packages (sensory + music)
+    - HTML guide with clickable images & YouTube links
 
-MOODS:
-  exploration, combat, tense, rest, boss
+DURING GAMEPLAY:
+  node ambiance.js scene <scene>      Full atmosphere for a scene
+  node ambiance.js music <mood>       Get music links
+  node ambiance.js tension <level>    Get tension cue
+  node ambiance.js monster <name>     Show monster (player-safe)
+
+CONFIG FILE (config.json):
+  {
+    "locations": [
+      { "name": "Temple Entrance", "scene": "ancient temple" },
+      { "name": "Boss Room", "scene": "boss battle" }
+    ],
+    "monsters": ["goblin", "troll", "dragon"]
+  }
+
+SCENES: dark forest, ancient temple, underground cavern, boss battle,
+        tavern, swamp, mountain peak, city streets, crypt, wizard tower
 
 EXAMPLES:
+  node ambiance.js prep "Tamoachan Session 3"
   node ambiance.js scene "dark forest"
+  node ambiance.js monster goblin
   node ambiance.js music combat
-  node ambiance.js tension rising
-  node ambiance.js generate "ancient temple"
 `);
   }
 }
@@ -440,6 +619,29 @@ if (require.main === module) {
           console.log(result.prompt);
         }
       });
+      break;
+
+    case 'prep':
+      if (!args[1]) {
+        console.log('Usage: prep "Session Name" [config.json]');
+        console.log('Example: node ambiance.js prep "Tamoachan Session 3" ./config.json');
+        process.exit(1);
+      }
+      let config = null;
+      if (args[2] && fs.existsSync(args[2])) {
+        config = JSON.parse(fs.readFileSync(args[2], 'utf8'));
+      }
+      agent.prepSession(args[1], config);
+      break;
+
+    case 'monster':
+      if (!args[1]) {
+        console.log('Usage: monster <name>');
+        process.exit(1);
+      }
+      const MMSkill = require('../mm-skill/mm-skill');
+      const mm = new MMSkill();
+      mm.printMonster(args[1], false); // Player view - no stats
       break;
 
     case 'help':
