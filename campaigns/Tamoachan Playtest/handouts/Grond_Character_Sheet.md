@@ -94,6 +94,12 @@
 | **Languages** | Common, Orc, Troll, Goblin |
 | **Size** | Large (12' tall) |
 
+## Innate Abilities
+
+| Ability | Uses/Day | Notes |
+|---------|----------|-------|
+| **Detect Magic** | At will | Innate ability to sense magical auras |
+
 ---
 
 ## Magic Item Details
