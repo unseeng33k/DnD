@@ -1,0 +1,34 @@
+{
+  "name": "The Olman King",
+  "race": "Mummy (formerly Human)",
+  "occupation": "Ancient Ruler",
+  "location": "Tomb of the Olman King",
+  "personality": "Proud, regal, confused about the passage of time",
+  "motivation": "Protect his tomb and treasures from defilers, return to eternal rest",
+  "fear": "That his legacy has been forgotten",
+  "secret": "He knows the true name of Tlaloc which grants power over rain and storms",
+  "attitude": "hostile",
+  "disposition": -5,
+  "knows": [
+    "The true history of the Olman empire",
+    "Ancient magical rituals",
+    "The location of his greatest treasures",
+    "The weakness of the cultists"
+  ],
+  "willShare": [
+    "History if treated with respect",
+    "Warning about Xilonen's madness"
+  ],
+  "willNotShare": [
+    "His treasures",
+    "The true name of Tlaloc unless truly impressed"
+  ],
+  "speechPattern": "formal",
+  "mannerisms": "Speaks slowly, as if remembering how, gestures with ancient regal bearing",
+  "catchphrase": "I am the last of the true kings...",
+  "hp": 80,
+  "ac": 3,
+  "met": false,
+  "interactions": [],
+  "notes": "Can be reasoned with if party shows proper respect. Knows much but is dangerous."
+}

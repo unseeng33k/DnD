@@ -1,0 +1,32 @@
+{
+  "name": "Xilonen",
+  "race": "Human",
+  "occupation": "Cult Leader of the Reborn Sun",
+  "location": "Shrine of Tlaloc",
+  "personality": "Fanatical, charismatic, utterly devoted to the Olman gods",
+  "motivation": "Complete the ritual to awaken Tlaloc and bring the Olman empire back to power",
+  "fear": "That the old ways will be forgotten and the Olman gods will fade away",
+  "secret": "The ritual requires a blood sacrifice from someone of pure Olman blood - he has been breeding cultists for this purpose",
+  "attitude": "hostile",
+  "disposition": -10,
+  "knows": [
+    "The full layout of the shrine",
+    "How to bypass most traps",
+    "The true nature of the Olman King's mummy",
+    "Ancient Olman magic"
+  ],
+  "willShare": [
+    "Nothing - he will die before betraying the cult"
+  ],
+  "willNotShare": [
+    "Everything - he is completely devoted"
+  ],
+  "speechPattern": "formal",
+  "mannerisms": "Gestures broadly when speaking of the gods, eyes gleam with fanaticism",
+  "catchphrase": "The sun shall rise again!",
+  "hp": 45,
+  "ac": 5,
+  "met": false,
+  "interactions": [],
+  "notes": "Main antagonist. Willing to die for his cause. Speaks in grand, prophetic terms."
+}
