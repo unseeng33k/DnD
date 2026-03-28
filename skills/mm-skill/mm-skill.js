@@ -103,7 +103,7 @@ class MMSkill {
     return results;
   }
 
-  printMonster(name) {
+  printMonster(name, showStats = true) {
     const stats = this.getMonster(name);
     if (!stats) {
       console.log(`Monster "${name}" not found.`);
@@ -111,12 +111,46 @@ class MMSkill {
     }
 
     console.log(`\n👹 ${name.toUpperCase()}\n`);
-    console.log(stats);
     
     // Generate AI image prompt
     const imagePrompt = this.generateImagePrompt(name, stats);
-    console.log(`\n🎨 AI IMAGE PROMPT:`);
-    console.log(imagePrompt);
+    
+    if (showStats) {
+      // DM view - show everything
+      console.log(stats);
+      console.log(`\n🎨 AI IMAGE PROMPT:`);
+      console.log(imagePrompt);
+    } else {
+      // Player view - show only description and image prompt
+      const description = this.getPlayerDescription(name, stats);
+      console.log(description);
+      console.log(`\n🎨 What you see:`);
+      console.log(imagePrompt);
+    }
+  }
+
+  getPlayerDescription(name, stats) {
+    const descriptions = {
+      'goblin': 'A small, ugly humanoid with green skin and sharp teeth. It wears crude leather armor and carries a rusty weapon.',
+      'orc': 'A muscular humanoid with gray-green skin and pig-like features. It wears mismatched armor and wields a crude weapon.',
+      'skeleton': 'A bleached human skeleton, animated by dark magic. Empty eye sockets glow with faint light.',
+      'zombie': 'A reanimated corpse with rotting flesh. It shambles forward with arms outstretched.',
+      'troll': 'A large green humanoid with rubbery skin and long arms. It has clawed hands and wild hair.',
+      'dragon': 'A massive winged reptile with gleaming scales. Smoke curls from its nostrils as it guards its treasure.',
+      'vampire': 'A pale figure in elegant dark clothing. Red eyes gleam with malevolent intelligence.',
+      'owlbear': 'A bizarre creature with the body of a bear and the head of an owl. Feathers mix with fur on its body.',
+      'rust monster': 'A strange insect-like creature with a propeller tail and two long feathery antennae.',
+      'umber hulk': 'A massive humanoid with mandibles and multifaceted eyes. Its powerful claws can dig through stone.',
+      'medusa': 'A figure with snakes for hair. Her gaze can turn flesh to stone.',
+      'basilisk': 'A large lizard-like creature with eight legs and a crown of horns.',
+      'mimic': 'What appears to be a treasure chest is actually a creature with pseudopods and teeth.',
+      'giant': 'A huge humanoid, towering over 12 feet tall, wielding a massive weapon.',
+      'demon': 'A winged humanoid with horns and claws. An aura of evil surrounds it.',
+      'wraith': 'A spectral figure in a hooded cloak with glowing eyes. It seems barely solid.',
+      'mummy': 'A figure wrapped in ancient bandages. One eye is visible through the wrappings.'
+    };
+
+    return descriptions[name.toLowerCase()] || `A ${name} stands before you.`;
   }
 
   generateImagePrompt(name, stats) {
