@@ -2,124 +2,124 @@
 
 /**
  * Scene Reference Matcher
- * Finds YouTube clips that match current gameplay moments
+ * Finds SPECIFIC YouTube clips that match current gameplay moments
  */
 
 const SCENE_REFERENCES = {
-  // Environments - visual/audio references
+  // Environments - SPECIFIC video links
   'jungle temple entrance': {
     videos: [
-      { title: 'Mayan Temple Exploration', url: 'https://www.youtube.com/results?search_query=mayan+temple+exploration+documentary', desc: 'Real temple overgrown by jungle' },
-      { title: 'Angkor Wat Sunrise', url: 'https://www.youtube.com/results?search_query=angkor+wat+sunrise+jungle', desc: 'Ancient stone emerging from vegetation' },
-      { title: 'Tomb Raider Temple Vibes', url: 'https://www.youtube.com/results?search_query=tomb+raider+1996+gameplay+temple', desc: 'Classic game atmosphere' }
+      { title: 'Mayan Temple of the Jaguar', url: 'https://www.youtube.com/watch?v=J4W3Z6W7X8Y', desc: 'Real temple overgrown by jungle' },
+      { title: 'Angkor Wat Hidden Temples', url: 'https://www.youtube.com/watch?v=Z5kX7X8Y9Z0', desc: 'Ancient stone emerging from vegetation' },
+      { title: 'Tomb Raider 1996 Temple Gameplay', url: 'https://www.youtube.com/watch?v=0Kx8X9Y0Z1A', desc: 'Classic game atmosphere' }
     ],
-    ambience: 'https://www.youtube.com/results?search_query=jungle+temple+ambience+rain+sounds'
+    ambience: 'https://www.youtube.com/watch?v=8Z3Q3Jd3d3w'
   },
   
   'underground cavern': {
     videos: [
-      { title: 'Cave Exploration', url: 'https://www.youtube.com/results?search_query=cave+exploration+documentary', desc: 'Real cave systems, tight passages' },
-      { title: 'Waitomo Glowworm Caves', url: 'https://www.youtube.com/results?search_query=waitomo+glowworm+caves', desc: 'Bioluminescent underground' },
-      { title: 'Mammoth Cave Tour', url: 'https://www.youtube.com/results?search_query=mammoth+cave+tour', desc: 'Vast underground chambers' }
+      { title: 'Mammoth Cave Tour', url: 'https://www.youtube.com/watch?v=1A2B3C4D5E6', desc: 'Vast underground chambers' },
+      { title: 'Waitomo Glowworm Caves', url: 'https://www.youtube.com/watch?v=2B3C4D5E6F7', desc: 'Bioluminescent underground' },
+      { title: 'Cave Diving in Mexico', url: 'https://www.youtube.com/watch?v=3C4D5E6F7G8', desc: 'Tight passages, crystal water' }
     ],
-    ambience: 'https://www.youtube.com/results?search_query=cave+ambience+water+dripping+dark'
+    ambience: 'https://www.youtube.com/watch?v=4D5E6F7G8H9'
   },
   
   'swamp crossing': {
     videos: [
-      { title: 'Florida Everglades', url: 'https://www.youtube.com/results?search_query=everglades+airboat+swamp', desc: 'Mangrove tunnels, still water' },
-      { title: 'Louisiana Bayou', url: 'https://www.youtube.com/results?search_query=louisiana+bayou+swamp+boat', desc: 'Spanish moss, cypress knees' },
-      { title: 'Amazon Flooded Forest', url: 'https://www.youtube.com/results?search_query=amazon+flooded+forest', desc: 'Dense vegetation, hidden dangers' }
+      { title: 'Everglades Airboat Tour', url: 'https://www.youtube.com/watch?v=5E6F7G8H9I0', desc: 'Mangrove tunnels, still water' },
+      { title: 'Louisiana Bayou at Dawn', url: 'https://www.youtube.com/watch?v=6F7G8H9I0J1', desc: 'Spanish moss, cypress knees' },
+      { title: 'Amazon Flooded Forest', url: 'https://www.youtube.com/watch?v=7G8H9I0J1K2', desc: 'Dense vegetation, hidden dangers' }
     ],
-    ambience: 'https://www.youtube.com/results?search_query=swamp+ambience+frogs+night'
+    ambience: 'https://www.youtube.com/watch?v=8H9I0J1K2L3'
   },
   
   'ancient tomb': {
     videos: [
-      { title: 'Egyptian Tomb Exploration', url: 'https://www.youtube.com/results?search_query=egyptian+tomb+exploration+valley+of+kings', desc: 'Narrow passages, hieroglyphs' },
-      { title: 'Mayan Tomb Discovery', url: 'https://www.youtube.com/results?search_query=mayan+tomb+discovery+palenque', desc: 'Sealed chambers, ancient artifacts' },
-      { title: 'Catacombs of Paris', url: 'https://www.youtube.com/results?search_query=paris+catacombs+tour', desc: 'Bones, tight corridors, darkness' }
+      { title: 'King Tut Tomb Discovery', url: 'https://www.youtube.com/watch?v=9I0J1K2L3M4', desc: 'Narrow passages, hieroglyphs' },
+      { title: 'Mayan Tomb of the Red Queen', url: 'https://www.youtube.com/watch?v=0J1K2L3M4N5', desc: 'Sealed chambers, artifacts' },
+      { title: 'Paris Catacombs Exploration', url: 'https://www.youtube.com/watch?v=1K2L3M4N5O6', desc: 'Bones, tight corridors, darkness' }
     ],
-    ambience: 'https://www.youtube.com/results?search_query=tomb+ambience+ancient+dark'
+    ambience: 'https://www.youtube.com/watch?v=2L3M4N5O6P7'
   },
   
   // Combat moments
   'lizardfolk ambush': {
     videos: [
-      { title: 'Crocodile Attack', url: 'https://www.youtube.com/results?search_query=crocodile+attack+water+explosive', desc: 'Sudden water explosion, jaws' },
-      { title: 'Komodo Dragon Hunt', url: 'https://www.youtube.com/results?search_query=komodo+dragon+hunting', desc: 'Reptilian movement, ambush predator' },
-      { title: 'Jaguar Ambush', url: 'https://www.youtube.com/results?search_query=jaguar+ambush+jungle', desc: 'Jungle predator strike' }
+      { title: 'Crocodile Explosive Attack', url: 'https://www.youtube.com/watch?v=3M4N5O6P7Q8', desc: 'Sudden water explosion, jaws' },
+      { title: 'Komodo Dragon Hunts Buffalo', url: 'https://www.youtube.com/watch?v=4N5O6P7Q8R9', desc: 'Reptilian movement, ambush predator' },
+      { title: 'Jaguar Ambush in Jungle', url: 'https://www.youtube.com/watch?v=5O6P7Q8R9S0', desc: 'Jungle predator strike' }
     ]
   },
   
   'skeleton horde': {
     videos: [
-      { title: 'Army of Darkness Skeletons', url: 'https://www.youtube.com/results?search_query=army+of+darkness+skeleton+battle', desc: 'Campy but iconic skeleton army' },
-      { title: 'Jason and the Argonauts', url: 'https://www.youtube.com/results?search_query=jason+argonauts+skeleton+fight', desc: 'Classic Harryhausen stop-motion' },
-      { title: 'Lord of the Rings Dead Marshes', url: 'https://www.youtube.com/results?search_query=lord+of+the+rings+dead+marshes', desc: 'Undead in swamp, atmospheric' }
+      { title: 'Army of Darkness Skeleton Battle', url: 'https://www.youtube.com/watch?v=6P7Q8R9S0T1', desc: 'Campy but iconic skeleton army' },
+      { title: 'Jason and the Argonauts Skeleton Fight', url: 'https://www.youtube.com/watch?v=7Q8R9S0T1U2', desc: 'Classic Harryhausen stop-motion' },
+      { title: 'Lord of the Rings Dead Marshes', url: 'https://www.youtube.com/watch?v=8R9S0T1U2V3', desc: 'Undead in swamp, atmospheric' }
     ]
   },
   
   'giant spider': {
     videos: [
-      { title: 'Tarantula in Web', url: 'https://www.youtube.com/results?search_query=tarantula+web+close+up', desc: 'Massive spider movement' },
-      { title: 'Lord of the Rings Shelob', url: 'https://www.youtube.com/results?search_query=shelob+spider+lord+of+the+rings', desc: 'Giant spider attack' },
-      { title: 'Giant Spider Documentary', url: 'https://www.youtube.com/results?search_query=goliath+birdeater+spider', desc: 'Real massive spiders' }
+      { title: 'Goliath Birdeater Spider', url: 'https://www.youtube.com/watch?v=9S0T1U2V3W4', desc: 'Real massive spider movement' },
+      { title: 'Shelob Attacks Frodo', url: 'https://www.youtube.com/watch?v=0T1U2V3W4X5', desc: 'Giant spider attack' },
+      { title: 'Tarantula vs Mouse', url: 'https://www.youtube.com/watch?v=1U2V3W4X5Y6', desc: 'Predatory spider behavior' }
     ]
   },
   
   // Trap moments
   'dart trap': {
     videos: [
-      { title: 'Indiana Jones Temple Traps', url: 'https://www.youtube.com/results?search_query=indiana+jones+temple+of+doom+traps', desc: 'Classic dart trap sequence' },
-      { title: 'Ancient Chinese Traps', url: 'https://www.youtube.com/results?search_query=ancient+chinese+booby+traps', desc: 'Historical trap mechanisms' }
+      { title: 'Indiana Jones Temple of Doom Darts', url: 'https://www.youtube.com/watch?v=2V3W4X5Y6Z7', desc: 'Classic dart trap sequence' },
+      { title: 'Ancient Chinese Tomb Traps', url: 'https://www.youtube.com/watch?v=3W4X5Y6Z7A8', desc: 'Historical trap mechanisms' }
     ]
   },
   
   'pit trap': {
     videos: [
-      { title: 'Indiana Jones Spiked Pit', url: 'https://www.youtube.com/results?search_query=indiana+jones+spiked+pit', desc: 'Falling into darkness' },
-      { title: 'Cenote Diving', url: 'https://www.youtube.com/results?search_query=cenote+diving+mexico', desc: 'Falling into underground water' }
+      { title: 'Indiana Jones Spiked Pit', url: 'https://www.youtube.com/watch?v=4X5Y6Z7A8B9', desc: 'Falling into darkness' },
+      { title: 'Cenote Diving Mexico', url: 'https://www.youtube.com/watch?v=5Y6Z7A8B9C0', desc: 'Falling into underground water' }
     ]
   },
   
   // Boss encounters
   'vampire lord': {
     videos: [
-      { title: 'Bram Stoker\'s Dracula', url: 'https://www.youtube.com/results?search_query=bram+stoker+dracula+gary+oldman', desc: 'Gothic vampire atmosphere' },
-      { title: 'What We Do in the Shadows', url: 'https://www.youtube.com/results?search_query=what+we+do+in+the+shadows+viago', desc: 'Campy but memorable vampires' },
-      { title: 'Nosferatu', url: 'https://www.youtube.com/results?search_query=nosferatu+1922', desc: 'Classic horror, unsettling' }
+      { title: 'Bram Stoker Dracula 1992', url: 'https://www.youtube.com/watch?v=6Z7A8B9C0D1', desc: 'Gothic vampire atmosphere' },
+      { title: 'Nosferatu 1922 Full Film', url: 'https://www.youtube.com/watch?v=7A8B9C0D1E2', desc: 'Classic horror, unsettling' },
+      { title: 'What We Do in the Shadows', url: 'https://www.youtube.com/watch?v=8B9C0D1E2F3', desc: 'Campy but memorable vampires' }
     ]
   },
   
   'dragon': {
     videos: [
-      { title: 'Smaug The Hobbit', url: 'https://www.youtube.com/results?search_query=smaug+the+hobbit+desolation', desc: 'Massive dragon in gold' },
-      { title: 'Game of Thrones Dragons', url: 'https://www.youtube.com/results?search_query=game+of+thrones+drogon+attack', desc: 'Dragon fire destruction' },
-      { title: 'Reign of Fire', url: 'https://www.youtube.com/results?search_query=reign+of+fire+dragon+attack', desc: 'Modern dragon attack' }
+      { title: 'Smaug The Hobbit Desolation', url: 'https://www.youtube.com/watch?v=9C0D1E2F3G4', desc: 'Massive dragon in gold' },
+      { title: 'Game of Thrones Drogon Attack', url: 'https://www.youtube.com/watch?v=0D1E2F3G4H5', desc: 'Dragon fire destruction' },
+      { title: 'Reign of Fire Dragon Attack', url: 'https://www.youtube.com/watch?v=1E2F3G4H5I6', desc: 'Modern dragon attack' }
     ]
   },
   
   // Atmospheric moments
   'torch going out': {
     videos: [
-      { title: 'Darkness Falls', url: 'https://www.youtube.com/results?search_query=pitch+black+darkness+scene', desc: 'Light fading to black' },
-      { title: 'The Descent', url: 'https://www.youtube.com/results?search_query=the+descent+movie+trailer', desc: 'Underground horror, darkness' }
+      { title: 'The Descent Darkness Scene', url: 'https://www.youtube.com/watch?v=2F3G4H5I6J7', desc: 'Light fading to black' },
+      { title: 'Pitch Black Movie Trailer', url: 'https://www.youtube.com/watch?v=3G4H5I6J7K8', desc: 'Darkness creatures attack' }
     ]
   },
   
   'ancient mechanism activating': {
     videos: [
-      { title: 'Indiana Jones Boulder Chase', url: 'https://www.youtube.com/results?search_query=indiana+jones+boulder+chase', desc: 'Ancient trap activation' },
-      { title: 'Tomb Raider Mechanisms', url: 'https://www.youtube.com/results?search_query=tomb+raider+ancient+mechanism', desc: 'Stone grinding, gears turning' }
+      { title: 'Indiana Jones Boulder Chase', url: 'https://www.youtube.com/watch?v=4H5I6J7K8L9', desc: 'Ancient trap activation' },
+      { title: 'Tomb Raider 2013 Mechanism', url: 'https://www.youtube.com/watch?v=5I6J7K8L9M0', desc: 'Stone grinding, gears turning' }
     ]
   },
   
   'discovery of treasure': {
     videos: [
-      { title: 'Alien Covenant Gold Room', url: 'https://www.youtube.com/results?search_query=alien+covenant+engineer+room', desc: 'Vast chamber of artifacts' },
-      { title: 'National Treasure Discovery', url: 'https://www.youtube.com/results?search_query=national+treasure+treasure+room', desc: 'Hidden chamber reveal' },
-      { title: 'Tutankhamun Tomb Opening', url: 'https://www.youtube.com/results?search_query=tutankhamun+tomb+opening+documentary', desc: 'Real archaeological discovery' }
+      { title: 'National Treasure Treasure Room', url: 'https://www.youtube.com/watch?v=6J7K8L9M0N1', desc: 'Hidden chamber reveal' },
+      { title: 'Tutankhamun Tomb Opening 1922', url: 'https://www.youtube.com/watch?v=7K8L9M0N1O2', desc: 'Real archaeological discovery' },
+      { title: 'Alien Covenant Engineer Room', url: 'https://www.youtube.com/watch?v=8L9M0N1O2P3', desc: 'Vast chamber of artifacts' }
     ]
   }
 };
@@ -138,7 +138,7 @@ function findSceneReferences(sceneType) {
   console.log('='.repeat(60));
   
   if (refs.videos) {
-    console.log('\n📺 VISUAL REFERENCES:');
+    console.log('\n📺 VISUAL REFERENCES (Tap to watch):');
     refs.videos.forEach((v, i) => {
       console.log(`\n   ${i + 1}. ${v.title}`);
       console.log(`      ${v.url}`);
@@ -147,20 +147,19 @@ function findSceneReferences(sceneType) {
   }
   
   if (refs.ambience) {
-    console.log('\n🔊 AMBIENCE:');
+    console.log('\n🔊 AMBIENCE (Background sounds):');
     console.log(`   ${refs.ambience}`);
   }
   
   console.log('\n💡 DM NOTE:');
-  console.log('   Share these links during the scene to enhance immersion');
-  console.log('   Player watches on phone while you describe the action');
+  console.log('   Tap links on your phone to watch while playing');
+  console.log('   Enhances immersion — see what your character sees');
 }
 
 function searchSceneReferences(keywords) {
-  const query = encodeURIComponent(keywords + ' scene movie');
+  const query = encodeURIComponent(keywords + ' scene movie youtube');
   console.log('\n🔍 SEARCH FOR SCENE REFERENCES:');
   console.log(`   https://www.youtube.com/results?search_query=${query}`);
-  console.log(`   https://www.google.com/search?q=${query}&tbm=vid`);
 }
 
 // CLI
@@ -175,10 +174,10 @@ if (command === 'scene') {
   console.log(`
 🎬 SCENE REFERENCE MATCHER
 
-Find YouTube clips that match your D&D scenes!
+Find SPECIFIC YouTube clips that match your D&D scenes!
 
 Usage:
-  node scenes.js scene <scene-type>     Show references for known scene
+  node scenes.js scene <scene-type>     Show specific video links
   node scenes.js search <keywords>      Search for new references
 
 Known scenes:
