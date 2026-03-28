@@ -380,10 +380,14 @@ RULEBOOKS (Source of Truth):
   mm hd <number>            List monsters by hit dice
   mm type <type>            List monsters by type (undead, dragon, etc.)
 
-AMBIANCE (Atmosphere & Immersion):
-  ambiance <scene>          Set scene atmosphere (sensory details + music)
-  ambiance music <mood>     Get music for mood (combat, tense, rest)
-  ambiance tension <level>  Get tension cue (low, rising, high, peak)
+SESSION PREP (Run BEFORE playing):
+  prep                      Show prep instructions
+  session-prep.js <name>    Full session prep with images
+  
+AMBIANCE (During gameplay):
+  ambiance <scene>          Scene atmosphere + YouTube music links
+  ambiance music <mood>     Music for mood (combat, tense, rest)
+  ambiance tension <level>  Tension cues (low, rising, high, peak)
   generate <scene>          Generate AI image with DALL-E 3
   
   Scenes: dark forest, ancient temple, underground cavern, boss battle,
@@ -642,6 +646,22 @@ if (require.main === module) {
           console.log(result.prompt);
         }
       });
+      break;
+
+    // Quick Session Prep
+    case 'prep':
+      console.log('\n🎲 QUICK SESSION PREP\n');
+      console.log('Run this BEFORE your session to generate all images.\n');
+      console.log('For full prep with custom locations/monsters:');
+      console.log('  node session-prep.js "Session Name" ./config.json\n');
+      console.log('Quick ambiance for common scenes:');
+      console.log('  ambiance dark forest     - Forest atmosphere + music');
+      console.log('  ambiance ancient temple  - Temple atmosphere + music');
+      console.log('  ambiance boss battle     - Boss room atmosphere + music');
+      console.log('\nQuick monster images:');
+      console.log('  show goblin    - Shows monster (copy prompt to DALL-E)');
+      console.log('  show dragon    - Shows monster (copy prompt to DALL-E)');
+      console.log('\nDuring gameplay, click YouTube links for sound.');
       break;
 
     default:
