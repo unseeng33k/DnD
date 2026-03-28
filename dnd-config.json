@@ -1,0 +1,45 @@
+{
+  "telegram": {
+    "botToken": "8552323205:AAHUOPhywiY_Xx-envETYzpd72Al_xJOysI",
+    "chatId": null,
+    "enabled": true,
+    "defaultCaption": "🎲 D&D Scene Generated"
+  },
+  "openai": {
+    "apiKeyEnv": "OPENAI_API_KEY",
+    "model": "dall-e-3",
+    "imageSize": "1024x1024",
+    "quality": "standard",
+    "style": "1979 D&D module art style, Erol Otus or David Sutherland illustration style, ink and watercolor, atmospheric lighting, vintage TSR aesthetic"
+  },
+  "imageGeneration": {
+    "enabled": true,
+    "cacheEnabled": true,
+    "cachePath": "images/image-cache.json",
+    "outputPath": "images/generated",
+    "timeoutSeconds": 120
+  },
+  "campaigns": {
+    "Curse of Strahd": {
+      "path": "campaigns/Curse of Strahd",
+      "active": true,
+      "description": "A gothic horror campaign in Ravenloft"
+    },
+    "Tamoachan Expedition": {
+      "path": "campaigns/Tamoachan Expedition",
+      "active": true,
+      "description": "A jungle exploration and ancient temple campaign"
+    },
+    "Tamoachan Playtest": {
+      "path": "campaigns/Tamoachan Playtest",
+      "active": false,
+      "description": "Playtest version"
+    }
+  },
+  "sessionDefaults": {
+    "imageGeneration": true,
+    "telegramNotifications": true,
+    "autoSaveState": true,
+    "saveInterval": 300000
+  }
+}

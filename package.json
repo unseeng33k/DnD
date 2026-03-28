@@ -1,0 +1,26 @@
+{
+  "name": "dnd-telegram-bot",
+  "version": "1.0.0",
+  "description": "D&D Campaign Manager with Telegram Integration & AI Image Generation",
+  "main": "simple-dnd.js",
+  "type": "module",
+  "scripts": {
+    "start": "node simple-dnd.js",
+    "diagnose": "node diagnose-images.js",
+    "test-image": "node -e \"import('./image-handler.js').then(m => m.generateImageDALLE('A dragon in a stone chamber')).then(r => console.log(r))\"",
+    "gen-room": "node image-handler.js",
+    "gen-monster": "node image-handler-monster.js",
+    "gen-battle": "node image-handler-battle.js"
+  },
+  "keywords": ["dnd", "telegram", "image-generation", "dalle", "campaign-manager"],
+  "author": "Michael Pruskowski",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

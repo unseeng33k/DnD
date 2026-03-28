@@ -1,115 +1,115 @@
 {
   "campaign": "Tamoachan Playtest",
-  "preppedAt": "2026-03-28T16:39:06.178Z",
+  "preppedAt": "2026-03-28T17:43:29.981Z",
   "scenes": 12,
   "monsters": 13,
   "log": [
     {
       "type": "scene",
       "name": "Jungle Approach",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-zdMNzdecMGe1OYcZT7eCCSjR.png?st=2026-03-28T15%3A35%3A14Z&se=2026-03-28T17%3A35%3A14Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=b1a0ae1f-618f-4548-84fd-8b16cacd5485&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T04%3A19%3A52Z&ske=2026-03-29T04%3A19%3A52Z&sks=b&skv=2026-02-06&sig=y4oqnCIp5L/8h/u4o6Ev/xiCFu46ubXrYdOMjpMEfWk%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-aqA74B7LDYkHCO6DocQ2rAT6.png?st=2026-03-28T16%3A39%3A34Z&se=2026-03-28T18%3A39%3A34Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=7daae675-7b42-4e2e-ab4c-8d8419a28d99&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T08%3A59%3A56Z&ske=2026-03-29T08%3A59%3A56Z&sks=b&skv=2026-02-06&sig=xdmpBWo9kYA9jiikmBK5sb12wjcVNab%2B8yDJyfKELAc%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Temple Entrance",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-94O3evSahOdkKtB0AAEMVRjp.png?st=2026-03-28T15%3A35%3A27Z&se=2026-03-28T17%3A35%3A27Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=b1a0ae1f-618f-4548-84fd-8b16cacd5485&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T04%3A46%3A11Z&ske=2026-03-29T04%3A46%3A11Z&sks=b&skv=2026-02-06&sig=bT2NhDR8jFNschmWu8f8NpfxN9UbWpmYOy1cpkfv6yg%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-zctCsoOSFMRJjUFZhMevcnmC.png?st=2026-03-28T16%3A39%3A49Z&se=2026-03-28T18%3A39%3A49Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T05%3A17%3A06Z&ske=2026-03-29T05%3A17%3A06Z&sks=b&skv=2026-02-06&sig=kXMq6H8ojnIxhbiAP%2BrVwdpAVeqf%2B4OQxEUn2TyGncs%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Entry Hall",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-lBbIdQp4Ipmf5WLFxdCSbxZt.png?st=2026-03-28T15%3A35%3A39Z&se=2026-03-28T17%3A35%3A39Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T09%3A58%3A13Z&ske=2026-03-29T09%3A58%3A13Z&sks=b&skv=2026-02-06&sig=KEvZXdAO1PIP5VIeim9U5%2Bck%2Br5r3oCIUhCI1i3xrGU%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-4mVhn4i5uOfAKxsJFrgivl7K.png?st=2026-03-28T16%3A40%3A02Z&se=2026-03-28T18%3A40%3A02Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=ed3ea2f9-5e38-44be-9a1b-7c1e65e4d54f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T08%3A31%3A59Z&ske=2026-03-29T08%3A31%3A59Z&sks=b&skv=2026-02-06&sig=PWAmiTM6jZ76/cfkmr4Fbx8IXwPQESAOS/RcCG0trKo%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Chamber of Three Archways",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-FzIwEp5JtyvAD38eEUIaveJx.png?st=2026-03-28T15%3A35%3A53Z&se=2026-03-28T17%3A35%3A53Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=9346e9b9-5d29-4d37-a0a9-c6f95f09f79d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T11%3A47%3A38Z&ske=2026-03-29T11%3A47%3A38Z&sks=b&skv=2026-02-06&sig=pTHxQJJG45eedgejV7zx72MHbYZypAavubi%2BJPdzEbs%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-tmHsxrN9szeF6K0HKnEZShr8.png?st=2026-03-28T16%3A40%3A14Z&se=2026-03-28T18%3A40%3A14Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=ed3ea2f9-5e38-44be-9a1b-7c1e65e4d54f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T04%3A11%3A40Z&ske=2026-03-29T04%3A11%3A40Z&sks=b&skv=2026-02-06&sig=7dJ36CYGWFK8jjS0X97/ShY1nytUyNH6trf762Tq9Kg%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Hall of the Glyphs",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-g0qjzKvqkjE4HH4ZC3cyVgiy.png?st=2026-03-28T15%3A36%3A07Z&se=2026-03-28T17%3A36%3A07Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=ed3ea2f9-5e38-44be-9a1b-7c1e65e4d54f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T02%3A14%3A53Z&ske=2026-03-29T02%3A14%3A53Z&sks=b&skv=2026-02-06&sig=CiR9Zjrbku07Q/l9m4rhPE/h32sVYHJdoNjd4In5oTY%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-NKEzCytVdnoUPJ1zNHiZ4wAu.png?st=2026-03-28T16%3A40%3A26Z&se=2026-03-28T18%3A40%3A26Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=b1a0ae1f-618f-4548-84fd-8b16cacd5485&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T08%3A31%3A55Z&ske=2026-03-29T08%3A31%3A55Z&sks=b&skv=2026-02-06&sig=S47hzhrzF/9rQdptgQjUQE/S55XmfuHEHbuSlhSK%2BMY%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Pool Chamber",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-iazD1McAbvqXGyuKOzbFYZrI.png?st=2026-03-28T15%3A36%3A19Z&se=2026-03-28T17%3A36%3A19Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=8b33a531-2df9-46a3-bc02-d4b1430a422c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T06%3A11%3A03Z&ske=2026-03-29T06%3A11%3A03Z&sks=b&skv=2026-02-06&sig=4d4iaJeS48eeOYumeevYV6IevNFRrgsIRqkPqRc2XU8%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-r5vXQwgH4iLELHhqkhNYswA1.png?st=2026-03-28T16%3A40%3A41Z&se=2026-03-28T18%3A40%3A41Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=b1a0ae1f-618f-4548-84fd-8b16cacd5485&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T12%3A30%3A14Z&ske=2026-03-29T12%3A30%3A14Z&sks=b&skv=2026-02-06&sig=p8Yc5yYcG1miaXDCVvYUDdljA%2BqII9ZjNERfjomsGo4%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Shrine of Tlaloc",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-1whunnJUqZnfXM4e5EnWMAAb.png?st=2026-03-28T15%3A36%3A33Z&se=2026-03-28T17%3A36%3A33Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=35890473-cca8-4a54-8305-05a39e0bc9c3&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T08%3A53%3A14Z&ske=2026-03-29T08%3A53%3A14Z&sks=b&skv=2026-02-06&sig=9eSbagdDpQNezZqDBZS72WNf9c1fIt8n/KTs7Hm8B7M%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-vLBjl4aZP8t9lCM7HxF52udi.png?st=2026-03-28T16%3A40%3A54Z&se=2026-03-28T18%3A40%3A54Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=9346e9b9-5d29-4d37-a0a9-c6f95f09f79d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T17%3A40%3A54Z&ske=2026-03-29T17%3A40%3A54Z&sks=b&skv=2026-02-06&sig=kzglIpdcrMjpSJXfz1qAgItMA%2BTU78yuReylG1rxhyU%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Tomb of the Olman King",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-hVVldU5rtXeZ8CWvce4iRVPe.png?st=2026-03-28T15%3A36%3A47Z&se=2026-03-28T17%3A36%3A47Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=13da7400-b3f7-4f8c-9cba-908fecbd114c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T01%3A16%3A02Z&ske=2026-03-29T01%3A16%3A02Z&sks=b&skv=2026-02-06&sig=pL/5kbM%2BeeEcrpo1PJviKhdA5nP/SrbsQ/WZFCtf/tU%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-KTFkmUe5BiR2Xz3Vz96ZDVne.png?st=2026-03-28T16%3A41%3A12Z&se=2026-03-28T18%3A41%3A12Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T15%3A12%3A07Z&ske=2026-03-29T15%3A12%3A07Z&sks=b&skv=2026-02-06&sig=QHHilHG6C5w1sj5jjzLv7ThXa8Bm4kP66j3sJi53Bk4%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Natural Cavern",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-kIAOzYZrvW8XUpYDDfOuJ4Cj.png?st=2026-03-28T15%3A36%3A57Z&se=2026-03-28T17%3A36%3A57Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=35890473-cca8-4a54-8305-05a39e0bc9c3&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T07%3A48%3A48Z&ske=2026-03-29T07%3A48%3A48Z&sks=b&skv=2026-02-06&sig=ZhQQH/yR62N3Mj09EEXhcP%2B47WKp8s7I9%2BO77P0S7aY%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-qZ716dN7YskwgJcsGQdgVL6Z.png?st=2026-03-28T16%3A41%3A25Z&se=2026-03-28T18%3A41%3A25Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=7daae675-7b42-4e2e-ab4c-8d8419a28d99&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T09%3A08%3A07Z&ske=2026-03-29T09%3A08%3A07Z&sks=b&skv=2026-02-06&sig=VHQV6pRBinJqE2UDRKUMhwi7lq30xXNPgpC6TUegj4s%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Cultist Quarters",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-Mrk5knV9xI8Rt5RA7oCqpiHd.png?st=2026-03-28T15%3A37%3A08Z&se=2026-03-28T17%3A37%3A08Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=b1a0ae1f-618f-4548-84fd-8b16cacd5485&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T10%3A11%3A59Z&ske=2026-03-29T10%3A11%3A59Z&sks=b&skv=2026-02-06&sig=C3Vm7BgvH4kEcopcemnKinKMKLT2%2Bve79lP%2B3HccjBU%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-d4tWo9tYbKEaNb0NBFKkkOsv.png?st=2026-03-28T16%3A41%3A36Z&se=2026-03-28T18%3A41%3A36Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=ed3ea2f9-5e38-44be-9a1b-7c1e65e4d54f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T12%3A47%3A57Z&ske=2026-03-29T12%3A47%3A57Z&sks=b&skv=2026-02-06&sig=nphEJXtoDgkVeSMq%2BM8W8j36u9uaq5aXQOenvHfMdv8%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Sacrifice Chamber",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-RfAYYgtotpVNbo4cMv1mjAXz.png?st=2026-03-28T15%3A37%3A23Z&se=2026-03-28T17%3A37%3A23Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=ed3ea2f9-5e38-44be-9a1b-7c1e65e4d54f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T08%3A01%3A47Z&ske=2026-03-29T08%3A01%3A47Z&sks=b&skv=2026-02-06&sig=h/3xV%2B1x6mVAGIfcXw4HOHtGrnZ8dBM4XTqBtI5C9sQ%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-DjXgCRiWI3chyHVSSRM2o6jj.png?st=2026-03-28T16%3A41%3A48Z&se=2026-03-28T18%3A41%3A48Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-27T23%3A02%3A57Z&ske=2026-03-28T23%3A02%3A57Z&sks=b&skv=2026-02-06&sig=%2B/PjbyATRk87fvR1sV4x0%2BgBt84qQCyyA3ck/CRA4%2Bs%3D",
       "status": "success"
     },
     {
       "type": "scene",
       "name": "Treasure Vault",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-9H8u9byUGVUqy1NxUMbkRJlp.png?st=2026-03-28T15%3A37%3A36Z&se=2026-03-28T17%3A37%3A36Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=7daae675-7b42-4e2e-ab4c-8d8419a28d99&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T09%3A01%3A23Z&ske=2026-03-29T09%3A01%3A23Z&sks=b&skv=2026-02-06&sig=vaZFL/i75nxpIwAkMC0eh3rMwvCkQ14TyMa16TeEF9s%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-0GZswJhdagRltyKzFCRbjoGZ.png?st=2026-03-28T16%3A42%3A02Z&se=2026-03-28T18%3A42%3A02Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-27T23%3A00%3A14Z&ske=2026-03-28T23%3A00%3A14Z&sks=b&skv=2026-02-06&sig=ly24MDz9MvFpCI0NcTlxaH9QHVdyeeX%2BbwjrOiaaD8w%3D",
       "status": "success"
     },
     {
       "type": "monster",
       "name": "goblin",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-SNgn93y5CVXIfT1MT9sxDX0X.png?st=2026-03-28T15%3A37%3A47Z&se=2026-03-28T17%3A37%3A47Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=f1dafa11-a0c2-4092-91d4-10981fbda051&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T09%3A01%3A41Z&ske=2026-03-29T09%3A01%3A41Z&sks=b&skv=2026-02-06&sig=Rh6Hn4aqS%2BAhGn3wOvzVhESGJWgB4TwmS0Wzw2mYxus%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-NNw6L7kNWDOVLgZmUyHHyVig.png?st=2026-03-28T16%3A42%3A15Z&se=2026-03-28T18%3A42%3A15Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T03%3A52%3A00Z&ske=2026-03-29T03%3A52%3A00Z&sks=b&skv=2026-02-06&sig=z0z/W4PZJZ5oq9rayYznmxbP0m2I2bumFqIJOoE3Xy4%3D",
       "status": "success"
     },
     {
       "type": "monster",
       "name": "skeleton",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-Gu2JLklVfcWLT7mbXOqLmGl3.png?st=2026-03-28T15%3A37%3A57Z&se=2026-03-28T17%3A37%3A57Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=13da7400-b3f7-4f8c-9cba-908fecbd114c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-27T17%3A29%3A52Z&ske=2026-03-28T17%3A29%3A52Z&sks=b&skv=2026-02-06&sig=tttqyWf7V/Y3FTFMAQ2gR/mFZJ8r22JWgqoTRJatTWA%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-sXbLIDPq20nSXsBli0f8ajGq.png?st=2026-03-28T16%3A42%3A33Z&se=2026-03-28T18%3A42%3A33Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T16%3A01%3A22Z&ske=2026-03-29T16%3A01%3A22Z&sks=b&skv=2026-02-06&sig=U2QqZbixbIpNTnNyT7866XLMup4tKYWYz7IZgfD11%2BA%3D",
       "status": "success"
     },
     {
       "type": "monster",
       "name": "zombie",
-      "error": "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system.",
+      "error": "Your request was rejected as a result of our safety system. Image descriptions generated from your prompt may contain text that is not allowed by our safety system. If you believe this was done in error, your request may succeed if retried, or by adjusting your prompt.",
       "status": "failed"
     },
     {
       "type": "monster",
       "name": "ghoul",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-4BDzRFgPs8p70mFAIDNKKyZs.png?st=2026-03-28T15%3A38%3A22Z&se=2026-03-28T17%3A38%3A22Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=13da7400-b3f7-4f8c-9cba-908fecbd114c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T09%3A03%3A43Z&ske=2026-03-29T09%3A03%3A43Z&sks=b&skv=2026-02-06&sig=5XGkgaGy3wZd1TP870XrrxLM28QxGce0Op4YprR834U%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-pBTLiOYnWnawLPVL1hkpPyhX.png?st=2026-03-28T16%3A42%3A55Z&se=2026-03-28T18%3A42%3A55Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=35890473-cca8-4a54-8305-05a39e0bc9c3&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T14%3A58%3A32Z&ske=2026-03-29T14%3A58%3A32Z&sks=b&skv=2026-02-06&sig=77wyUzcKxY2Ndpf9QWAc2nSqIJBCPUeiwglffrmbXck%3D",
       "status": "success"
     },
     {
       "type": "monster",
       "name": "wight",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-ycEy4YvW9yruFCYOMXKTlvq9.png?st=2026-03-28T15%3A38%3A36Z&se=2026-03-28T17%3A38%3A36Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=f1dafa11-a0c2-4092-91d4-10981fbda051&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-27T16%3A57%3A04Z&ske=2026-03-28T16%3A57%3A04Z&sks=b&skv=2026-02-06&sig=GttyjKp8wwOSM%2BkN7%2BnxIuCt1y6Td3MZz9i9k6IQNYc%3D",
-      "status": "success"
+      "error": "Your request was rejected as a result of our safety system. Image descriptions generated from your prompt may contain text that is not allowed by our safety system. If you believe this was done in error, your request may succeed if retried, or by adjusting your prompt.",
+      "status": "failed"
     },
     {
       "type": "monster",
       "name": "lizard man",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-Afnt7lnVCfue8ag8AY9YJvJ3.png?st=2026-03-28T15%3A38%3A50Z&se=2026-03-28T17%3A38%3A50Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=f1dafa11-a0c2-4092-91d4-10981fbda051&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-27T19%3A14%3A48Z&ske=2026-03-28T19%3A14%3A48Z&sks=b&skv=2026-02-06&sig=Qzj/h2oOtfZo6ofHorsZ6xB43jzBp5SddrDiRtjqVUU%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-nMfE3iWlV4LdYj9am1hCMj2B.png?st=2026-03-28T16%3A43%3A13Z&se=2026-03-28T18%3A43%3A13Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=b1a0ae1f-618f-4548-84fd-8b16cacd5485&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T06%3A53%3A13Z&ske=2026-03-29T06%3A53%3A13Z&sks=b&skv=2026-02-06&sig=t7ZacI6CG1WWLjuahK7snroDcD2etvzcPegNHfIgjek%3D",
       "status": "success"
     },
     {
@@ -126,7 +126,7 @@
     {
       "type": "monster",
       "name": "mummy",
-      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-R19Fjjyvz8KdhkUQoWx3PAXJ.png?st=2026-03-28T15%3A39%3A06Z&se=2026-03-28T17%3A39%3A06Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=b1a0ae1f-618f-4548-84fd-8b16cacd5485&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T10%3A42%3A17Z&ske=2026-03-29T10%3A42%3A17Z&sks=b&skv=2026-02-06&sig=ewdnc2ri5wLcv%2BvEQA/IbaOqoql9Ee14cyU1P5EPzsI%3D",
+      "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-5hcEVEDbptQA6yZbr2UT9hw8/user-hakQmQbijOa5tOPbBNfBZkdH/img-Nnlsi15dkPzZ711YwykwLO8i.png?st=2026-03-28T16%3A43%3A29Z&se=2026-03-28T18%3A43%3A29Z&sp=r&sv=2026-02-06&sr=b&rscd=inline&rsct=image/png&skoid=f1dafa11-a0c2-4092-91d4-10981fbda051&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-03-28T09%3A01%3A47Z&ske=2026-03-29T09%3A01%3A47Z&sks=b&skv=2026-02-06&sig=wHHXjthPjkZj/rzz7K5nA3uc6nbCWbZnC%2BTK1nOZjrw%3D",
       "status": "success"
     },
     {
@@ -150,5 +150,5 @@
       "status": "not_found"
     }
   ],
-  "ready": 18
+  "ready": 17
 }
