@@ -377,7 +377,8 @@ RULEBOOKS (Source of Truth):
   phb table <name>          Show PHB table (strength, spells, etc.)
   
   mm <monster>              Show monster stats (DM only)
-  show <monster>            Show monster to players (image only, no stats)
+  show <monster>            Show monster to players (no stats)
+  image <monster>           Generate actual monster image with DALL-E
   mm search <term>          Search monsters
   mm hd <number>            List monsters by hit dice
   mm type <type>            List monsters by type (undead, dragon, etc.)
@@ -577,8 +578,9 @@ if (require.main === module) {
     case 'monster':
     case 'show':
       if (args.length < 2) {
-        console.error('Usage: mm <monster-name>         (DM view - with stats)');
-        console.error('       show <monster-name>       (Player view - image only)');
+        console.error('Usage: mm <monster-name>              (DM view - with stats)');
+        console.error('       show <monster-name>            (Player view - image only)');
+        console.error('       image <monster-name>           (Generate actual image)');
         console.error('       mm search <term>');
         console.error('       mm hd <number>');
         console.error('       mm type <type>');
@@ -596,9 +598,11 @@ if (require.main === module) {
         // Default: get monster
         // "show" command = player view (no stats)
         // "mm" command = DM view (with stats)
-        const monsterName = command === 'show' ? args.slice(1).join(' ') : args[1];
-        const showStats = command !== 'show';
-        engine.mm.printMonster(monsterName, showStats);
+        // "image" command = generate actual image
+        const monsterName = (command === 'show' || command === 'image') ? args.slice(1).join(' ') : args[1];
+        const showStats = command !== 'show' && command !== 'image';
+        const generateImage = command === 'image';
+        engine.mm.printMonster(monsterName, showStats, true, generateImage);
       }
       break;
 

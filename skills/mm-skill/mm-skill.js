@@ -103,7 +103,7 @@ class MMSkill {
     return results;
   }
 
-  printMonster(name, showStats = true, chatFormat = true) {
+  async printMonster(name, showStats = true, chatFormat = true, generateImage = false) {
     const stats = this.getMonster(name);
     if (!stats) {
       console.log(`Monster "${name}" not found.`);
@@ -131,13 +131,28 @@ class MMSkill {
       } else {
         console.log(stats);
       }
-      console.log(`\n🎨 AI IMAGE PROMPT:`);
-      console.log(imagePrompt);
     } else {
-      // Player view - show only description and image prompt
+      // Player view - show only description
       const description = this.getPlayerDescription(name, stats);
       console.log(description);
-      console.log(`\n🎨 What you see:`);
+    }
+    
+    // Generate actual image if requested
+    if (generateImage) {
+      console.log('\n🎨 Generating image...');
+      const AmbianceAgent = require('../ambiance-agent/ambiance');
+      const ambiance = new AmbianceAgent();
+      const result = await ambiance.generateImage(imagePrompt);
+      
+      if (result.success) {
+        console.log(`\n🖼️  IMAGE: ${result.url}`);
+      } else {
+        console.log(`\n⚠️  Could not generate image: ${result.error}`);
+        console.log('\n🎨 PROMPT (copy to generate manually):');
+        console.log(imagePrompt);
+      }
+    } else {
+      console.log('\n🎨 AI IMAGE PROMPT:');
       console.log(imagePrompt);
     }
   }
@@ -265,10 +280,12 @@ USAGE:
   node mm-skill.js <command> [args]
 
 COMMANDS:
-  search <term>       Search monsters
-  monster <name>      Show monster stats
-  hd <number>         List monsters by hit dice
-  type <type>         List monsters by type
+  search <term>              Search monsters
+  monster <name>             Show monster stats
+  monster <name> --image     Show monster + generate actual image
+  image <name>               Generate monster image (player view)
+  hd <number>                List monsters by hit dice
+  type <type>                List monsters by type
 
 TYPES:
   undead, dragon, giant, demon, humanoid
@@ -276,7 +293,8 @@ TYPES:
 EXAMPLES:
   node mm-skill.js search "poison"
   node mm-skill.js monster goblin
-  node mm-skill.js monster dragon
+  node mm-skill.js monster goblin --image
+  node mm-skill.js image dragon
   node mm-skill.js hd 5
   node mm-skill.js type undead
 `);
@@ -302,9 +320,19 @@ if (require.main === module) {
     case 'monster':
       if (!args[1]) {
         console.log('Usage: monster <name>');
+        console.log('       monster <name> --image    (generate actual image)');
         process.exit(1);
       }
-      skill.printMonster(args[1]);
+      const generateMonsterImage = args.includes('--image');
+      skill.printMonster(args[1], true, true, generateMonsterImage);
+      break;
+
+    case 'image':
+      if (!args[1]) {
+        console.log('Usage: image <monster-name>');
+        process.exit(1);
+      }
+      skill.printMonster(args[1], false, true, true);
       break;
 
     case 'hd':
