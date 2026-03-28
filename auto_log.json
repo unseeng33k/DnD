@@ -40,6 +40,39 @@
         "source": "healing"
       },
       "session_id": "tamoachan_day2"
+    },
+    {
+      "timestamp": "2026-03-28T12:16:25.499Z",
+      "type": "PARTY_MOVED",
+      "data": {
+        "from": "Antechamber (Three Archways)",
+        "to": "room",
+        "description": "antechamber",
+        "new_area": false
+      },
+      "session_id": "tamoachan_day2"
+    },
+    {
+      "timestamp": "2026-03-28T12:16:59.273Z",
+      "type": "PARTY_MOVED",
+      "data": {
+        "from": "room",
+        "to": "room",
+        "description": "antechamber",
+        "new_area": false
+      },
+      "session_id": "tamoachan_day2"
+    },
+    {
+      "timestamp": "2026-03-28T12:17:32.536Z",
+      "type": "PARTY_MOVED",
+      "data": {
+        "from": "room",
+        "to": "room",
+        "description": "antechamber",
+        "new_area": false
+      },
+      "session_id": "tamoachan_day2"
     }
   ],
   "created": "2026-03-28T11:33:11.153Z"

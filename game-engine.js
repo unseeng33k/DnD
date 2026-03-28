@@ -12,6 +12,7 @@ const DMGSkill = require('./skills/dmg-skill/dmg-skill');
 const PHBSkill = require('./skills/phb-skill/phb-skill');
 const MMSkill = require('./skills/mm-skill/mm-skill');
 const AmbianceAgent = require('./skills/ambiance-agent/ambiance');
+const ASCIIMap = require('./skills/ascii-map/ascii-map');
 const fs = require('fs');
 const path = require('path');
 
@@ -22,6 +23,7 @@ class GameEngine {
     this.phb = new PHBSkill();
     this.mm = new MMSkill();
     this.ambiance = new AmbianceAgent();
+    this.map = new ASCIIMap();
     this.loggers = {};
     this.activeCharacter = null;
 
@@ -380,6 +382,13 @@ RULEBOOKS (Source of Truth):
   mm hd <number>            List monsters by hit dice
   mm type <type>            List monsters by type (undead, dragon, etc.)
 
+MAP (ASCII Dungeon Maps):
+  map                       Show current dungeon map
+  move <x> <y>              Move party on map
+  move room <room-id>       Move to specific room
+  discover <x> <y>          Reveal area on map
+  load-map <name>           Load dungeon (tamoachan)
+
 SESSION PREP (Run BEFORE playing):
   prep                      Show prep instructions
   session-prep.js <name>    Full session prep with images
@@ -590,6 +599,62 @@ if (require.main === module) {
         const monsterName = command === 'show' ? args.slice(1).join(' ') : args[1];
         const showStats = command !== 'show';
         engine.mm.printMonster(monsterName, showStats);
+      }
+      break;
+
+    // ASCII Map Integration
+    case 'map':
+    case 'show-map':
+      engine.map.printMap();
+      break;
+
+    case 'move':
+      if (args.length < 2) {
+        console.error('Usage: move <x> <y>  or  move room <room-id>');
+        process.exit(1);
+      }
+      if (args[1] === 'room' && args[2]) {
+        if (engine.map.moveToRoom(args[2])) {
+          console.log(`Party moved to ${args[2]}.`);
+          engine.map.printMap();
+        } else {
+          console.log('Room not found.');
+        }
+      } else if (args.length >= 3) {
+        if (engine.map.moveParty(parseInt(args[1]), parseInt(args[2]))) {
+          console.log('Party moved.');
+          engine.map.printMap();
+        } else {
+          console.log('Invalid coordinates.');
+        }
+      } else {
+        console.error('Usage: move <x> <y>  or  move room <room-id>');
+        process.exit(1);
+      }
+      break;
+
+    case 'discover':
+      if (args.length < 3) {
+        console.error('Usage: discover <x> <y>');
+        process.exit(1);
+      }
+      engine.map.discover(parseInt(args[1]), parseInt(args[2]));
+      console.log('Area discovered.');
+      engine.map.printMap();
+      break;
+
+    case 'load-map':
+      if (!args[1]) {
+        console.error('Usage: load-map <dungeon-name>');
+        console.error('Available: tamoachan');
+        process.exit(1);
+      }
+      if (args[1] === 'tamoachan') {
+        engine.map.createTamoachan();
+        console.log('Loaded: Hidden Shrine of Tamoachan');
+        engine.map.printMap();
+      } else {
+        console.log('Dungeon not found. Available: tamoachan');
       }
       break;
 
