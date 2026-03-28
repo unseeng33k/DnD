@@ -1,0 +1,33 @@
+{
+  "name": "Tomas",
+  "race": "Human",
+  "occupation": "Merchant Survivor",
+  "location": "Jungle Approach",
+  "personality": "Nervous but deeply grateful, speaks quickly when scared",
+  "motivation": "Escape the shrine and return to his family in the coastal town",
+  "fear": "The cultists who captured him, especially at night",
+  "secret": "Overheard the cult leader speaking of 'the awakening' but doesn't understand what it means",
+  "attitude": "friendly",
+  "disposition": 8,
+  "knows": [
+    "There are cultists in the shrine",
+    "The skull archway leads to danger",
+    "Something lives in the pool chamber"
+  ],
+  "willShare": [
+    "Basic layout of entrance areas",
+    "Warning about traps",
+    "Gratitude for rescue"
+  ],
+  "willNotShare": [
+    "His secret about 'the awakening' - too afraid"
+  ],
+  "speechPattern": "stutter",
+  "mannerisms": "Wrings his hands constantly, looks over his shoulder",
+  "catchphrase": "Please, we must hurry!",
+  "hp": 6,
+  "ac": 10,
+  "met": false,
+  "interactions": [],
+  "notes": "First NPC the party encounters. Good source of initial information but traumatized."
+}
