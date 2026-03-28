@@ -11,6 +11,7 @@ const CharacterLogger = require('./logger');
 const DMGSkill = require('./skills/dmg-skill/dmg-skill');
 const PHBSkill = require('./skills/phb-skill/phb-skill');
 const MMSkill = require('./skills/mm-skill/mm-skill');
+const AmbianceAgent = require('./skills/ambiance-agent/ambiance');
 const fs = require('fs');
 const path = require('path');
 
@@ -20,6 +21,7 @@ class GameEngine {
     this.dmg = new DMGSkill();
     this.phb = new PHBSkill();
     this.mm = new MMSkill();
+    this.ambiance = new AmbianceAgent();
     this.loggers = {};
     this.activeCharacter = null;
 
@@ -378,6 +380,14 @@ RULEBOOKS (Source of Truth):
   mm hd <number>            List monsters by hit dice
   mm type <type>            List monsters by type (undead, dragon, etc.)
 
+AMBIANCE (Atmosphere & Immersion):
+  ambiance <scene>          Set scene atmosphere (sensory details + music)
+  ambiance music <mood>     Get music for mood (combat, tense, rest)
+  ambiance tension <level>  Get tension cue (low, rising, high, peak)
+  
+  Scenes: dark forest, ancient temple, underground cavern, boss battle,
+          tavern, swamp, mountain peak, city streets, crypt, wizard tower
+
 EXAMPLES:
   node game-engine.js cast "Magic Missile" 1 mage "Orc"
   node game-engine.js damage 5 "Trap"
@@ -575,6 +585,34 @@ if (require.main === module) {
         const monsterName = command === 'show' ? args.slice(1).join(' ') : args[1];
         const showStats = command !== 'show';
         engine.mm.printMonster(monsterName, showStats);
+      }
+      break;
+
+    // Ambiance Agent Integration
+    case 'ambiance':
+    case 'atmosphere':
+    case 'scene':
+      if (args.length < 2) {
+        console.error('Usage: ambiance <scene-name>');
+        console.error('       ambiance music <mood>');
+        console.error('       ambiance tension <level>');
+        console.error('Scenes: dark forest, ancient temple, underground cavern, boss battle, tavern, swamp, mountain peak, city streets, crypt, wizard tower');
+        process.exit(1);
+      }
+      const ambianceCmd = args[1];
+      if (ambianceCmd === 'music' && args[2]) {
+        engine.ambiance.setMood(args[2]);
+        console.log(engine.ambiance.getMusic());
+      } else if (ambianceCmd === 'tension' && args[2]) {
+        console.log('\n⚡ TENSION CUE:\n');
+        console.log(engine.ambiance.getTensionCue(args[2]));
+      } else if (ambianceCmd === 'image') {
+        console.log('\n🎨 AI IMAGE PROMPT:\n');
+        console.log(engine.ambiance.generateImagePrompt());
+      } else {
+        // Set scene
+        engine.ambiance.setScene(args.slice(1).join(' '));
+        engine.ambiance.printScene();
       }
       break;
 
