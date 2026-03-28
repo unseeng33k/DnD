@@ -117,60 +117,56 @@ class AmbianceAgent {
   loadMusic() {
     return {
       'dark_forest': {
-        youtube: [
-          { title: 'Dark Forest Ambience', url: 'https://youtube.com/watch?v=8Z3Q3Jd3d3w' },
-          { title: 'Haunted Woods', url: 'https://youtube.com/watch?v=4D5E6F7G8H9' }
-        ],
-        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX8Ugs9TgZgU1'
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX8Ugs9TgZgU1',
+        search: 'dark forest ambience fantasy rpg'
       },
       'ancient_temple': {
-        youtube: [
-          { title: 'Temple Ambience', url: 'https://youtube.com/watch?v=5E6F7G8H9I0' },
-          { title: 'Sacred Ruins', url: 'https://youtube.com/watch?v=6F7G8H9I0J1' }
-        ],
-        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j'
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j',
+        search: 'ancient temple ambience dungeon'
       },
-      'combat': {
-        youtube: [
-          { title: 'Epic Battle Music', url: 'https://youtube.com/watch?v=I0r1J0K3L4' },
-          { title: 'Combat Intense', url: 'https://youtube.com/watch?v=J1K2L3M4N5' }
-        ],
-        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX4wta20PHgwo'
+      'underground_cavern': {
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX4wta20PHgwo',
+        search: 'cave ambience underground dungeon'
       },
       'boss_battle': {
-        youtube: [
-          { title: 'Boss Battle Epic', url: 'https://youtube.com/watch?v=K2L3M4N5O6' },
-          { title: 'Final Boss', url: 'https://youtube.com/watch?v=L3M4N5O6P7' }
-        ],
-        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX8Ugs9TgZgU1'
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX8Ugs9TgZgU1',
+        search: 'epic boss battle music fantasy'
+      },
+      'combat': {
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX4wta20PHgwo',
+        search: 'combat music fantasy rpg'
       },
       'exploration': {
-        youtube: [
-          { title: 'Exploration Music', url: 'https://youtube.com/watch?v=M4N5O6P7Q8' },
-          { title: 'Adventure Awaits', url: 'https://youtube.com/watch?v=N5O6P7Q8R9' }
-        ],
-        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j'
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j',
+        search: 'fantasy exploration adventure music'
       },
       'tense': {
-        youtube: [
-          { title: 'Suspense Building', url: 'https://youtube.com/watch?v=O6P7Q8R9S0' },
-          { title: 'Tension Rising', url: 'https://youtube.com/watch?v=P7Q8R9S0T1' }
-        ],
-        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX4wta20PHgwo'
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX4wta20PHgwo',
+        search: 'tense suspense ambience dungeon'
       },
       'tavern': {
-        youtube: [
-          { title: 'Medieval Tavern', url: 'https://youtube.com/watch?v=Q8R9S0T1U2' },
-          { title: 'Inn Ambience', url: 'https://youtube.com/watch?v=R9S0T1U2V3' }
-        ],
-        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j'
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j',
+        search: 'medieval tavern music fantasy'
       },
       'rest': {
-        youtube: [
-          { title: 'Peaceful Rest', url: 'https://youtube.com/watch?v=S0T1U2V3W4' },
-          { title: 'Campfire Ambience', url: 'https://youtube.com/watch?v=T1U2V3W4X5' }
-        ],
-        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX4wta20PHgwo'
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX4wta20PHgwo',
+        search: 'peaceful rest campfire ambience'
+      },
+      'swamp': {
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX4wta20PHgwo',
+        search: 'swamp marsh ambience fantasy'
+      },
+      'mountain': {
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j',
+        search: 'mountain wind ambience peak'
+      },
+      'crypt': {
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX8Ugs9TgZgU1',
+        search: 'crypt tomb ambience horror'
+      },
+      'wizard_tower': {
+        spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j',
+        search: 'arcane magical study ambience'
       }
     };
   }
@@ -223,15 +219,12 @@ class AmbianceAgent {
     
     let output = '\n🎵 MUSIC RECOMMENDATIONS\n\n';
     
-    if (music.youtube) {
-      output += '📺 YouTube:\n';
-      music.youtube.forEach(m => {
-        output += `   • ${m.title}: ${m.url}\n`;
-      });
+    if (music.spotify) {
+      output += `🎧 Spotify: ${music.spotify}\n`;
     }
     
-    if (music.spotify) {
-      output += `\n🎧 Spotify: ${music.spotify}\n`;
+    if (music.search) {
+      output += `\n🔍 YouTube Search: "${music.search}"\n`;
     }
     
     return output;
