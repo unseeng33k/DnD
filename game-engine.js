@@ -376,6 +376,7 @@ RULEBOOKS (Source of Truth):
   mm search <term>          Search monsters
   mm hd <number>            List monsters by hit dice
   mm type <type>            List monsters by type (undead, dragon, etc.)
+  show <monster>            Quick monster lookup (same as mm)
 
 EXAMPLES:
   node game-engine.js cast "Magic Missile" 1 mage "Orc"
@@ -550,11 +551,13 @@ if (require.main === module) {
     // Monster Manual Integration
     case 'mm':
     case 'monster':
+    case 'show':
       if (args.length < 2) {
         console.error('Usage: mm <monster-name>');
         console.error('       mm search <term>');
         console.error('       mm hd <number>');
         console.error('       mm type <type>');
+        console.error('       show <monster-name>');
         process.exit(1);
       }
       const mmCmd = args[1];
@@ -566,8 +569,9 @@ if (require.main === module) {
       } else if (mmCmd === 'type' && args[2]) {
         engine.mm.printByType(args[2]);
       } else {
-        // Default: get monster
-        engine.mm.printMonster(args[1]);
+        // Default: get monster (works for both "mm goblin" and "show goblin")
+        const monsterName = command === 'show' ? args.slice(1).join(' ') : args[1];
+        engine.mm.printMonster(monsterName);
       }
       break;
 
