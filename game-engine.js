@@ -384,6 +384,7 @@ AMBIANCE (Atmosphere & Immersion):
   ambiance <scene>          Set scene atmosphere (sensory details + music)
   ambiance music <mood>     Get music for mood (combat, tense, rest)
   ambiance tension <level>  Get tension cue (low, rising, high, peak)
+  generate <scene>          Generate AI image with DALL-E 3
   
   Scenes: dark forest, ancient temple, underground cavern, boss battle,
           tavern, swamp, mountain peak, city streets, crypt, wizard tower
@@ -596,6 +597,8 @@ if (require.main === module) {
         console.error('Usage: ambiance <scene-name>');
         console.error('       ambiance music <mood>');
         console.error('       ambiance tension <level>');
+        console.error('       ambiance image          (get prompt)');
+        console.error('       generate <scene>        (create AI image)');
         console.error('Scenes: dark forest, ancient temple, underground cavern, boss battle, tavern, swamp, mountain peak, city streets, crypt, wizard tower');
         process.exit(1);
       }
@@ -614,6 +617,31 @@ if (require.main === module) {
         engine.ambiance.setScene(args.slice(1).join(' '));
         engine.ambiance.printScene();
       }
+      break;
+
+    // AI Image Generation
+    case 'generate':
+    case 'image-gen':
+      if (args.length < 2) {
+        console.error('Usage: generate <scene-name>');
+        console.error('       generate "dark forest"');
+        console.error('       generate "boss battle"');
+        process.exit(1);
+      }
+      console.log('\n🎨 Generating AI image with DALL-E 3...\n');
+      engine.ambiance.setScene(args.slice(1).join(' '));
+      engine.ambiance.generateImage().then(result => {
+        if (result.success) {
+          console.log('✅ Image generated!\n');
+          console.log(`🖼️  URL: ${result.url}\n`);
+          console.log(`📝 Prompt: ${result.original_prompt}`);
+        } else {
+          console.log('❌ Failed to generate image:');
+          console.log(result.error);
+          console.log('\n📝 Prompt that would have been used:');
+          console.log(result.prompt);
+        }
+      });
       break;
 
     default:

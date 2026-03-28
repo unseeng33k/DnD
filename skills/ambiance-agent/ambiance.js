@@ -2,11 +2,14 @@
 
 /**
  * Ambiance Agent for D&D
- * Generates atmosphere, sensory details, and music recommendations
+ * Generates atmosphere, sensory details, music recommendations, and AI images
  */
 
 const fs = require('fs');
 const path = require('path');
+
+// DALL-E integration
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
 
 class AmbianceAgent {
   constructor() {
@@ -277,6 +280,66 @@ class AmbianceAgent {
     return `${this.currentMood} fantasy scene, ${s.lighting}, ${s.textures}, ${s.mood} atmosphere, 1979 D&D art style, detailed illustration`;
   }
 
+  async generateImage(prompt = null) {
+    const imagePrompt = prompt || this.generateImagePrompt();
+    const fullPrompt = `${imagePrompt}. 1979 D&D module art style, Erol Otus or David Sutherland illustration style, ink and watercolor, atmospheric lighting, vintage TSR aesthetic`;
+    
+    if (!OPENAI_API_KEY) {
+      return {
+        success: false,
+        error: 'OPENAI_API_KEY not set. Set environment variable or add to script.',
+        prompt: fullPrompt
+      };
+    }
+
+    try {
+      const response = await fetch('https://api.openai.com/v1/images/generations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${OPENAI_API_KEY}`
+        },
+        body: JSON.stringify({
+          model: 'dall-e-3',
+          prompt: fullPrompt,
+          size: '1024x1024',
+          quality: 'standard',
+          n: 1
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (data.data && data.data[0]) {
+        return {
+          success: true,
+          url: data.data[0].url,
+          revised_prompt: data.data[0].revised_prompt,
+          original_prompt: imagePrompt
+        };
+      }
+      
+      return { 
+        success: false, 
+        error: data.error?.message || 'Unknown error',
+        prompt: fullPrompt 
+      };
+    } catch (err) {
+      return { 
+        success: false, 
+        error: err.message,
+        prompt: fullPrompt 
+      };
+    }
+  }
+
+  async generateSceneImage(sceneName = null) {
+    if (sceneName) {
+      this.setScene(sceneName);
+    }
+    return await this.generateImage();
+  }
+
   printScene() {
     console.log(this.getSensoryDescription());
     console.log(this.getMusic());
@@ -294,6 +357,7 @@ USAGE:
   node ambiance.js sense                 Show sensory details
   node ambiance.js tension <level>       Get tension cue (low/rising/high/peak)
   node ambiance.js image                 Get AI image prompt
+  node ambiance.js generate [scene]      Generate AI image with DALL-E
 
 SCENES:
   dark forest, ancient temple, underground cavern
@@ -307,6 +371,7 @@ EXAMPLES:
   node ambiance.js scene "dark forest"
   node ambiance.js music combat
   node ambiance.js tension rising
+  node ambiance.js generate "ancient temple"
 `);
   }
 }
@@ -355,6 +420,26 @@ if (require.main === module) {
     case 'image':
       console.log('\n🎨 AI IMAGE PROMPT:\n');
       console.log(agent.generateImagePrompt());
+      break;
+
+    case 'generate':
+      console.log('\n🎨 Generating AI image...\n');
+      const sceneForImage = args.slice(1).join(' ') || null;
+      if (sceneForImage) {
+        agent.setScene(sceneForImage);
+      }
+      agent.generateImage().then(result => {
+        if (result.success) {
+          console.log('✅ Image generated!\n');
+          console.log(`URL: ${result.url}\n`);
+          console.log(`Prompt: ${result.original_prompt}`);
+        } else {
+          console.log('❌ Failed to generate image:');
+          console.log(result.error);
+          console.log('\nPrompt that would have been used:');
+          console.log(result.prompt);
+        }
+      });
       break;
 
     case 'help':
