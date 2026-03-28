@@ -8,15 +8,17 @@
 
 const PartyManager = require('./party_manager');
 const CharacterLogger = require('./logger');
+const DMGSkill = require('./skills/dmg-skill/dmg-skill');
 const fs = require('fs');
 const path = require('path');
 
 class GameEngine {
   constructor() {
     this.pm = new PartyManager();
+    this.dmg = new DMGSkill();
     this.loggers = {};
     this.activeCharacter = null;
-    
+
     // Initialize loggers for all party members
     this.initializeLoggers();
   }
@@ -357,6 +359,12 @@ COMMANDS:
   
   char <char-id>            Switch active character
 
+DMG RULES (Source of Truth):
+  dmg <search-term>         Search DMG for rule
+  dmg table <name>          Show table (strength, THAC0, etc.)
+  dmg rule <section>        Show rule section (combat, magic, etc.)
+  dmg ref <topic>           Quick reference (movement, saves, etc.)
+
 EXAMPLES:
   node game-engine.js cast "Magic Missile" 1 mage "Orc"
   node game-engine.js damage 5 "Trap"
@@ -365,6 +373,10 @@ EXAMPLES:
   node game-engine.js combat-end 150
   node game-engine.js move "Throne Room" "Ancient stone chamber"
   node game-engine.js innate "Darkness" "60' radius"
+  node game-engine.js dmg "saving throws"
+  node game-engine.js dmg table strength
+  node game-engine.js dmg rule combat
+  node game-engine.js dmg ref movement
 `);
 }
 
@@ -481,7 +493,31 @@ if (require.main === module) {
       }
       engine.setCharacter(args[1]);
       break;
-    
+
+    // DMG Integration
+    case 'dmg':
+    case 'rule':
+      if (args.length < 2) {
+        console.error('Usage: dmg <search-term>');
+        console.error('       dmg table <table-name>');
+        console.error('       dmg rule <section>');
+        console.error('       dmg ref <topic>');
+        process.exit(1);
+      }
+      const subCmd = args[1];
+      if (subCmd === 'table' && args[2]) {
+        engine.dmg.printTable(args[2]);
+      } else if (subCmd === 'rule' && args[2]) {
+        engine.dmg.printRule(args[2]);
+      } else if (subCmd === 'ref' && args[2]) {
+        engine.dmg.printRef(args[2]);
+      } else {
+        // Default: search
+        const results = engine.dmg.search(args.slice(1).join(' '));
+        engine.dmg.printSearch(results, args.slice(1).join(' '));
+      }
+      break;
+
     default:
       console.error(`Unknown command: ${command}`);
       printHelp();
