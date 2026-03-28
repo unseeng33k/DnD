@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || 'AIzaSyC1AIKfvGz9U8Wuow0u9-fH-TtnyHkMfs8';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 /**
  * Generate AI images for D&D scenes using Gemini

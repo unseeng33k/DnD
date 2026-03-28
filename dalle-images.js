@@ -1,4 +1,4 @@
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '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';
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 /**
  * Generate AI images for D&D scenes using DALL-E 3

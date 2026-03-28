@@ -143,17 +143,25 @@ dnd/
 
 ## API Keys Setup
 
-Copy `api-keys.md.example` to `api-keys.md` and add your keys:
+The system requires API keys for image generation. Set them as environment variables:
 
-```markdown
-## AGENCY — OpenAI (DALL-E)
-sk-your-dalle-key-here
-
-## AGENCY — Gemini
-AIzaSy-your-gemini-key-here
+```bash
+# Add to your ~/.zshrc or ~/.bashrc
+export OPENAI_API_KEY='sk-your-key-here'
+export GEMINI_API_KEY='AIzaSy-your-key-here'  # optional
 ```
 
-**Note:** `api-keys.md` is in `.gitignore` — your keys stay local and safe.
+Then reload your shell:
+```bash
+source ~/.zshrc  # or ~/.bashrc
+```
+
+**Check if keys are set:**
+```bash
+./check-api-keys.sh
+```
+
+**Security note:** Never commit API keys to git. The code only reads from environment variables.
 
 ## Party Management (Auto-Tracking)
 
