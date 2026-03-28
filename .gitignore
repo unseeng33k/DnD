@@ -19,13 +19,21 @@ npm-debug.log*
 
 # Session data
 *.log
+session_state.json
+party.json
 
-# Character files (private)
-characters/malice*.json
-characters/malice*.md
+# Character files (private) - NEVER PUSH GAME LOGS
+characters/*.json
+characters/*.md
+characters/_*
 
 # Resources (large PDFs - keep local)
 resources/
 
 # Images (generated, keep local)
 images/
+
+# Adventure logs (contain gameplay history)
+*log.md
+*session*.md
+*adventure*.md

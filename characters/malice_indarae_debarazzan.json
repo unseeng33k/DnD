@@ -19,17 +19,11 @@
   
   "hp": {
     "max": 42,
-    "current": 40,
-    "nonLethal": 0
+    "current": 42
   },
   
   "ac": {
-    "total": 5,
-    "base": 10,
-    "dex": 1,
-    "armor": 0,
-    "shield": 0,
-    "magic": 0
+    "total": 5
   },
   
   "saves": {
@@ -41,89 +35,94 @@
   },
   
   "thac0": 16,
-  "bab": 6,
-  
-  "spells": {
-    "cleric": {
-      "level1": 4,
-      "level2": 3,
-      "level3": 2
-    },
-    "mage": {
-      "level1": 4,
-      "level2": 3,
-      "level3": 3
-    }
-  },
   
   "memorizedSpells": {
     "cleric": [
       "Cure Light Wounds",
-      "Cure Light Wounds", 
-      "Detect Magic",
-      "Protection from Evil"
+      "Cure Light Wounds",
+      "Cure Light Wounds",
+      "Cure Light Wounds",
+      "Cure Light Wounds",
+      "Find Traps",
+      "Find Traps",
+      "Find Traps",
+      "Hold Person",
+      "Hold Person",
+      "Animate Dead",
+      "Animate Dead",
+      "Speak with Dead"
     ],
     "mage": [
       "Magic Missile",
       "Magic Missile",
-      "Shield",
-      "Sleep",
-      "Invisibility",
+      "Magic Missile",
+      "Magic Missile",
+      "Magic Missile",
+      "Magic Missile",
+      "Unseen Servant",
+      "Unseen Servant",
       "Mirror Image",
-      "Fireball",
-      "Fireball",
+      "Mirror Image",
       "Fireball"
     ]
   },
   
   "equipment": {
     "weapons": [
-      { "name": "Rapier +2", "damage": "1d6+3", "bonus": 2 },
-      { "name": "Short Sword +2", "damage": "1d6+2", "bonus": 2 }
+      { "name": "Rapier +2", "damage": "1d6+3" },
+      { "name": "Short Sword +2", "damage": "1d6+2" },
+      { "name": "Dagger", "damage": "1d4" },
+      { "name": "Bolt +1", "damage": "1d6+1" }
     ],
     "armor": "Elven Chain",
     "magicItems": [
-      "Ring of Wizardry (doubles 1st level mage spells)",
-      "Wand of Magic Missiles (charges: 50)",
-      "Bag of Holding",
-      "Luck Stone (+1 to all saves)"
+      "Wand of Entanglement (11 charges)",
+      "Wand of Magic Missiles (10 charges)",
+      "Ring of Wizardry",
+      "Bag of Holding (2,000 gp limit)",
+      "Helm of Understanding Language and Read Magic",
+      "Luck Stone (+1 to saves)"
+    ],
+    "gear": [
+      "Bolt Pouch",
+      "Tome of Dragon Lore",
+      "Holy Symbol",
+      "Spell Components Pouch",
+      "50' Silk Rope",
+      "Torches",
+      "Rations (2 weeks)",
+      "Waterskin"
     ]
   },
   
-  "inventory": [
-    "Holy symbol",
-    "Spell components pouch",
-    "Torches (5)",
-    "Rations (6 days)",
-    "Waterskin",
-    "Thieves' tools",
-    "50 ft silk rope",
-    "Healer's kit"
-  ],
-  
   "wealth": {
-    "pp": 12,
-    "gp": 45,
-    "sp": 23,
-    "cp": 18
+    "gp": 3487
+  },
+  
+  "racialAbilities": {
+    "darkvision": "120 feet",
+    "infravision": "See heat signatures",
+    "lightSensitivity": "-1 to hit in bright sunlight",
+    "magicResistance": "50%",
+    "stealthBonus": "+2 to hide in shadows, move silently",
+    "innateSpells": {
+      "description": "Once per day each, no components needed",
+      "spells": [
+        "Dancing Lights",
+        "Faerie Fire",
+        "Darkness",
+        "Detect Magic",
+        "Know Alignment",
+        "Levitate",
+        "Clairvoyance",
+        "Suggestion",
+        "Detect Lie",
+        "Dispel Magic"
+      ]
+    }
   },
   
   "xp": 45000,
   
-  "spellbooks": {
-    "cleric": {
-      "description": "Prayer book to Lloth - all spells granted through divine communion",
-      "level1": ["Cure Light Wounds", "Detect Magic", "Protection from Evil", "Light", "Command"],
-      "level2": ["Hold Person", "Silence 15' Radius", "Spiritual Hammer", "Augury"],
-      "level3": ["Cure Disease", "Dispel Magic", "Prayer", "Remove Curse"]
-    },
-    "mage": {
-      "description": "Arcane spellbook - handwritten over 200 years",
-      "level1": ["Magic Missile", "Shield", "Sleep", "Charm Person", "Detect Magic", "Read Magic", "Burning Hands", "Feather Fall"],
-      "level2": ["Invisibility", "Mirror Image", "Web", "Detect Invisible", "Knock", "Levitate"],
-      "level3": ["Fireball", "Lightning Bolt", "Haste", "Slow", "Dispel Magic", "Fly"]
-    }
-  },
-  
-  "notes": "Drow cleric/mage multiclass. Can see in darkness (120 ft). Light sensitivity (-1 to hit in bright light)."
+  "notes": "Drow Cleric 6 / Mage 6. Full inventory and spell loadout."
 }

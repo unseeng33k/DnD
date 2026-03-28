@@ -1,0 +1,46 @@
+{
+  "events": [
+    {
+      "timestamp": "2026-03-28T11:33:11.154Z",
+      "type": "SPELL_CAST",
+      "data": {
+        "character_id": "malice_indarae_debarazzan",
+        "character_name": "Malice Indarae De'Barazzan",
+        "spell_name": "Cure Light Wounds",
+        "level": 1,
+        "spell_class": "cleric",
+        "slots_remaining": 2
+      },
+      "session_id": "tamoachan_day2"
+    },
+    {
+      "timestamp": "2026-03-28T11:33:16.973Z",
+      "type": "HP_DAMAGE",
+      "data": {
+        "character_id": "malice_indarae_debarazzan",
+        "character_name": "Malice Indarae De'Barazzan",
+        "old_hp": 42,
+        "new_hp": 32,
+        "amount": 10,
+        "max_hp": 42,
+        "source": "damage"
+      },
+      "session_id": "tamoachan_day2"
+    },
+    {
+      "timestamp": "2026-03-28T11:33:20.432Z",
+      "type": "HP_HEALED",
+      "data": {
+        "character_id": "malice_indarae_debarazzan",
+        "character_name": "Malice Indarae De'Barazzan",
+        "old_hp": 32,
+        "new_hp": 37,
+        "amount": 5,
+        "max_hp": 42,
+        "source": "healing"
+      },
+      "session_id": "tamoachan_day2"
+    }
+  ],
+  "created": "2026-03-28T11:33:11.153Z"
+}
