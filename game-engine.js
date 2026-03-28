@@ -485,6 +485,9 @@ GYGAXIAN SYSTEMS:
   disease                   Random disease
   train <level>             Calculate training costs
   ecology <monster>         Show monster ecology
+  item <name>               Show magic item details
+  item search <term>        Search magic items
+  item list <type>          List items by type
 
 DM TOOLS:
   check [campaign]          Pre-game character check
@@ -1141,6 +1144,30 @@ if (require.main === module) {
         return;
       }
       console.log(engine.ecology.printEcology(args[1]));
+      break;
+
+    // Magic Item Compendium
+    case 'item':
+      if (!args[1]) {
+        console.log('Usage: item <item-name>');
+        console.log('       item search <term>');
+        console.log('       item list <type>');
+        return;
+      }
+      const MagicItemCompendium = require('./item');
+      const mic = new MagicItemCompendium();
+      
+      if (args[1] === 'search' && args[2]) {
+        const results = mic.searchItems(args[2]);
+        console.log(`\n🔍 Found ${results.length} item(s):\n`);
+        results.forEach(item => console.log(`  • ${item.name} (${item.type})`));
+      } else if (args[1] === 'list' && args[2]) {
+        const results = mic.listByType(args[2]);
+        console.log(`\n📋 ${args[2].toUpperCase()} ITEMS:\n`);
+        results.forEach(item => console.log(`  • ${item.name}`));
+      } else {
+        mic.printItem(args.slice(1).join(' '));
+      }
       break;
 
     // Pre-Game Check
