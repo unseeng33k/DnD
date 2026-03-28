@@ -1,0 +1,87 @@
+{
+  "name": "",
+  "player": "",
+  "race": "",
+  "class": "",
+  "level": 1,
+  "alignment": "",
+  "deity": "",
+  
+  "abilityScores": {
+    "str": { "score": 10, "mod": 0, "temp": null },
+    "dex": { "score": 10, "mod": 0, "temp": null },
+    "con": { "score": 10, "mod": 0, "temp": null },
+    "int": { "score": 10, "mod": 0, "temp": null },
+    "wis": { "score": 10, "mod": 0, "temp": null },
+    "cha": { "score": 10, "mod": 0, "temp": null }
+  },
+  
+  "hp": {
+    "max": 0,
+    "current": 0,
+    "nonLethal": 0
+  },
+  
+  "ac": {
+    "total": 10,
+    "armor": 0,
+    "shield": 0,
+    "dex": 0,
+    "size": 0,
+    "natural": 0,
+    "deflection": 0,
+    "misc": 0
+  },
+  
+  "saves": {
+    "fortitude": { "base": 0, "ability": "con", "magic": 0, "misc": 0, "temp": 0 },
+    "reflex": { "base": 0, "ability": "dex", "magic": 0, "misc": 0, "temp": 0 },
+    "will": { "base": 0, "ability": "wis", "magic": 0, "misc": 0, "temp": 0 }
+  },
+  
+  "bab": 0,
+  "spellResistance": 0,
+  "speed": 30,
+  
+  "skills": {},
+  "feats": [],
+  "specialAbilities": [],
+  
+  "equipment": {
+    "weapons": [],
+    "armor": null,
+    "shield": null,
+    "gear": [],
+    "magicItems": {
+      "worn": [],
+      "carried": []
+    }
+  },
+  
+  "inventory": [],
+  "wealth": {
+    "pp": 0,
+    "gp": 0,
+    "sp": 0,
+    "cp": 0
+  },
+  
+  "spells": {
+    "spellcaster": false,
+    "spellClass": "",
+    "spellsPerDay": {},
+    "spellsKnown": {},
+    "spellbook": [],
+    "prepared": []
+  },
+  
+  "bio": {
+    "appearance": "",
+    "personality": "",
+    "background": "",
+    "goals": "",
+    "connections": []
+  },
+  
+  "notes": ""
+}

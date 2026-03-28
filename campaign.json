@@ -1,0 +1,36 @@
+{
+  "campaign": {
+    "name": "",
+    "module": "",
+    "edition": "3.5",
+    "dm": "Bruh",
+    "started": "",
+    "lastSession": ""
+  },
+  "party": {
+    "members": [],
+    "location": "",
+    "questLog": [],
+    "inventory": {
+      "partyFunds": {
+        "pp": 0,
+        "gp": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "sharedItems": []
+    }
+  },
+  "session": {
+    "scene": "",
+    "initiative": [],
+    "activeEffects": [],
+    "npcsPresent": []
+  },
+  "world": {
+    "factions": {},
+    "locationsVisited": [],
+    "npcsMet": {},
+    "rumorsHeard": []
+  }
+}

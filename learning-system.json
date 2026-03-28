@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "player": {
+    "name": "",
+    "playStyle": {
+      "combatPreference": null,
+      "roleplayLevel": null,
+      "puzzleTolerance": null,
+      "riskTolerance": null,
+      "partyRole": null
+    },
+    "preferences": {
+      "scenePacing": [],
+      "descriptionDetail": null,
+      "npcInteractionStyle": [],
+      "combatFrequency": null,
+      "lootImportance": null,
+      "storyVsSandbox": null
+    },
+    "feedback": {
+      "positive": [],
+      "negative": [],
+      "suggestions": []
+    },
+    "characterHistory": [],
+    "favoriteMoments": [],
+    "frustrations": []
+  },
+  "sessions": [],
+  "dmImprovements": {
+    "narrationAdjustments": [],
+    "ruleInterpretations": [],
+    "pacingChanges": [],
+    "contentAdditions": []
+  },
+  "patterns": {
+    "successfulEncounters": [],
+    "failedEncounters": [],
+    "playerTriggers": {},
+    "engagementMetrics": {}
+  }
+}

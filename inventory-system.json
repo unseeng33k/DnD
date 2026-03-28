@@ -1,0 +1,47 @@
+{
+  "currency": {
+    "pp": 0,
+    "gp": 0,
+    "sp": 0,
+    "cp": 0
+  },
+  
+  "encumbrance": {
+    "light": 0,
+    "medium": 0,
+    "heavy": 0,
+    "currentWeight": 0
+  },
+  
+  "equipment": {
+    "armor": null,
+    "shield": null,
+    "weapons": {
+      "mainHand": null,
+      "offHand": null,
+      "ranged": null,
+      "ammo": []
+    },
+    "slot": {
+      "head": null,
+      "eyes": null,
+      "neck": null,
+      "shoulders": null,
+      "body": null,
+      "torso": null,
+      "waist": null,
+      "wrists": null,
+      "hands": null,
+      "fingers": [null, null],
+      "feet": null
+    }
+  },
+  
+  "backpack": [],
+  "containers": [],
+  
+  "magicItems": {
+    "active": [],
+    "stored": []
+  }
+}
