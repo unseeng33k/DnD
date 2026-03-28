@@ -1,0 +1,256 @@
+{
+  "name": "Curse of Strahd",
+  "module": "Ravenloft",
+  "moduleCode": "I6",
+  "edition": "AD&D 1e",
+  "created": "2026-03-28T12:28:18.061Z",
+  "currentSession": 1,
+  "partyLocation": "Village of Barovia",
+  "scenes": [
+    {
+      "name": "Village of Barovia",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Blood on the Vine Tavern",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Church of St. Andral",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Madame Evas Camp",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Old Svalich Road",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Gates of Ravenloft",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Castle Courtyard",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "Castle Entrance Hall",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "K78 Dining Hall",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "K67 Chapel",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "K88 Crypts",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "K87 Strahds Tomb",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "K20 Library",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "K34 Treasury",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    },
+    {
+      "name": "K50 Tower Peak",
+      "visited": false,
+      "cleared": false,
+      "notes": ""
+    }
+  ],
+  "monsters": [
+    {
+      "name": "vampire",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "vampire spawn",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "wolf",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "dire wolf",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "werewolf",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "zombie",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "skeleton",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "ghost",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "banshee",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "ghoul",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "wight",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "wraith",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "spectre",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "hell hound",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "bat",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "rat",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "swarm",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "animated armor",
+      "encountered": 0,
+      "killed": 0
+    },
+    {
+      "name": "flying sword",
+      "encountered": 0,
+      "killed": 0
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Strahd von Zarovich",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    },
+    {
+      "name": "Ireena Kolyana",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    },
+    {
+      "name": "Madame Eva",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    },
+    {
+      "name": "Father Donavich",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    },
+    {
+      "name": "Ismark Kolyanovich",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    },
+    {
+      "name": "Rahadin",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    },
+    {
+      "name": "Escher",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    },
+    {
+      "name": "Patrina Velikovna",
+      "met": false,
+      "attitude": "unknown",
+      "notes": ""
+    }
+  ],
+  "treasure": {
+    "found": [],
+    "totalValue": 0
+  },
+  "xp": {
+    "total": 0,
+    "perCharacter": {}
+  }
+}

@@ -50,6 +50,7 @@ class CampaignManager {
       'sessions',
       'maps',
       'images',
+      'ambiance',
       'logs',
       'npcs',
       'treasure',
@@ -119,20 +120,28 @@ class CampaignManager {
       this.generateScenesChecklist(module)
     );
 
+    // Create ambiance index
+    fs.writeFileSync(
+      path.join(campaignDir, 'ambiance', 'scene_ambiance.md'),
+      this.generateAmbianceIndex(module)
+    );
+
     console.log(`\n✅ Campaign created: ${name}\n`);
     console.log(`📁 Location: ${campaignDir}\n`);
     console.log('Folder structure:');
     console.log('  📂 sessions/    - Session logs and notes');
     console.log('  📂 maps/        - ASCII maps and dungeon layouts');
     console.log('  📂 images/      - Generated images for scenes/monsters');
+    console.log('  📂 ambiance/    - Scene ambiance descriptions and YouTube links');
     console.log('  📂 logs/        - Combat logs and event tracking');
     console.log('  📂 npcs/        - NPC notes and interactions');
-    console.log('  📂 treasure/     - Found treasure and loot');
-    console.log('  📂 handouts/     - Player handouts');
+    console.log('  📂 treasure/    - Found treasure and loot');
+    console.log('  📂 handouts/    - Player handouts');
     console.log('\nFiles created:');
     console.log('  📄 campaign.json     - Campaign state and tracking');
     console.log('  📄 README.md         - Campaign overview');
     console.log('  📄 scenes_checklist.md - Scene completion tracker');
+    console.log('  📄 ambiance/scene_ambiance.md - Ambiance for all scenes');
     console.log('  📄 sessions/session_001.md - First session log');
 
     return campaignDir;
@@ -216,6 +225,7 @@ ${module.keyNPCs.map(n => `- ${n}`).join('\n')}
 - **sessions/** - Write session logs here after each game
 - **maps/** - Save ASCII maps and location diagrams
 - **images/** - Store generated images for scenes and monsters
+- **ambiance/** - Scene ambiance descriptions and YouTube links
 - **logs/** - Combat logs, treasure logs, etc.
 - **npcs/** - Notes on NPCs, their motivations, interactions
 - **treasure/** - List of found treasure and who has what
@@ -270,6 +280,51 @@ ${s.description}
 ---
 `).join('')}
 `;
+  }
+
+  generateAmbianceIndex(module) {
+    const AmbianceAgent = require('./skills/ambiance-agent/ambiance');
+    const ModuleParser = require('./skills/ambiance-agent/module-parser');
+    const agent = new AmbianceAgent();
+    const parser = new ModuleParser();
+    
+    let content = `# Scene Ambiance - ${module.name}\n\n`;
+    content += `Pre-generated ambiance for all scenes in this module.\n\n`;
+    content += `## Quick Links\n\n`;
+    
+    for (const scene of module.scenes) {
+      // Map scene type to ambiance scene
+      const ambianceScene = parser.mapSceneType(scene.type, scene.mood);
+      agent.setScene(ambianceScene);
+      const s = agent.currentScene;
+      
+      content += `### ${scene.name}\n\n`;
+      content += `**Mood:** ${scene.mood}  \n`;
+      content += `**Type:** ${scene.type}\n\n`;
+      content += `**Description:** ${scene.description}\n\n`;
+      content += `👁️ **Lighting:** ${s.lighting}\n\n`;
+      content += `👂 **Sounds:** ${s.sounds}\n\n`;
+      content += `👃 **Smells:** ${s.smells}\n\n`;
+      content += `🌡️ **Temperature:** ${s.temperature}\n\n`;
+      content += `✋ **Textures:** ${s.textures}\n\n`;
+      
+      // Get music links
+      const music = agent.getMusic();
+      const youtubeMatches = music.match(/https:\/\/youtube\.com\/watch\?v=[\w-]+/g);
+      if (youtubeMatches) {
+        content += `🎵 **Music:**\n`;
+        for (const url of youtubeMatches) {
+          content += `- ${url}\n`;
+        }
+        content += '\n';
+      }
+      
+      content += `🎨 **Image Prompt:**\n`;
+      content += `\`\`\`\n${agent.generateImagePrompt()}\n\`\`\`\n\n`;
+      content += `---\n\n`;
+    }
+    
+    return content;
   }
 
   listCampaigns() {
