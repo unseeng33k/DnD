@@ -442,16 +442,53 @@ class AmbianceAgent {
 
     console.log('\n' + '='.repeat(60));
     console.log('✅ SESSION PREP COMPLETE!\n');
-    console.log(`📁 Files saved to: ${sessionDir}/`);
-    console.log(`📄 JSON data: ${path.basename(jsonFile)}`);
-    console.log(`🌐 HTML guide: ${path.basename(htmlFile)}`);
-    console.log('\n🎮 During gameplay:');
-    console.log('   1. Open the HTML file');
-    console.log('   2. Click images to show players');
-    console.log('   3. Click YouTube links for sound');
-    console.log('   4. Read sensory descriptions aloud');
+    
+    // Print chat-friendly output
+    this.printChatOutput(data);
 
     return { jsonFile, htmlFile, data };
+  }
+
+  /**
+   * Print chat-friendly output with clickable links
+   */
+  printChatOutput(data) {
+    console.log('\n📱 CHAT-READY OUTPUT\n');
+    console.log('='.repeat(60));
+    
+    // Locations
+    console.log('\n🏰 LOCATIONS\n');
+    for (const loc of data.locations || []) {
+      console.log(`\n📍 ${loc.name}`);
+      if (loc.url) {
+        console.log(`🖼️  Image: ${loc.url}`);
+      }
+      if (loc.ambiance?.sensory) {
+        console.log(loc.ambiance.sensory);
+      }
+      if (loc.ambiance?.music) {
+        // Extract YouTube links
+        const youtubeMatches = loc.ambiance.music.match(/https:\/\/youtube\.com\/watch\?v=[\w-]+/g);
+        if (youtubeMatches) {
+          console.log('\n🎵 Music:');
+          youtubeMatches.forEach(url => console.log(`   ${url}`));
+        }
+      }
+    }
+    
+    // Monsters
+    console.log('\n\n👹 MONSTERS\n');
+    for (const mon of data.monsters || []) {
+      console.log(`\n👹 ${mon.name}`);
+      if (mon.url) {
+        console.log(`🖼️  Image: ${mon.url}`);
+      }
+      if (mon.prompt) {
+        console.log(`🎨 Prompt: ${mon.prompt.substring(0, 100)}...`);
+      }
+    }
+    
+    console.log('\n' + '='.repeat(60));
   }
 
   generateHTML(name, data) {
@@ -515,6 +552,34 @@ class AmbianceAgent {
     return html;
   }
 
+  /**
+   * Show scene for chat - inline output
+   */
+  showSceneForChat(sceneName) {
+    this.setScene(sceneName);
+    const s = this.currentScene;
+    
+    console.log(`\n🏰 ${sceneName.toUpperCase()}\n`);
+    console.log(`👁️  Lighting: ${s.lighting}`);
+    console.log(`👂 Sounds: ${s.sounds}`);
+    console.log(`👃 Smells: ${s.smells}`);
+    console.log(`🌡️  Temperature: ${s.temperature}`);
+    console.log(`✋ Textures: ${s.textures}`);
+    console.log(`\n🎭 Mood: ${s.mood}`);
+    
+    // Music
+    const music = this.getMusic();
+    const youtubeMatches = music.match(/https:\/\/youtube\.com\/watch\?v=[\w-]+/g);
+    if (youtubeMatches) {
+      console.log('\n🎵 Music:');
+      youtubeMatches.forEach(url => console.log(`   ${url}`));
+    }
+    
+    // Image
+    console.log('\n🎨 AI Image Prompt:');
+    console.log(this.generateImagePrompt());
+  }
+
   printHelp() {
     console.log(`
 🎭 AMBIANCE AGENT for D&D - Central Hub for Session Prep
@@ -527,7 +592,7 @@ PRE-SESSION PREP (Run this BEFORE playing):
     - All location images from the adventure
     - All monster images from the module
     - Ambiance for every scene
-    - HTML guide with everything
+    - Chat-ready output with clickable links
 
 AVAILABLE MODULES:
   tamoachan          - Hidden Shrine of Tamoachan (C1)
@@ -538,7 +603,7 @@ AVAILABLE MODULES:
   white plume mountain - White Plume Mountain (S2)
 
 DURING GAMEPLAY:
-  node ambiance.js scene <scene>      Full atmosphere for a scene
+  node ambiance.js scene <scene>      Show scene in chat
   node ambiance.js music <mood>       Get music links
   node ambiance.js tension <level>    Get tension cue
   node ambiance.js monster <name>     Show monster (player-safe)
@@ -565,8 +630,7 @@ if (require.main === module) {
         console.log('Scenes: dark forest, ancient temple, underground cavern, boss battle, tavern, swamp, mountain peak, city streets, crypt, wizard tower');
         process.exit(1);
       }
-      agent.setScene(args.slice(1).join(' '));
-      agent.printScene();
+      agent.showSceneForChat(args.slice(1).join(' '));
       break;
 
     case 'music':

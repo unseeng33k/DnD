@@ -103,7 +103,7 @@ class MMSkill {
     return results;
   }
 
-  printMonster(name, showStats = true) {
+  printMonster(name, showStats = true, chatFormat = true) {
     const stats = this.getMonster(name);
     if (!stats) {
       console.log(`Monster "${name}" not found.`);
@@ -117,7 +117,20 @@ class MMSkill {
     
     if (showStats) {
       // DM view - show everything
-      console.log(stats);
+      if (chatFormat) {
+        // Chat-friendly format
+        const lines = stats.split('\n');
+        for (const line of lines) {
+          if (line.includes('AC:')) console.log(`🛡️  ${line.trim()}`);
+          else if (line.includes('HD:')) console.log(`❤️  ${line.trim()}`);
+          else if (line.includes('Move:')) console.log(`🏃 ${line.trim()}`);
+          else if (line.includes('Attacks:')) console.log(`⚔️  ${line.trim()}`);
+          else if (line.includes('Special:')) console.log(`✨ ${line.trim()}`);
+          else if (line.includes('XP:')) console.log(`💎 ${line.trim()}`);
+        }
+      } else {
+        console.log(stats);
+      }
       console.log(`\n🎨 AI IMAGE PROMPT:`);
       console.log(imagePrompt);
     } else {
