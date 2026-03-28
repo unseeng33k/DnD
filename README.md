@@ -6,6 +6,7 @@ A complete AI-powered Dungeon Master system for AD&D 1st Edition / 3.5e hybrid p
 
 ### 🎲 Core Systems
 - **Character Creation** (`create-adnd1e.js`) — Full AD&D 1e with THAC0, exceptional strength, racial mins/maxs
+- **Party Manager** (`game-engine.js`) — Auto-tracking HP, spells, combat, inventory with validation
 - **Inventory Management** (`inventory.js`) — Auto-calculated AC, weight, encumbrance, currency conversion
 - **Dice Roller** (`dice.js`) — All standard rolls, advantage/disadvantage, stat generation
 - **Campaign Onboarding** (`onboard.js`) — 35 classic modules, interactive setup
@@ -40,6 +41,20 @@ node create-adnd1e.js
 
 # Start a campaign
 node onboard.js
+
+# Check party status
+node game-engine.js status
+
+# Cast a spell (auto-validates slots)
+node game-engine.js cast "Fireball" 3 mage "Orcs"
+
+# Track damage/healing
+node game-engine.js damage 8 "Trap"
+node game-engine.js heal 10 "Potion"
+
+# Combat tracking
+node game-engine.js combat-start "Orc,Orc,Goblin"
+node game-engine.js combat-end 150
 
 # Check inventory
 node inventory.js <character> sheet
@@ -99,12 +114,19 @@ dnd/
 ├── LEARNING.md           # Learning system documentation
 ├── VISUAL.md             # Visual system documentation
 ├── MUSIC.md              # Soundtrack documentation
+├── PARTY_SYSTEM.md       # Party management documentation
 ├── .gitignore            # Secrets and OS files excluded
 ├── onboard.js            # Campaign setup
 ├── create-adnd1e.js      # AD&D 1e character creator
 ├── create-character.js   # 3.5e character creator
+├── game-engine.js        # Main DM interface (auto-tracking)
+├── party_manager.js      # Party state management
+├── party.json            # Character sheets & party data
+├── session_state.json    # Current session state
+├── auto_log.json         # Auto-generated event log
 ├── inventory.js          # Inventory & equipment manager
 ├── inventory-system.json # Inventory data structure
+├── logger.js             # Character action logger
 ├── dice.js               # Dice roller
 ├── learn.js              # Post-session feedback system
 ├── visual.js             # Monster/room/battle references
@@ -132,6 +154,38 @@ AIzaSy-your-gemini-key-here
 ```
 
 **Note:** `api-keys.md` is in `.gitignore` — your keys stay local and safe.
+
+## Party Management (Auto-Tracking)
+
+The `game-engine.js` provides automatic tracking for all game actions:
+
+```bash
+# View party status with HP bars and spell slots
+node game-engine.js status
+
+# Cast spells (validates available slots)
+node game-engine.js cast "Magic Missile" 1 mage "Target"
+
+# Track HP changes
+node game-engine.js damage 10 "Orc attack"
+node game-engine.js heal 8 "Cure Light Wounds"
+
+# Combat management
+node game-engine.js combat-start "Lizardfolk Shaman,Lizardfolk x2"
+node game-engine.js damage-enemy 0 12    # Damage enemy index 0
+node game-engine.js combat-end 450       # End combat, award XP
+
+# Movement and rest
+node game-engine.js move "Throne Room" "Ancient stone chamber"
+node game-engine.js rest 8               # Refreshes spells
+
+# Review session events
+node game-engine.js events 20
+```
+
+**Auto-tracked events:** Spell casts, HP changes, innate abilities, items, combat, movement, conditions. All saved to `auto_log.json`.
+
+See `PARTY_SYSTEM.md` for full documentation.
 
 ## Requirements
 
