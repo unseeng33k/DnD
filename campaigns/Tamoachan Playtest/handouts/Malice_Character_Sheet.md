@@ -8,8 +8,8 @@
 
 | | |
 |---|---|
-| **Class:** | Cleric 6 / Mage 6 |
-| **Level:** | 6/6 |
+| **Class:** | Cleric 6 / Mage 5 |
+| **Level:** | 6/5 |
 | **Race:** | Drow (Dark Elf) |
 | **Alignment:** | Neutral |
 | **Deity:** | Lloth |
@@ -120,22 +120,20 @@
 | 7 | Read Magic | ☑ | ☐ |
 | 8 | Burning Hands | ☑ | ☐ |
 
-### Level 2 Spells (Max: 4 / Day)
+### Level 2 Spells (Max: 3 / Day)
 
 | # | Spell Name | Prepared | Cast |
 |---|------------|----------|------|
 | 1 | Web | ☑ | ☐ |
 | 2 | Invisibility | ☑ | ☐ |
 | 3 | Mirror Image | ☑ | ☐ |
-| 4 | Knock | ☑ | ☐ |
 
-### Level 3 Spells (Max: 3 / Day)
+### Level 3 Spells (Max: 2 / Day)
 
 | # | Spell Name | Prepared | Cast |
 |---|------------|----------|------|
 | 1 | Fireball | ☑ | ☐ |
 | 2 | Lightning Bolt | ☑ | ☐ |
-| 3 | Haste | ☑ | ☐ |
 
 ---
 

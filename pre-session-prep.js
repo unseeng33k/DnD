@@ -8,9 +8,9 @@
 
 const fs = require('fs');
 const path = require('path');
-const CampaignManager = require('./campaign-manager');
-const AmbianceAgent = require('./skills/ambiance-agent/ambiance');
-const MMSkill = require('./skills/mm-skill/mm-skill');
+const CampaignManager = require('./campaign-manager.js');
+const AmbianceAgent = require('./skills/ambiance-agent/ambiance.js');
+const MMSkill = require('./skills/mm-skill/mm-skill.js');
 
 class PreSessionPrep {
   constructor(campaignName) {
@@ -60,7 +60,7 @@ class PreSessionPrep {
   async prepScenes() {
     console.log('\n🏰 GENERATING SCENE IMAGES\n');
     
-    const ModuleParser = require('./skills/ambiance-agent/module-parser');
+    const ModuleParser = require('./skills/ambiance-agent/module-parser.js');
     const parser = new ModuleParser();
     const imagesDir = path.join(this.campaignDir, 'images', 'scenes');
     fs.mkdirSync(imagesDir, { recursive: true });

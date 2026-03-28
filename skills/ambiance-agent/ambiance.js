@@ -8,8 +8,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// DALL-E integration
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
+// DALL-E integration - requires OPENAI_API_KEY environment variable
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 class AmbianceAgent {
   constructor() {

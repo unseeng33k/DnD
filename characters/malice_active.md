@@ -3,8 +3,8 @@
 ## Core Stats
 - **Name:** Malice Indarae De'Barazzan
 - **Race:** Drow (Dark Elf)
-- **Class:** Cleric 6 / Mage 6
-- **Level:** 6/6
+- **Class:** Cleric 6 / Mage 5
+- **Level:** 6/5
 - **Alignment:** Neutral
 - **HP:** 40/42
 - **AC:** 5
@@ -47,7 +47,7 @@
 - [ ] Protection from Evil
 - (4 more slots from Ring)
 
-## Mage 6 Abilities
+## Mage 5 Abilities
 - **Spellcasting:** Arcane spells
 - **Armor:** None (elven chain allowed)
 - **Weapons:** Dagger, dart, staff, knife
@@ -55,7 +55,7 @@
 ### Mage Spells Per Day
 - Level 1: 4 (Ring of Wizardry doubles: 8)
 - Level 2: 3
-- Level 3: 3
+- Level 3: 2
 
 ### Memorized Mage Spells
 - [x] Magic Missile
@@ -66,8 +66,7 @@
 - [ ] Mirror Image
 - [x] Fireball
 - [x] Fireball
-- [x] Fireball
-- (4 more 1st level slots from Ring)
+- (6 more 1st level slots from Ring)
 
 ## Equipment
 ### Weapons

@@ -2,7 +2,7 @@
   "name": "Malice Indarae De'Barazzan",
   "player": "Open Pruskowski",
   "race": "Drow (Dark Elf)",
-  "class": "Cleric 6 / Mage 6",
+  "class": "Cleric 6 / Mage 5",
   "level": 6,
   "alignment": "Neutral",
   "deity": "Lloth",
@@ -36,6 +36,24 @@
   
   "thac0": 16,
   
+  "spellSlots": {
+    "cleric": {
+      "level": 6,
+      "wisdom": 17,
+      "bonusSpells": "+1 1st, +2 2nd, +2 3rd",
+      "slots": { "1": 5, "2": 4, "3": 3 },
+      "total": "12 spells"
+    },
+    "mage": {
+      "level": 5,
+      "intelligence": 17,
+      "bonusSpells": "+1 1st, +1 2nd, +1 3rd",
+      "ringOfWizardry": "Doubles 1st level (8 total)",
+      "slots": { "1": 8, "2": 3, "3": 2 },
+      "total": "13 spells"
+    }
+  },
+  
   "memorizedSpells": {
     "cleric": [
       "Cure Light Wounds",
@@ -59,11 +77,13 @@
       "Magic Missile",
       "Magic Missile",
       "Magic Missile",
+      "Magic Missile",
+      "Magic Missile",
+      "Unseen Servant",
       "Unseen Servant",
       "Unseen Servant",
       "Mirror Image",
-      "Mirror Image",
-      "Fireball"
+      "Mirror Image"
     ]
   },
   
@@ -124,5 +144,5 @@
   
   "xp": 45000,
   
-  "notes": "Drow Cleric 6 / Mage 6. Full inventory and spell loadout."
+  "notes": "Drow Cleric 6 / Mage 5. Full inventory and spell loadout."
 }
