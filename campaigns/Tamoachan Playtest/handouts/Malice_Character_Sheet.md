@@ -199,6 +199,32 @@
 
 Drow cleric/mage seeking power and knowledge. Venturing into the Hidden Shrine of Tamoachan for ancient Olman magic and treasure. Worships Lloth but pragmatic about alliances.
 
+## Magic Item Details
+
+**Armor of the Sunken King (+3)**
+- AC Bonus: -3 (AC 5 → AC 2 base)
+- Special: Water breathing 1/day (activate as action, lasts 1 hour)
+- Appearance: Ancient bronze scales with sea-green patina, depictions of underwater kingdoms
+- History: Belonged to an ancient Olman king who ruled from a submerged palace
+
+**Ring of Protection (+2)**
+- AC Bonus: -2
+- Save Bonus: +2 to all saving throws
+- Appearance: Plain silver band with protective runes visible only in moonlight
+- Stacks with other AC bonuses
+
+**Ring of Wizardry**
+- Effect: Doubles 1st-level mage spell slots (4 → 8)
+- Does not affect spell levels 2+
+- Appearance: Gold band set with tiny star sapphires that twinkle when spells are cast
+- One of the most prized possessions of any mage
+
+**Luck Stone**
+- Effect: +1 to all saving throws
+- Appearance: Smooth river stone that feels warm to the touch
+- Stacks with Ring of Protection for total +3 saves
+- Must be carried on person (not in bag) to function
+
 ---
 
 ## Session Log
