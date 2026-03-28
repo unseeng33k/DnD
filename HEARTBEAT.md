@@ -86,6 +86,92 @@ Automated random encounter checks that run on a schedule. The DM checks periodic
 - **Loud activities:** +1 to encounter chance
 - **Stealth movement:** -1 to encounter chance
 
+## Time & Resource Tracking
+
+### Spell Durations
+**Active Spells:**
+- Find Traps (Malice) - Cast: Hour 7, **EXPIRES: Hour 13** (6 rounds remaining)
+
+**Spell Duration Rules:**
+- 1 turn = 10 minutes
+- 1 hour = 6 turns
+- DM alerts player 2 turns before expiration
+- When spell expires, effects end immediately
+
+**Common Spell Durations:**
+- Find Traps: 3 turns (30 minutes)
+- Detect Magic: 2 turns (20 minutes)
+- Light: 6 turns + 1/level (1+ hours)
+- Invisibility: 24 hours or until attack
+- Shield: 5 rounds/level (30 min at 6th level)
+- Mirror Image: 6 turns (1 hour)
+- Fireball: Instant
+- Magic Missile: Instant
+- Cure Light Wounds: Instant
+
+### Torch & Light Tracking
+**Active Light Sources:**
+- Torch (Malice) - Lit: Hour 7, **BURNS OUT: Hour 8** (60 min remaining)
+
+**Light Source Rules:**
+- Torch: 1 hour duration
+- Lantern (oil): 4 hours per pint
+- Candle: 30 minutes
+- Light spell: 1+ hours (see spells)
+- Darkvision: Unlimited (racial ability)
+
+**DM Alerts:**
+- 15 minutes left: "Your torch flickers"
+- 5 minutes left: "Your torch gutters, about to die"
+- Expired: "Your torch goes out. Darkness."
+
+### Supply Tracking
+**Current Supplies (Malice):**
+- Torches: 7 (1 burning, 6 packed)
+- Rations: 9 days
+- Waterskins: 2 (1 full, 1 empty)
+- Oil (lantern): 0 pints
+
+**Consumption Rules:**
+- Rations: 1/day per person
+- Water: 1 waterskin/day per person (jungle = +1 for humidity)
+- Torch: 1/hour of dungeon exploration
+- Rest without food: -1 HP per day, cumulative
+- Rest without water: -2 HP per day, cumulative
+
+**DM Alerts:**
+- 3 days rations left: "Supplies running low"
+- 1 day rations left: "Last day of food"
+- No rations: "Starvation begins"
+
+### Time of Day Tracking
+**Current Time:** Day 2, Hour 13 (1:00 PM)
+- Sunrise: Hour 6
+- Sunset: Hour 18
+- Night: Hours 18-6
+
+**Time Effects:**
+- Daylight: Normal vision, -1 Drow attack in bright sun
+- Twilight: -1 to spot checks
+- Night: Darkvision active, torches needed for humans
+- Dungeon: Always dark, always need light (unless Drow)
+
+### Exhaustion & Rest
+**Current Status (Malice):**
+- Rest: 4 hours (insufficient)
+- Exhaustion level: 0
+
+**Rest Rules:**
+- Full rest: 8 hours, restores HP (1/day)
+- Short rest: 1 hour, no HP, recover breath
+- No rest: -1 to all rolls per day without sleep
+- Forced march: +50% distance, -2 HP, save or exhaustion
+
+**DM Alerts:**
+- 24 hours no sleep: "You feel sluggish, reactions slow"
+- 48 hours no sleep: "Hallucinations begin, -2 all rolls"
+- 72 hours no sleep: "Collapse, automatic exhaustion"
+
 ## Integration
 
 This file is read by the DM during heartbeat checks. Update terrain and location as party moves.
