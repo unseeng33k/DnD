@@ -9,6 +9,8 @@
 const PartyManager = require('./party_manager');
 const CharacterLogger = require('./logger');
 const DMGSkill = require('./skills/dmg-skill/dmg-skill');
+const PHBSkill = require('./skills/phb-skill/phb-skill');
+const MMSkill = require('./skills/mm-skill/mm-skill');
 const fs = require('fs');
 const path = require('path');
 
@@ -16,6 +18,8 @@ class GameEngine {
   constructor() {
     this.pm = new PartyManager();
     this.dmg = new DMGSkill();
+    this.phb = new PHBSkill();
+    this.mm = new MMSkill();
     this.loggers = {};
     this.activeCharacter = null;
 
@@ -359,11 +363,19 @@ COMMANDS:
   
   char <char-id>            Switch active character
 
-DMG RULES (Source of Truth):
+RULEBOOKS (Source of Truth):
   dmg <search-term>         Search DMG for rule
   dmg table <name>          Show table (strength, THAC0, etc.)
   dmg rule <section>        Show rule section (combat, magic, etc.)
   dmg ref <topic>           Quick reference (movement, saves, etc.)
+  
+  phb <search-term>         Search Player's Handbook
+  phb table <name>          Show PHB table (strength, spells, etc.)
+  
+  mm <monster>              Show monster stats
+  mm search <term>          Search monsters
+  mm hd <number>            List monsters by hit dice
+  mm type <type>            List monsters by type (undead, dragon, etc.)
 
 EXAMPLES:
   node game-engine.js cast "Magic Missile" 1 mage "Orc"
@@ -504,17 +516,58 @@ if (require.main === module) {
         console.error('       dmg ref <topic>');
         process.exit(1);
       }
-      const subCmd = args[1];
-      if (subCmd === 'table' && args[2]) {
+      const dmgCmd = args[1];
+      if (dmgCmd === 'table' && args[2]) {
         engine.dmg.printTable(args[2]);
-      } else if (subCmd === 'rule' && args[2]) {
+      } else if (dmgCmd === 'rule' && args[2]) {
         engine.dmg.printRule(args[2]);
-      } else if (subCmd === 'ref' && args[2]) {
+      } else if (dmgCmd === 'ref' && args[2]) {
         engine.dmg.printRef(args[2]);
       } else {
         // Default: search
         const results = engine.dmg.search(args.slice(1).join(' '));
         engine.dmg.printSearch(results, args.slice(1).join(' '));
+      }
+      break;
+
+    // PHB Integration
+    case 'phb':
+      if (args.length < 2) {
+        console.error('Usage: phb <search-term>');
+        console.error('       phb table <table-name>');
+        process.exit(1);
+      }
+      const phbCmd = args[1];
+      if (phbCmd === 'table' && args[2]) {
+        engine.phb.printTable(args[2]);
+      } else {
+        // Default: search
+        const results = engine.phb.search(args.slice(1).join(' '));
+        engine.phb.printSearch(results, args.slice(1).join(' '));
+      }
+      break;
+
+    // Monster Manual Integration
+    case 'mm':
+    case 'monster':
+      if (args.length < 2) {
+        console.error('Usage: mm <monster-name>');
+        console.error('       mm search <term>');
+        console.error('       mm hd <number>');
+        console.error('       mm type <type>');
+        process.exit(1);
+      }
+      const mmCmd = args[1];
+      if (mmCmd === 'search' && args[2]) {
+        const results = engine.mm.search(args.slice(2).join(' '));
+        engine.mm.printSearch(results, args.slice(2).join(' '));
+      } else if (mmCmd === 'hd' && args[2]) {
+        engine.mm.printByHD(parseInt(args[2]));
+      } else if (mmCmd === 'type' && args[2]) {
+        engine.mm.printByType(args[2]);
+      } else {
+        // Default: get monster
+        engine.mm.printMonster(args[1]);
       }
       break;
 
