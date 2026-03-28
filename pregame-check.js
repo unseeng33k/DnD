@@ -73,6 +73,9 @@ class PregameCheck {
     
     // Location Check
     console.log(`📍 Location: ${char.location || 'Unknown'}`);
+    
+    // Level-Up Check
+    this.checkLevelUp(char);
   }
 
   checkSpells(char, sessionChar) {
@@ -113,6 +116,76 @@ class PregameCheck {
     }
     
     console.log('✅ Equipment check complete');
+  }
+
+  checkLevelUp(char) {
+    // Check if character is close to leveling
+    const xp = char.xp || 0;
+    const level = this.parseLevel(char.level);
+    const nextLevelXP = this.getNextLevelXP(char.class, level);
+    
+    if (nextLevelXP && xp >= nextLevelXP) {
+      this.warnings.push(`${char.name}: READY TO LEVEL UP!`);
+      console.log(`⚠️  LEVEL UP READY: ${xp} XP (needs ${nextLevelXP})`);
+      this.printLevelUpChecklist(char);
+    } else if (nextLevelXP) {
+      const percent = Math.floor((xp / nextLevelXP) * 100);
+      console.log(`📈 XP Progress: ${percent}% (${xp}/${nextLevelXP})`);
+    }
+  }
+
+  parseLevel(levelStr) {
+    // Handle "6/6" or "6" formats
+    if (levelStr.includes('/')) {
+      return parseInt(levelStr.split('/')[0]);
+    }
+    return parseInt(levelStr);
+  }
+
+  getNextLevelXP(charClass, currentLevel) {
+    // Fighter XP table (simplified)
+    const fighterXP = [0, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000];
+    // Cleric XP table
+    const clericXP = [0, 1500, 3000, 6000, 13000, 27500, 55000, 110000, 225000, 450000];
+    // Mage XP table
+    const mageXP = [0, 2500, 5000, 10000, 20000, 40000, 80000, 150000, 300000, 600000];
+    
+    const nextLevel = currentLevel + 1;
+    if (nextLevel > 10) return null;
+    
+    if (charClass.toLowerCase().includes('fighter')) {
+      return fighterXP[nextLevel];
+    } else if (charClass.toLowerCase().includes('cleric')) {
+      return clericXP[nextLevel];
+    } else if (charClass.toLowerCase().includes('mage')) {
+      return mageXP[nextLevel];
+    }
+    
+    return null;
+  }
+
+  printLevelUpChecklist(char) {
+    console.log(`\n   📋 LEVEL UP CHECKLIST for ${char.name}:`);
+    console.log(`   • Roll HP (add CON bonus)`);
+    
+    if (char.class.toLowerCase().includes('mage')) {
+      console.log(`   • Check for new spell slots`);
+      console.log(`   • Attempt to learn new spells (INT check)`);
+    }
+    if (char.class.toLowerCase().includes('cleric')) {
+      console.log(`   • Check for new spell slots`);
+      console.log(`   • Update turn undead table`);
+    }
+    if (char.class.toLowerCase().includes('fighter')) {
+      console.log(`   • THAC0 improves`);
+      console.log(`   • Check for additional attacks`);
+    }
+    
+    console.log(`   • Update saving throws`);
+    console.log(`   • Record new abilities/features`);
+    console.log(`   • Training time: 1 week per level`);
+    console.log(`   • Training cost: 1000 gp per level`);
+    console.log();
   }
 
   printResults() {

@@ -146,6 +146,15 @@
 
 Half-ogre fighter/cleric of Tritherion. Simple but good-hearted. Fights for the weak and oppressed.
 
+## Personality
+
+**Role:** The lumbering ogre / meat shield
+- Grond knows his job: stand in front, take hits, protect the party
+- Not the brightest, but fiercely loyal
+- Speaks in simple terms: "Grond smash!" or "Grond protect!"
+- 69 HP makes him the party's damage sponge
+- Willing to take hits so others don't have to
+
 ---
 
 ## Session Log
