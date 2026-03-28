@@ -1,0 +1,47 @@
+{
+  "acquisitions": [
+    {
+      "date": "2026-03-28",
+      "session": "Session 1",
+      "character": "Malice Indarae De'Barazzan",
+      "item": "Armor of the Sunken King +3",
+      "type": "armor",
+      "bonus": "+3",
+      "identified": true,
+      "identified_by": "Detect Magic, Legend Lore",
+      "location": "Tomb of the Olman King",
+      "source": "Treasure hoard",
+      "value_gp": 15000,
+      "notes": "Ancient bronze scale armor. Water breathing 1/day. Belonged to Olman king who ruled from submerged palace."
+    },
+    {
+      "date": "2026-03-28",
+      "session": "Session 1",
+      "character": "Malice Indarae De'Barazzan",
+      "item": "Long Sword +3",
+      "type": "weapon",
+      "bonus": "+3",
+      "identified": true,
+      "identified_by": "Detect Magic",
+      "location": "Tomb of the Olman King",
+      "source": "Treasure hoard",
+      "value_gp": 7000,
+      "notes": "Ancient Olman blade with jade inlays. Glows faintly blue when drawn."
+    },
+    {
+      "date": "2026-03-28",
+      "session": "Session 1",
+      "character": "Malice Indarae De'Barazzan",
+      "item": "Ring of Protection +2",
+      "type": "ring",
+      "bonus": "+2",
+      "identified": true,
+      "identified_by": "Detect Magic",
+      "location": "Tamoachan - Cultist Quarters",
+      "source": "Xilonen's body",
+      "value_gp": 10000,
+      "notes": "Silver band with protective runes visible in moonlight."
+    }
+  ],
+  "total_value_acquired": 32000
+}

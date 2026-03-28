@@ -54,6 +54,7 @@
 
 | Weapon | Damage (S-M) | Damage (L) | To-Hit | Notes |
 |--------|--------------|------------|--------|-------|
+| **Long Sword +3** | 4-9 | 3-11 | +4 | *Acquired in Tamoachan* |
 | Mace | 2-7 | 1-6 | +1 | |
 | Dagger | 1-4 | 1-3 | +1 | Throwing |
 | Short Sword | 1-6 | 1-8 | +1 | |
@@ -201,7 +202,15 @@ Drow cleric/mage seeking power and knowledge. Venturing into the Hidden Shrine o
 
 ## Magic Item Details
 
-**Armor of the Sunken King (+3)**
+**Long Sword +3** *(Acquired: Tamoachan Expedition, Session 1)*
+- Damage: 4-9 (S-M), 3-11 (L)
+- To-Hit: +4 (+3 sword, +1 STR)
+- Value: 7,000 gp
+- Special: +3 to hit and damage
+- Appearance: Ancient Olman blade with jade inlays, glows faintly blue when drawn
+- History: Recovered from the Tomb of the Olman King, wielded by ancient warriors
+
+**Armor of the Sunken King (+3)** *(Acquired: Tamoachan Expedition, Session 1)*
 - AC Bonus: -3 (AC 5 → AC 2 base)
 - Special: Water breathing 1/day (activate as action, lasts 1 hour)
 - Appearance: Ancient bronze scales with sea-green patina, depictions of underwater kingdoms

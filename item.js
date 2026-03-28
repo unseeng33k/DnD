@@ -161,6 +161,19 @@ class MagicItemCompendium {
         appearance: 'Brilliant blade that hums with power',
         history: 'Masterwork weapon, rare and powerful'
       },
+      'long sword +3': {
+        name: 'Long Sword +3',
+        type: 'Weapon',
+        bonus: '+3',
+        toHit: 3,
+        damage: 3,
+        damageSM: '4-9',
+        damageL: '3-11',
+        value: '7,000 gp',
+        special: null,
+        appearance: 'Ancient blade with jade inlays, glows faintly blue when drawn',
+        history: 'Often recovered from ancient tombs, wielded by legendary warriors'
+      },
       'vorpal sword': {
         name: 'Vorpal Sword',
         type: 'Weapon',
