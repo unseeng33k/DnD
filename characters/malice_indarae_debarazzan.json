@@ -110,5 +110,20 @@
   
   "xp": 45000,
   
+  "spellbooks": {
+    "cleric": {
+      "description": "Prayer book to Lloth - all spells granted through divine communion",
+      "level1": ["Cure Light Wounds", "Detect Magic", "Protection from Evil", "Light", "Command"],
+      "level2": ["Hold Person", "Silence 15' Radius", "Spiritual Hammer", "Augury"],
+      "level3": ["Cure Disease", "Dispel Magic", "Prayer", "Remove Curse"]
+    },
+    "mage": {
+      "description": "Arcane spellbook - handwritten over 200 years",
+      "level1": ["Magic Missile", "Shield", "Sleep", "Charm Person", "Detect Magic", "Read Magic", "Burning Hands", "Feather Fall"],
+      "level2": ["Invisibility", "Mirror Image", "Web", "Detect Invisible", "Knock", "Levitate"],
+      "level3": ["Fireball", "Lightning Bolt", "Haste", "Slow", "Dispel Magic", "Fly"]
+    }
+  },
+  
   "notes": "Drow cleric/mage multiclass. Can see in darkness (120 ft). Light sensitivity (-1 to hit in bright light)."
 }

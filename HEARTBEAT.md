@@ -172,6 +172,47 @@ Automated random encounter checks that run on a schedule. The DM checks periodic
 - 48 hours no sleep: "Hallucinations begin, -2 all rolls"
 - 72 hours no sleep: "Collapse, automatic exhaustion"
 
+### Spell Recovery (AD&D 1e Rules - DMG p. 40)
+
+**RECOVERY OF SPELLS**
+Spell recovery requires rest AND study/prayer time.
+
+**STEP 1: REST (Sleep)**
+Minimum rest time depends on HIGHEST spell level being recovered:
+
+| Highest Spell Level | Rest Time Required |
+|---------------------|-------------------|
+| 1-2                 | 4 hours           |
+| 3-4                 | 6 hours           |
+| 5-6                 | 8 hours           |
+| 7-8                 | 10 hours          |
+| 9                   | 12 hours          |
+
+**STEP 2: STUDY/PRAYER**
+After rest: **15 minutes (1/4 hour) per spell level** must be spent memorizing/acquiring each spell.
+
+**Example - Malice (Cleric 6/Mage 6):**
+- Highest spell level: 3rd (for both classes)
+- Rest required: 6 hours
+- Study/Prayer: 15 min × number of spells being prepared
+- If preparing 8 spells total: 6 hours rest + 2 hours preparation = **8 hours total**
+
+**Requirements:**
+- Must be uninterrupted (no combat, no conversation)
+- Must have holy symbol (cleric) or spellbook (mage)
+- Cannot prepare if exhausted
+
+**Current Status (Malice):**
+- Last preparation: Day 1, morning
+- Spells remaining: See character sheet
+- Next preparation: Day 3, morning (due)
+- Required: 6 hours rest + 2 hours study/prayer = 8 hours total
+
+**DM Alerts:**
+- Morning after rest: "Time to pray and study for spells (8 hours total)"
+- Skipped preparation: "You feel disconnected from your power"
+- After preparation: "Spells refreshed. Divine and arcane power flows."
+
 ## Integration
 
 This file is read by the DM during heartbeat checks. Update terrain and location as party moves.
