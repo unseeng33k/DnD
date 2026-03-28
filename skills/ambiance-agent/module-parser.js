@@ -22,20 +22,25 @@ class ModuleParser {
         code: 'C1',
         edition: 'AD&D 1e',
         scenes: [
-          { name: 'Jungle Entrance', type: 'outdoor', mood: 'exploration', description: 'Overgrown Olman temple entrance, vines crawling weathered stone' },
-          { name: 'Temple Stairs', type: 'dungeon', mood: 'tense', description: 'Steep stairs descending into darkness, ancient carvings' },
-          { name: 'Antechamber', type: 'dungeon', mood: 'mysterious', description: 'Chamber with three archways: skull, pool, and Tlaloc' },
-          { name: 'Pool Chamber', type: 'dungeon', mood: 'dangerous', description: 'Underground cenote with crystal water, offerings visible below' },
-          { name: 'Shrine Room', type: 'dungeon', mood: 'sacred', description: 'Ancient shrine to Tlaloc, blood-stained altar, glowing glyphs' },
-          { name: 'Tomb of the Olman King', type: 'dungeon', mood: 'deathly', description: 'Sealed tomb, mummified remains, treasure and traps' },
-          { name: 'Natural Cavern', type: 'cave', mood: 'claustrophobic', description: 'Limestone caverns, stalactites, underground river' },
-          { name: 'Cultist Sacrifice Chamber', type: 'dungeon', mood: 'evil', description: 'Hidden chamber, recent sacrifices, cultist presence' }
+          { name: 'Jungle Approach', type: 'outdoor', mood: 'exploration', description: 'Dense jungle, ancient trail, overgrown ruins, humid air' },
+          { name: 'Temple Entrance', type: 'outdoor', mood: 'discovery', description: 'Overgrown Olman temple entrance, vines crawling weathered stone, carved serpents' },
+          { name: 'Entry Hall', type: 'dungeon', mood: 'tense', description: 'Steep stairs descending into darkness, ancient carvings, trapped steps' },
+          { name: 'Chamber of Three Archways', type: 'dungeon', mood: 'mysterious', description: 'Skull archway (left), Pool archway (center), Tlaloc archway (right), glowing glyphs' },
+          { name: 'Hall of the Glyphs', type: 'dungeon', mood: 'arcane', description: 'Walls covered in Olman writing, magical warnings, history of the shrine' },
+          { name: 'Pool Chamber', type: 'dungeon', mood: 'dangerous', description: 'Underground cenote with crystal water, offerings visible below, something moves in depths' },
+          { name: 'Shrine of Tlaloc', type: 'dungeon', mood: 'sacred', description: 'Ancient shrine to Tlaloc, blood-stained altar, glowing glyphs, rain god statue' },
+          { name: 'Tomb of the Olman King', type: 'dungeon', mood: 'deathly', description: 'Sealed tomb, mummified remains, treasure and traps, royal burial chamber' },
+          { name: 'Natural Cavern', type: 'cave', mood: 'claustrophobic', description: 'Limestone caverns, stalactites, underground river, bioluminescent fungi' },
+          { name: 'Cultist Quarters', type: 'dungeon', mood: 'evil', description: 'Living area, sleeping mats, cooking fires, evidence of recent occupation' },
+          { name: 'Sacrifice Chamber', type: 'dungeon', mood: 'evil', description: 'Hidden chamber, bloodstained altar, ritual implements, fresh sacrifices' },
+          { name: 'Treasure Vault', type: 'vault', mood: 'treasure', description: 'Hidden cache, Olman gold, jade, turquoise, trapped chests' }
         ],
         monsters: [
           'goblin', 'skeleton', 'zombie', 'ghoul', 'wight', 
-          'lizard man', 'giant spider', 'basilisk', 'mummy'
+          'lizard man', 'giant spider', 'basilisk', 'mummy',
+          'giant centipede', 'poisonous snake', 'crocodile', 'jaguar'
         ],
-        keyNPCs: ['Tomas', 'Villager Woman', 'Cult Leader'],
+        keyNPCs: ['Tomas the Survivor', 'Villager Woman', 'Cult Leader Xilonen', 'The Olman King (mummy)'],
         soundtrack: ['mesoamerican', 'jungle', 'tense']
       },
       'tomb of horrors': {
@@ -43,16 +48,21 @@ class ModuleParser {
         code: 'S1',
         edition: 'AD&D 1e',
         scenes: [
-          { name: 'Hill Entrance', type: 'outdoor', mood: 'foreboding', description: 'Skull-shaped hill, black granite, evil aura' },
-          { name: 'Great Hall of Spheres', type: 'dungeon', mood: 'trapped', description: 'Four colored spheres, pit traps, false exits' },
-          { name: 'Gargoyle Lair', type: 'dungeon', mood: 'dangerous', description: 'Chapel area, gargoyles, desecrated altar' },
-          { name: 'Acereraks Tomb', type: 'dungeon', mood: 'deathly', description: 'Final chamber, demilich, treasure hoard' }
+          { name: 'The Green Devil Face', type: 'outdoor', mood: 'foreboding', description: 'Skull-shaped hill, black granite entrance, evil aura, the Great Green Devil Face' },
+          { name: 'Entrance Corridor', type: 'dungeon', mood: 'trapped', description: 'Spiked pit, false doors, teleporter traps, deadly from the start' },
+          { name: 'The Great Hall of Spheres', type: 'dungeon', mood: 'trapped', description: 'Four colored spheres, pit traps, false exits, gargoyle observation' },
+          { name: 'The Chapel of Evil', type: 'dungeon', mood: 'profane', description: 'Desecrated chapel, pews, altar, pit to lower levels' },
+          { name: 'The Laboratory', type: 'dungeon', mood: 'arcane', description: 'Acereraks workshop, experiments, constructs, magical traps' },
+          { name: 'The Crypt of Acererak', type: 'dungeon', mood: 'deathly', description: 'Final chamber, demilich skull, treasure hoard, the ultimate trap' },
+          { name: 'The Forsaken Prison', type: 'dungeon', mood: 'hopeless', description: 'Trapped adventurers, starvation, madness, warning to others' },
+          { name: 'The Maze of Death', type: 'dungeon', mood: 'confusing', description: 'Twisting corridors, dead ends, teleport traps, no way out' }
         ],
         monsters: [
           'gargoyle', 'ghoul', 'zombie', 'wraith', 'spectre', 
-          'lich', 'mummy', 'green slime', 'trap'
+          'lich', 'mummy', 'green slime', 'gelatinous cube',
+          'shadow', 'wraith', 'ghost', 'animated statue'
         ],
-        keyNPCs: ['Acererak'],
+        keyNPCs: ['Acererak the Demilich', 'The Green Devil'],
         soundtrack: ['death', 'dungeon', 'boss']
       },
       'temple of elemental evil': {
@@ -94,16 +104,29 @@ class ModuleParser {
         code: 'I6',
         edition: 'AD&D 1e',
         scenes: [
-          { name: 'Village of Barovia', type: 'village', mood: 'gothic', description: 'Misty village, frightened villagers, gothic architecture' },
-          { name: 'Castle Ravenloft', type: 'castle', mood: 'horror', description: 'Gothic castle, spiral towers, vampire lair' },
-          { name: 'Crypts', type: 'dungeon', mood: 'deathly', description: 'Ancient crypts, vampire spawn, Strahds brides' },
-          { name: 'Strahds Throne Room', type: 'boss', mood: 'boss', description: 'Throne of the vampire lord, final confrontation' }
+          { name: 'Village of Barovia', type: 'village', mood: 'gothic', description: 'Misty village, frightened villagers, gothic architecture, blood on the cobblestones' },
+          { name: 'Blood on the Vine Tavern', type: 'tavern', mood: 'suspicious', description: 'Warm fire, locals whispering, fear in the air, Arik the bartender' },
+          { name: 'Church of St. Andral', type: 'church', mood: 'sanctuary', description: 'Holy ground, Father Donavich praying, Doru trapped in basement' },
+          { name: 'Madame Evas Camp', type: 'camp', mood: 'mysterious', description: 'Vistani camp outside village, tarokka card reading, prophecy' },
+          { name: 'Old Svalich Road', type: 'road', mood: 'foreboding', description: 'Misty road through the woods, wolf howls, carriage ruts' },
+          { name: 'Gates of Ravenloft', type: 'gate', mood: 'ominous', description: 'Iron gates, raven statues, thunder crashes, castle looming above' },
+          { name: 'Castle Courtyard', type: 'courtyard', mood: 'exposed', description: 'Overgrown garden, crumbling statues, fountain with red water' },
+          { name: 'Castle Entrance Hall', type: 'castle', mood: 'grand', description: 'Massive staircase, portraits of Strahd, suits of armor' },
+          { name: 'K78 Dining Hall', type: 'hall', mood: 'decadent', description: 'Dusty feast, rotting food, phantom servants, organ music' },
+          { name: 'K67 Chapel', type: 'chapel', mood: 'profane', description: 'Desecrated altar, unholy symbols, Strahds place of power' },
+          { name: 'K88 Crypts', type: 'dungeon', mood: 'deathly', description: 'Ancient crypts, vampire spawn, Strahds brides, sarcophagi' },
+          { name: 'K87 Strahds Tomb', type: 'boss', mood: 'boss', description: 'Final resting place, Strahds coffin, confrontation with the vampire lord' },
+          { name: 'K20 Library', type: 'library', mood: 'arcane', description: 'Dusty tomes, magical research, history of Barovia' },
+          { name: 'K34 Treasury', type: 'vault', mood: 'treasure', description: 'Gold and jewels, trapped chests, artifacts' },
+          { name: 'K50 Tower Peak', type: 'tower', mood: 'exposed', description: 'Highest tower, lightning rod, view of Barovia, heart of sorrow' }
         ],
         monsters: [
           'vampire', 'vampire spawn', 'wolf', 'dire wolf', 
-          'werewolf', 'zombie', 'skeleton', 'ghost', 'banshee'
+          'werewolf', 'zombie', 'skeleton', 'ghost', 'banshee',
+          'ghoul', 'wight', 'wraith', 'spectre', 'hell hound',
+          'bat', 'rat', 'swarm', 'animated armor', 'flying sword'
         ],
-        keyNPCs: ['Strahd von Zarovich', 'Ireena Kolyana', 'Madame Eva'],
+        keyNPCs: ['Strahd von Zarovich', 'Ireena Kolyana', 'Madame Eva', 'Father Donavich', 'Ismark Kolyanovich', 'Rahadin', 'Escher', 'Patrina Velikovna'],
         soundtrack: ['gothic', 'horror', 'boss']
       },
       'white plume mountain': {
