@@ -1,0 +1,168 @@
+═════════════════════════════════════════════════════════════════════════════
+                      ✅ INTEGRATION AUDIT COMPLETE
+═════════════════════════════════════════════════════════════════════════════
+
+You now have a DELIBERATE INTEGRATION STRATEGY for the DND project.
+No auto-merge. No copying old code into src/. Only adapters.
+
+═════════════════════════════════════════════════════════════════════════════
+DOCUMENTS CREATED (Read in this order)
+═════════════════════════════════════════════════════════════════════════════
+
+1. INTEGRATION-AUDIT-README.md
+   👈 START HERE - Overview & how to use this folder
+
+2. INTEGRATION-STRATEGY.md
+   Main strategy document - principle, phases, rules
+
+3. DEPENDENCY-AUDIT.md
+   Which legacy files exist, what they do, integration priorities
+
+4. PHASE-1-DM-MEMORY-ADAPTER-PLAN.md
+   Complete implementation guide for dm-memory (Phase 1)
+   Code examples ready to copy-paste
+
+5. LEGACY-CODE-AUDIT.md (already existed)
+   Inventory of all legacy code
+
+6. INTEGRATION-ROADMAP.md (already existed)
+   Timeline for all phases
+
+═════════════════════════════════════════════════════════════════════════════
+THE APPROACH IN ONE PICTURE
+═════════════════════════════════════════════════════════════════════════════
+
+BEFORE (Tangled):
+  ❌ Legacy code in root
+  ❌ New code in src/
+  ❌ No clear integration path
+  ❌ Tempted to auto-merge
+
+AFTER (Clean):
+  ✅ Legacy code stays in place (untouched)
+  ✅ New code in src/ (clean)
+  ✅ Adapters in src/adapters/ (bridge)
+  ✅ Clear integration phases
+  ✅ One system at a time
+  ✅ Tested before moving on
+
+═════════════════════════════════════════════════════════════════════════════
+WHAT YOU SHOULD DO NEXT
+═════════════════════════════════════════════════════════════════════════════
+
+Option A: READ (Do this first)
+  1. Open INTEGRATION-AUDIT-README.md
+  2. Read INTEGRATION-STRATEGY.md
+  3. Skim DEPENDENCY-AUDIT.md
+  4. Note the 3 integration phases
+  Time: 30-45 minutes
+
+Option B: UNDERSTAND (After reading)
+  1. Review Phase 1 plan
+  2. Understand the adapter pattern
+  3. Identify where adapters will go
+  4. Plan the test structure
+  Time: 30 minutes
+
+Option C: IMPLEMENT (When ready)
+  1. Follow PHASE-1-DM-MEMORY-ADAPTER-PLAN.md
+  2. Create src/adapters/dm-memory-adapter.js
+  3. Create tests
+  4. Run tests
+  5. Commit to git
+  Time: 4-6 hours
+
+═════════════════════════════════════════════════════════════════════════════
+PHASE SUMMARY
+═════════════════════════════════════════════════════════════════════════════
+
+PHASE 1: DM-MEMORY ⭐⭐⭐⭐⭐
+  ├─ File: dm-memory-system.js (root)
+  ├─ Adapter: src/adapters/dm-memory-adapter.js (CREATE)
+  ├─ Status: READY TO IMPLEMENT
+  └─ Effort: 4-6 hours
+
+PHASE 2: PARTY-SYSTEM ⭐⭐⭐⭐
+  ├─ File: party-system.js (root)
+  ├─ Adapter: src/adapters/party-system-adapter.js (CREATE)
+  ├─ Status: PLANNED (after Phase 1)
+  └─ Effort: 6-8 hours
+
+PHASE 3: DEDUPLICATION ⭐⭐⭐
+  ├─ File: spotlight-pacing-scheduler.js
+  ├─ Action: Compare & merge with pillar-8
+  ├─ Status: PLANNED (after Phase 2)
+  └─ Effort: 2-3 hours
+
+PHASE 4+: SKILLS & GENERATORS ⭐⭐
+  ├─ Files: Various skills/
+  ├─ Status: BACKLOG
+  └─ Action: Integrate one by one, nice-to-have
+
+═════════════════════════════════════════════════════════════════════════════
+KEY PRINCIPLE: ADAPTERS, NOT AUTO-MERGE
+═════════════════════════════════════════════════════════════════════════════
+
+Old Code (stays in place):
+  dm-memory-system.js          ← DON'T MODIFY
+  party-system.js              ← DON'T MODIFY
+  spotlight-pacing-scheduler   ← DON'T MODIFY
+
+New Adapters (you create):
+  src/adapters/dm-memory-adapter.js           ← NEW
+  src/adapters/party-system-adapter.js        ← NEW
+  (more adapters as needed)
+
+Benefits:
+  ✅ Old code untouched (less risk)
+  ✅ New code clean (no legacy cruft)
+  ✅ Clear integration boundary
+  ✅ Easy to test (each adapter separately)
+  ✅ Easy to revert (just delete adapter)
+
+═════════════════════════════════════════════════════════════════════════════
+FILES ALREADY IN YOUR PROJECT
+═════════════════════════════════════════════════════════════════════════════
+
+These already existed, you reviewed them:
+  ✅ LEGACY-CODE-AUDIT.md
+  ✅ INTEGRATION-ROADMAP.md
+  ✅ PHASE-1-DM-MEMORY-INTEGRATION.md
+
+You created TODAY:
+  ✅ INTEGRATION-AUDIT-README.md
+  ✅ INTEGRATION-STRATEGY.md
+  ✅ DEPENDENCY-AUDIT.md
+  ✅ PHASE-1-DM-MEMORY-ADAPTER-PLAN.md
+  ✅ archive/README.md
+
+═════════════════════════════════════════════════════════════════════════════
+HOW THIS FITS INTO YOUR DND PROJECT
+═════════════════════════════════════════════════════════════════════════════
+
+DND PROJECT STRUCTURE:
+  /dnd
+    /src                          ← Clean architecture (don't mix with legacy)
+      /core                       ← eventBus, turn-pipeline, registry
+      /systems                    ← game systems
+      /registries                 ← game data
+      /adapters                   ← NEW! Bridges to legacy code
+      /effects
+    dm-memory-system.js           ← Legacy (untouched)
+    party-system.js               ← Legacy (untouched)
+    spotlight-pacing-scheduler.js ← Legacy (untouched)
+    /skills                       ← Various legacy skills
+    /archive                      ← Dead/questionable code (organized)
+    INTEGRATION-STRATEGY.md       ← You are here
+    DEPENDENCY-AUDIT.md
+    PHASE-1-DM-MEMORY-ADAPTER-PLAN.md
+
+═════════════════════════════════════════════════════════════════════════════
+READY?
+═════════════════════════════════════════════════════════════════════════════
+
+Next action: Open INTEGRATION-AUDIT-README.md
+
+It has links to all the other docs and explains how to use them.
+
+═════════════════════════════════════════════════════════════════════════════

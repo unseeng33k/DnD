@@ -18,6 +18,7 @@ import { fileURLToPath } from 'url';
 import { DMMemory } from './dm-memory-system.js';
 import { SessionAmbiance } from './session-ambiance-orchestrator.js';
 import { AdventureModule, ModuleRegistry } from './adventure-module-system.js';
+import { NarratorEngine } from './src/systems/narrator/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -461,6 +462,7 @@ class GameMasterOrchestrator {
     this.consequences = null;
     this.decisions = null;
     this.campaign_manager = null;
+    this.narratorEngine = null;
     this.sessionNumber = 1;
     this.activeParty = [];
     this.loadedLocations = new Map();
@@ -524,6 +526,13 @@ class GameMasterOrchestrator {
 
     // Initialize ambiance
     this.ambiance = new SessionAmbiance(campaignName, telegramChatId);
+
+    // Initialize narrator engine for chronicle generation
+    this.narratorEngine = new NarratorEngine(
+      this.memory,
+      null,  // npcDialogueSystem - wire up when available
+      this.campaign_manager
+    );
 
     // Load previous session context if available
     const prevSession = this.campaign_manager.loadSessionContext(sessionNum - 1);
@@ -761,6 +770,35 @@ class GameMasterOrchestrator {
     console.log(`Decisions recorded: ${this.memory.decisions.decisions.length}`);
     console.log(`Consequences triggered: ${this.consequences.consequences.length}`);
     console.log(`\n💾 Saved to: ${savedFile}`);
+
+    // NARRATOR ENGINE - Generate and append chronicle chapter
+    if (this.narratorEngine) {
+      try {
+        console.log(`\n📖 Generating chronicle chapter...`);
+        
+        const chapter = await this.narratorEngine.generateChapter(
+          this.sessionNumber,
+          savedFile,
+          this.memory.timeline.events,
+          this.activeParty,
+          this.activeParty[0]
+        );
+        
+        const appendResult = await this.narratorEngine.appendToChronicle(
+          this.module.metadata.name,
+          chapter
+        );
+        
+        console.log(`\n✅ Chronicle updated:`);
+        console.log(`   Path: ${appendResult.chroniclePath}`);
+        console.log(`   Chapter: ${appendResult.chapter}`);
+        console.log(`   Title: "${appendResult.title}"`);
+      } catch (narratorError) {
+        console.error(`\n⚠️  Chronicle generation failed:`, narratorError.message);
+        console.log(`   (Session saved, but chapter not appended)`);
+      }
+    }
+
     console.log(`${'═'.repeat(50)}\n`);
 
     return {

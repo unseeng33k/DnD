@@ -1,0 +1,110 @@
+{
+  "campaign": "Tamoachan Expedition",
+  "session": 1,
+  "startTime": "2026-03-29T19:15:00Z",
+  "endTime": null,
+  "location": "Jungle Approach - Tamoachan",
+  "currentEncounter": null,
+  "timeline": {
+    "totalEvents": 4,
+    "events": [
+      {
+        "id": 0,
+        "type": "narrative",
+        "description": "Party stands at edge of Tamoachan Jungle - wall of green, heavy moisture, insects, jungle smell",
+        "metadata": {
+          "mood": "tense",
+          "visibility": "limited"
+        },
+        "timestamp": "2026-03-29T19:15:00Z",
+        "round": null
+      },
+      {
+        "id": 1,
+        "type": "discovery",
+        "description": "Mission briefing: Find Lost Shrine of Tamoachan, retrieve ancient artifact",
+        "metadata": {
+          "employer": "merchant_tavern",
+          "reward_proof": 500,
+          "reward_artifact": 1000,
+          "danger_level": "high"
+        },
+        "timestamp": "2026-03-29T19:15:15Z",
+        "round": null
+      },
+      {
+        "id": 2,
+        "type": "location",
+        "description": "Entered Jungle - Tamoachan",
+        "metadata": {
+          "location": "Tamoachan Jungle Approach",
+          "weather": "recently_rained",
+          "terrain": "dense_vegetation"
+        },
+        "timestamp": "2026-03-29T19:15:30Z",
+        "round": null
+      },
+      {
+        "id": 3,
+        "type": "exploration",
+        "description": "Bruh leads party; scouts Black Dow and Dogman sent ahead to reconnoiter jungle approach",
+        "metadata": {
+          "leader": "Bruh",
+          "scouts": ["Black Dow", "Dogman"],
+          "remaining_party": ["Grond", "Malice", "Threetrees"],
+          "tactic": "cautious_reconnaissance"
+        },
+        "timestamp": "2026-03-29T19:15:45Z",
+        "round": null
+      }
+    ],
+    "byType": {
+      "exploration": 1,
+      "combat": 0,
+      "roleplay": 0,
+      "discovery": 1,
+      "location": 1,
+      "narrative": 1
+    }
+  },
+  "decisions": {
+    "totalDecisions": 1,
+    "decisions": [
+      {
+        "id": 1,
+        "decision": "Send Black Dow and Dogman ahead as scouts",
+        "reasoning": "Ranger expertise (Dogman) for tracking + Fighter combat prowess (Dow) for threat response",
+        "ruleReference": null,
+        "timestamp": "2026-03-29T19:15:45Z",
+        "precedent": []
+      }
+    ],
+    "auditTrail": [
+      {
+        "decision": "Send Black Dow and Dogman ahead as scouts",
+        "timestamp": "2026-03-29T19:15:45Z",
+        "similar": 0
+      }
+    ]
+  },
+  "npcInteractions": {
+    "totalInteractions": 0,
+    "interactions": [],
+    "relationships": []
+  },
+  "worldState": [
+    ["merchant_employer_status", "active_contract", "Employer awaits proof/artifact from Tamoachan"]
+  ],
+  "sessionState": {
+    "partyStatus": {
+      "Grond": "waiting_at_jungle_edge",
+      "Black Dow": "scouting_ahead",
+      "Dogman": "scouting_ahead",
+      "Malice": "waiting_at_jungle_edge",
+      "Threetrees": "waiting_at_jungle_edge"
+    },
+    "threatLevel": "unknown",
+    "pacing": "deliberate",
+    "scout_status": "in_progress"
+  }
+}
