@@ -1,5 +1,4 @@
-# 🎭 OPENCLAW
-## AI-Powered D&D Campaign Management System
+# AI-Powered D&D Campaign Management System
 
 **Status:** ✅ Production Ready | **Version:** 1.0.0 | **License:** MIT
 
